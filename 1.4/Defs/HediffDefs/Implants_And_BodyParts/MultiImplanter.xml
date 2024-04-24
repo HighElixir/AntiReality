@@ -1,0 +1,1490 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<!-- マルチインプランター-->
+
+	<HediffDef ParentName="AR_ImplantBase">
+		<defName>AR_MultiImplantor</defName>
+		<label>マルチインプランター</label>
+		<labelNoun>マルチインプランター</labelNoun>
+		<description>[Tier3]移植されたポーンを次元の外に接続し、全身を徐々に改造する。虚構への適応性のないポーンはその過程で死亡する。完全に変換が終了した後、このインプラントは自動的に破壊される\nなお変換の途中（改造の進捗が「完了」でない間）、何らかの方法（CharacterEditorなど）でこのインプラントを取り除いた場合、進捗中の改造はすべて破棄される。(Wip)</description>
+		<descriptionHyperlinks>
+			<ThingDef>AR_MultiImplantor_Implant</ThingDef>
+			<HediffDef>AR_Multi_Brain</HediffDef>
+			<HediffDef>AR_Multi_Heart</HediffDef>
+			<HediffDef>AR_Multi_Leg</HediffDef>
+		</descriptionHyperlinks>
+		<defaultLabelColor>(0.25, 0.12, 0.38)</defaultLabelColor>
+		<makesSickThought>true</makesSickThought>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<hediffClass>Hediff_Implant</hediffClass>
+		<comps>
+			<!--<li Class="HediffCompProperties_GiveHediff">
+				<hediffDef>AR_Resistance</hediffDef>
+				<skipIfAlreadyExists>true</skipIfAlreadyExists>
+			</li>-->
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.1</severityPerDay>
+			</li>
+			<li Class="HE_AntiReality.HediffCompProperties_MakeBodyParts">
+				<addBodyParts>
+					
+					<li>
+						<createHediffOn>Brain</createHediffOn>
+						<createHediff>AR_Multi_Brain</createHediff>
+					</li>
+					
+					<li>
+						<createHediffOn>Heart</createHediffOn>
+						<createHediff>AR_Multi_Heart</createHediff>
+					</li>
+					
+					<!--============================================================================-->
+					<li>
+						<createHediffOn>Leg</createHediffOn>
+						<createHediff>AR_Multi_Leg</createHediff>
+						<partsLabel>leg</partsLabel><!--なるべく単純な英単語-->
+					</li>
+					<!--============================================================================-->
+
+					<li>
+						<createHediffOn>Shoulder</createHediffOn>
+						<createHediff>AR_Multi_Shoulder</createHediff>
+						<partsLabel>shoulder</partsLabel>
+					</li>
+					<!--============================================================================-->
+					
+					<li>
+						<createHediffOn>Eye</createHediffOn>
+						<createHediff>AR_Multi_Eye</createHediff>
+						<partsLabel>eye</partsLabel>
+					</li>
+				</addBodyParts>
+			</li>
+		</comps>
+
+		<stages>
+			<li>
+				<label>100%</label>
+				<minSeverity>0.01</minSeverity>
+			</li>
+			<li>
+				<label>80%</label>
+				<minSeverity>0.02</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<!--				■身体能力:意識-->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<!--						■身体能力:運動-->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<!--				■身体能力:指-->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<!--			■身体能力:腎機能-->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<!--					■身体能力:会話能力-->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<!--						■身体能力:視覚-->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Eating</capacity>
+						<!--						■身体能力:消化機能 -->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<!--					■身体能力:聴覚 -->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<!--					■身体能力:肺機能-->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<!--				■身体能力:心機能-->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Metabolism</capacity>
+						<!--					■身体能力:代謝機能-->
+						<setMax>2.5</setMax>
+						<!--								■上限100％-->
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>60%</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+						<li>
+							<capacity>Consciousness</capacity>
+							<!--				■身体能力:意識-->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Moving</capacity>
+							<!--						■身体能力:運動-->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Manipulation</capacity>
+							<!--				■身体能力:指-->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>BloodFiltration</capacity>
+							<!--			■身体能力:腎機能-->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Talking</capacity>
+							<!--					■身体能力:会話能力-->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Sight</capacity>
+							<!--						■身体能力:視覚-->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Eating</capacity>
+							<!--						■身体能力:消化機能 -->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Hearing</capacity>
+							<!--					■身体能力:聴覚 -->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Breathing</capacity>
+							<!--					■身体能力:肺機能-->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>BloodPumping</capacity>
+							<!--				■身体能力:心機能-->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Metabolism</capacity>
+							<!--					■身体能力:代謝機能-->
+							<setMax>2</setMax>
+							<!--								■上限100％-->
+						</li>
+				</capMods>
+			</li>
+			<li>
+				<label>40%</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<!--				■身体能力:意識-->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<!--						■身体能力:運動-->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<!--				■身体能力:指-->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<!--			■身体能力:腎機能-->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<!--					■身体能力:会話能力-->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<!--						■身体能力:視覚-->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Eating</capacity>
+						<!--						■身体能力:消化機能 -->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<!--					■身体能力:聴覚 -->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<!--					■身体能力:肺機能-->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<!--				■身体能力:心機能-->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Metabolism</capacity>
+						<!--					■身体能力:代謝機能-->
+						<setMax>1.4</setMax>
+						<!--								■上限100％-->
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>20%</label>
+				<minSeverity>0.6</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<!--				■身体能力:意識-->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<!--						■身体能力:運動-->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<!--				■身体能力:指-->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<!--			■身体能力:腎機能-->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<!--					■身体能力:会話能力-->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<!--						■身体能力:視覚-->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Eating</capacity>
+						<!--						■身体能力:消化機能 -->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<!--					■身体能力:聴覚 -->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<!--					■身体能力:肺機能-->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<!--				■身体能力:心機能-->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Metabolism</capacity>
+						<!--					■身体能力:代謝機能-->
+						<setMax>1</setMax>
+						<!--								■上限100％-->
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>0%</label>
+				<minSeverity>0.8</minSeverity>
+				<capMods>
+						<li>
+							<capacity>Consciousness</capacity>
+							<!--				■身体能力:意識-->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Moving</capacity>
+							<!--						■身体能力:運動-->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Manipulation</capacity>
+							<!--				■身体能力:指-->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>BloodFiltration</capacity>
+							<!--			■身体能力:腎機能-->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Talking</capacity>
+							<!--					■身体能力:会話能力-->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Sight</capacity>
+							<!--						■身体能力:視覚-->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Eating</capacity>
+							<!--						■身体能力:消化機能 -->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Hearing</capacity>
+							<!--					■身体能力:聴覚 -->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Breathing</capacity>
+							<!--					■身体能力:肺機能-->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>BloodPumping</capacity>
+							<!--				■身体能力:心機能-->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+						<li>
+							<capacity>Metabolism</capacity>
+							<!--					■身体能力:代謝機能-->
+							<setMax>0.8</setMax>
+							<!--								■上限100％-->
+						</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+
+
+	<ThingDef ParentName="BodyPartAntiRealityBase_M">
+		<defName>AR_MultiImplantor_Implant</defName>
+		<label>マルチインプランター</label>
+		<description>[Tier3]次元の外と接続するための部品と浸食の進行を制御する人工知能といくつかの計器を備えた小さな精密機械。\n全身を虚構エネルギーを用いて改造する。</description>
+		<descriptionHyperlinks>
+			<HediffDef>AR_MultiImplantor</HediffDef>
+			<RecipeDef>AR_MultiImplantor_Recipe</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Fiction_Core>5</Fiction_Core>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<statBases>
+			<MarketValue>58000</MarketValue>
+			<Mass>0.01</Mass>
+		</statBases>
+
+		<recipeMaker>
+			<researchPrerequisite>Researtch_MultiInplantor</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+
+
+	<RecipeDef ParentName="AR_InstallImplants">
+		<defName>AR_MultiImplantor_Recipe</defName>
+		<label>
+			マルチインプランターを移植する</label>
+		<description>マルチインプランターを移植する。\n埋め込む場所が厳密に指定されるため、高度な知識と技術が必要になる。</description>
+		<descriptionHyperlinks>
+			<ThingDef>AR_MultiImplantor_Implant</ThingDef>
+			<HediffDef>AR_MultiImplantor</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>マルチインプランターを移植している</jobString>
+		<workAmount>2500</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AR_MultiImplantor_Implant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AR_MultiImplantor_Implant</li>
+			</thingDefs>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+
+		<addsHediff>AR_MultiImplantor</addsHediff>
+
+		<skillRequirements>
+			<Medicine>18</Medicine>
+		</skillRequirements>
+
+		<appliedOnFixedBodyParts>
+			<li>Pelvis</li>
+		</appliedOnFixedBodyParts>
+		
+		<researchPrerequisite>Researtch_MultiInplantor</researchPrerequisite>
+	</RecipeDef>
+	
+
+	<!--マルチインプランターによって追加されるボディパーツ-->
+	<HediffDef ParentName="AR_BodyPartsBase" Name="MultiInplantorBase" Abstract="True">
+		<descriptionHyperlinks>
+			<HediffDef>AR_MultiImplantor</HediffDef>
+		</descriptionHyperlinks>
+		<defaultLabelColor>(0.27, 0.13, 0.45)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>2</partEfficiency>
+		</addedPartProps>
+		
+		<comps>
+			<li Class="HE_AntiReality.HediffCompProperties_NeedMultiInplantor"/>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="MultiInplantorBase" Name="Multi_Invisible" Abstract="True">
+		<description>マルチインプランターによって改造されたパーツ。尋常ではない性能を持つ。(欠損による不都合を回避するためのパーツ)</description>
+	</HediffDef>
+
+	<!--テンプレート-->
+	<!--
+	
+	<HediffDef ParentName="MultiInplanterBase">
+		<defName>AR_Multi_@@</defName>
+		<label>MI-@@</label>
+		<description>マルチインプランターによって改造された@@。尋常ではない性能を持つ。</description>
+
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.2</severityPerDay>
+			</li>
+		</comps>
+		
+		<stages>
+			<li>
+				<label>0%</label>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-2</ComfyTemperatureMin>
+					<ComfyTemperatureMax>2</ComfyTemperatureMax>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>2</LifespanFactor>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>20%</label>
+				<minSeverity>0.2</minSeverity>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>1.3</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-4</ComfyTemperatureMin>
+					<ComfyTemperatureMax>4</ComfyTemperatureMax>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>2</LifespanFactor>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>40%</label>
+				<minSeverity>0.4</minSeverity>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>1.6</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-6</ComfyTemperatureMin>
+					<ComfyTemperatureMax>6</ComfyTemperatureMax>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>2</LifespanFactor>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>60%</label>
+				<minSeverity>0.6</minSeverity>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>1.9</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-8</ComfyTemperatureMin>
+					<ComfyTemperatureMax>8</ComfyTemperatureMax>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>2</LifespanFactor>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>80%</label>
+				<minSeverity>0.8</minSeverity>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>2.2</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-8</ComfyTemperatureMin>
+					<ComfyTemperatureMax>8</ComfyTemperatureMax>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>2</LifespanFactor>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>完了</label>
+				<minSeverity>1</minSeverity>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>2.7</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-10</ComfyTemperatureMin>
+					<ComfyTemperatureMax>10</ComfyTemperatureMax>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>2</LifespanFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	-->
+	
+	<!--脳 5日-->
+	<HediffDef ParentName="MultiInplantorBase">
+		<defName>AR_Multi_Brain</defName>
+		<label>MI-脳</label>
+		<description>マルチインプランターによって改造された脳。尋常ではない性能を持つ。</description>
+		<tags>
+			<li>Brain</li>
+		</tags>
+
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.2</severityPerDay>
+			</li>
+		</comps>
+		
+		<stages>
+			<li>
+				<label>0%</label>
+				<makeImmuneTo>
+					<li>Dementia</li>
+					<li>Alzheimers</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<RestRateMultiplier>0.05</RestRateMultiplier>
+					<WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+					<GlobalLearningFactor>0.1</GlobalLearningFactor>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.1</ShootingAccuracyPawn>
+					<AimingDelayFactor>0.95</AimingDelayFactor>
+					<PawnTrapSpringChance>0.5</PawnTrapSpringChance>
+					<NegotiationAbility>1.05</NegotiationAbility>
+					<ResearchSpeed>1.07</ResearchSpeed>
+				</statFactors>
+			
+		</li>
+			<li>
+				<label>20%</label>
+				<minSeverity>0.2</minSeverity>
+				<makeImmuneTo>
+					<li>Dementia</li>
+					<li>Alzheimers</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>1.3</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<RestRateMultiplier>0.08</RestRateMultiplier>
+					<WorkSpeedGlobal>0.08</WorkSpeedGlobal>
+					<GlobalLearningFactor>0.12</GlobalLearningFactor>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.13</ShootingAccuracyPawn>
+					<AimingDelayFactor>0.91</AimingDelayFactor>
+					<PawnTrapSpringChance>0.42</PawnTrapSpringChance>
+					<NegotiationAbility>1.10</NegotiationAbility>
+					<ResearchSpeed>1.12</ResearchSpeed>
+				</statFactors>
+			
+		</li>
+			<li>
+				<label>40%</label>
+				<minSeverity>0.4</minSeverity>
+				<makeImmuneTo>
+					<li>Dementia</li>
+					<li>Alzheimers</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>1.6</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<RestRateMultiplier>0.12</RestRateMultiplier>
+					<WorkSpeedGlobal>0.12</WorkSpeedGlobal>
+					<GlobalLearningFactor>0.17</GlobalLearningFactor>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.18</ShootingAccuracyPawn>
+					<AimingDelayFactor>0.85</AimingDelayFactor>
+					<PawnTrapSpringChance>0.32</PawnTrapSpringChance>
+					<NegotiationAbility>1.15</NegotiationAbility>
+					<ResearchSpeed>1.18</ResearchSpeed>
+				</statFactors>
+			</li>
+			<li>
+				<label>60%</label>
+				<minSeverity>0.6</minSeverity>
+				<makeImmuneTo>
+					<li>Dementia</li>
+					<li>Alzheimers</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>1.9</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<RestRateMultiplier>0.16</RestRateMultiplier>
+					<WorkSpeedGlobal>0.16</WorkSpeedGlobal>
+					<GlobalLearningFactor>0.25</GlobalLearningFactor>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.20</ShootingAccuracyPawn>
+					<AimingDelayFactor>0.82</AimingDelayFactor>
+					<PawnTrapSpringChance>0.20</PawnTrapSpringChance>
+					<NegotiationAbility>1.17</NegotiationAbility>
+					<ResearchSpeed>1.23</ResearchSpeed>
+				</statFactors>
+			
+		</li>
+			<li>
+				<label>80%</label>
+				<minSeverity>0.8</minSeverity>
+				<makeImmuneTo>
+					<li>Dementia</li>
+					<li>Alzheimers</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>2.2</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<RestRateMultiplier>0.2</RestRateMultiplier>
+					<WorkSpeedGlobal>0.2</WorkSpeedGlobal>
+					<GlobalLearningFactor>0.25</GlobalLearningFactor>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.20</ShootingAccuracyPawn>
+					<AimingDelayFactor>0.80</AimingDelayFactor>
+					<PawnTrapSpringChance>0.20</PawnTrapSpringChance>
+					<NegotiationAbility>1.2</NegotiationAbility>
+					<ResearchSpeed>1.28</ResearchSpeed>
+				</statFactors>
+			
+		</li>
+			<li>
+				<label>完了</label>
+				<minSeverity>1</minSeverity>
+				<makeImmuneTo>
+					<li>Dementia</li>
+					<li>Alzheimers</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>2.7</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<RestRateMultiplier>0.2</RestRateMultiplier>
+					<WorkSpeedGlobal>0.2</WorkSpeedGlobal>
+					<GlobalLearningFactor>0.25</GlobalLearningFactor>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.20</ShootingAccuracyPawn>
+					<AimingDelayFactor>0.80</AimingDelayFactor>
+					<PawnTrapSpringChance>0.20</PawnTrapSpringChance>
+					<NegotiationAbility>1.25</NegotiationAbility>
+					<ResearchSpeed>1.35</ResearchSpeed>
+				</statFactors>
+			
+		</li>
+		</stages>
+	</HediffDef>
+	
+	<!--心臓 5日-->
+	<HediffDef ParentName="MultiInplantorBase">
+		<defName>AR_Multi_Heart</defName>
+		<label>MI-心臓</label>
+		<description>マルチインプランターによって改造された心臓。尋常ではない性能を持つ。</description>
+
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.2</severityPerDay>
+			</li>
+		</comps>
+		
+		<stages>
+			<li>
+				<label>0%</label>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+					<li>Flu</li>
+					<li>Plague</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-2</ComfyTemperatureMin>
+					<ComfyTemperatureMax>2</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+			
+			<li>
+				<label>20%</label>
+				<minSeverity>0.2</minSeverity>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+					<li>Flu</li>
+					<li>Plague</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>1.3</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-4</ComfyTemperatureMin>
+					<ComfyTemperatureMax>4</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+			
+			<li>
+				<label>40%</label>
+				<minSeverity>0.4</minSeverity>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+					<li>Flu</li>
+					<li>Plague</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>1.6</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-6</ComfyTemperatureMin>
+					<ComfyTemperatureMax>6</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+			
+			<li>
+				<label>60%</label>
+				<minSeverity>0.6</minSeverity>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+					<li>Flu</li>
+					<li>Plague</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>1.9</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-8</ComfyTemperatureMin>
+					<ComfyTemperatureMax>8</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+			
+			<li>
+				<label>80%</label>
+				<minSeverity>0.8</minSeverity>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+					<li>Flu</li>
+					<li>Plague</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>2.2</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-8</ComfyTemperatureMin>
+					<ComfyTemperatureMax>8</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+			
+			<li>
+				<label>完了</label>
+				<minSeverity>1</minSeverity>
+				<makeImmuneTo>
+					<li>HeartArteryBlockage</li>
+					<li>Flu</li>
+					<li>Plague</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<postFactor>2.7</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<ComfyTemperatureMin>-10</ComfyTemperatureMin>
+					<ComfyTemperatureMax>10</ComfyTemperatureMax>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>2</LifespanFactor>
+				</statFactors>
+			</li>
+		</stages>
+		<tags>
+			<li>Heart</li>
+		</tags>
+	</HediffDef>
+
+	<!--脚　7日--><!--============================================================================-->
+	<HediffDef ParentName="MultiInplantorBase">
+		<defName>AR_Multi_Leg</defName>
+		<label>MI-脚</label>
+		<description>マルチインプランターによって改造された脚。尋常ではない性能を持つ。</description>
+
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.142</severityPerDay>
+			</li>
+		</comps>
+		
+		<stages>
+			<li>
+				<label>0%</label>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.05</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<MeleeDodgeChance>0.05</MeleeDodgeChance>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>1.05</LifespanFactor>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>20%</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.08</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<MeleeDodgeChance>0.08</MeleeDodgeChance>
+					<ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>1.06</LifespanFactor>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>40%</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.12</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<MeleeDodgeChance>0.10</MeleeDodgeChance>
+					<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>1.08</LifespanFactor>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>60%</label>
+				<minSeverity>0.6</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.16</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<MeleeDodgeChance>0.15</MeleeDodgeChance>
+					<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>1.1</LifespanFactor>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>80%</label>
+				<minSeverity>0.8</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.22</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<MeleeDodgeChance>0.19</MeleeDodgeChance>
+					<ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>1.13</LifespanFactor>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>完了</label>
+				<minSeverity>1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.35</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<MeleeDodgeChance>0.25</MeleeDodgeChance>
+					<ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+				</statOffsets>
+				<statFactors>
+					<LifespanFactor>1.15</LifespanFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+
+	<!--============================================================================-->
+	<!--眼　7日-->
+	<HediffDef ParentName="MultiInplantorBase">
+		<defName>AR_Multi_Eye</defName>
+		<label>MI-眼</label>
+		<description>マルチインプランターによって改造された眼。尋常ではない性能を持つ。</description>
+
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.142</severityPerDay>
+			</li>
+		</comps>
+
+		<stages>
+			<li>
+				<label>0%</label>
+				<makeImmuneTo>
+					<li>Cataract</li>
+					<li>Blindness</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<postFactor>2</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<MeleeDodgeChance>0.05</MeleeDodgeChance>
+					<MeleeHitChance>0.05</MeleeHitChance>
+					<PsychicEntropyRecoveryRate>0.2</PsychicEntropyRecoveryRate>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.05</ShootingAccuracyPawn>
+					<PsychicEntropyRecoveryRate>1.07</PsychicEntropyRecoveryRate>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>20%</label>
+				<minSeverity>0.2</minSeverity>
+				<makeImmuneTo>
+					<li>Cataract</li>
+					<li>Blindness</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<postFactor>2.5</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1200</MarketValue>
+					<MeleeDodgeChance>0.08</MeleeDodgeChance>
+					<MeleeHitChance>0.09</MeleeHitChance>
+					<PsychicEntropyRecoveryRate>0.22</PsychicEntropyRecoveryRate>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.1</ShootingAccuracyPawn>
+					<PsychicEntropyRecoveryRate>1.1</PsychicEntropyRecoveryRate>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>40%</label>
+				<minSeverity>0.4</minSeverity>
+				<makeImmuneTo>
+					<li>Cataract</li>
+					<li>Blindness</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<postFactor>3.2</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1700</MarketValue>
+					<MeleeDodgeChance>0.10</MeleeDodgeChance>
+					<MeleeHitChance>0.12</MeleeHitChance>
+					<PsychicEntropyRecoveryRate>0.24</PsychicEntropyRecoveryRate>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.15</ShootingAccuracyPawn>
+					<PsychicEntropyRecoveryRate>1.13</PsychicEntropyRecoveryRate>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>60%</label>
+				<minSeverity>0.6</minSeverity>
+				<makeImmuneTo>
+					<li>Cataract</li>
+					<li>Blindness</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<postFactor>3.7</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>2200</MarketValue>
+					<MeleeDodgeChance>0.15</MeleeDodgeChance>
+					<MeleeHitChance>0.17</MeleeHitChance>
+					<PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.2</ShootingAccuracyPawn>
+					<PsychicEntropyRecoveryRate>1.15</PsychicEntropyRecoveryRate>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>80%</label>
+				<minSeverity>0.8</minSeverity>
+				<makeImmuneTo>
+					<li>Cataract</li>
+					<li>Blindness</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<postFactor>4.1</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>2700</MarketValue>
+					<MeleeDodgeChance>0.19</MeleeDodgeChance>
+					<MeleeHitChance>0.25</MeleeHitChance>
+					<PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
+				</statOffsets>
+				<statFactors>
+					<PsychicEntropyRecoveryRate>1.15</PsychicEntropyRecoveryRate>
+					<ShootingAccuracyPawn>1.25</ShootingAccuracyPawn>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>完了</label>
+				<minSeverity>1</minSeverity>
+				<makeImmuneTo>
+					<li>Cataract</li>
+					<li>Blindness</li>
+				</makeImmuneTo>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<postFactor>5</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>3500</MarketValue>
+					<MeleeDodgeChance>0.25</MeleeDodgeChance>
+					<MeleeHitChance>0.4</MeleeHitChance>
+					<PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyPawn>1.3</ShootingAccuracyPawn>
+					<MedicalSurgerySuccessChance>2</MedicalSurgerySuccessChance>
+					<PsychicEntropyRecoveryRate>1.15</PsychicEntropyRecoveryRate>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!--肩10日--><!--============================================================================-->
+	<HediffDef ParentName="MultiInplantorBase">
+		<defName>AR_Multi_Shoulder</defName>
+		<label>MI-肩</label>
+		<description>マルチインプランターによって改造された肩。尋常ではない性能を持つ。</description>
+
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.1</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>浸透</label>
+						<capacities>
+							<li>Osmosis</li>
+						</capacities>
+						<power>15</power>
+						<armorPenetration>1000</armorPenetration>
+						<cooldownTime>1.1</cooldownTime>
+					</li>
+				</tools>
+			</li>
+		</comps>
+
+		<stages>
+			<li>
+				<label>0%</label>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>1.15</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>1000</MarketValue>
+					<WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+				</statOffsets>
+			</li>
+
+			<li>
+				<label>20%</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>1.17</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>2000</MarketValue>
+					<WorkSpeedGlobal>0.08</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+				</statOffsets>
+				<statFactors>
+					<MeleeHitChance>1.06</MeleeHitChance>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>40%</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>1.22</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>2000</MarketValue>
+					<WorkSpeedGlobal>0.08</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.28</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+				</statOffsets>
+				<statFactors>
+					<MeleeHitChance>1.09</MeleeHitChance>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>60%</label>
+				<minSeverity>0.6</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>1.28</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>3000</MarketValue>
+					<WorkSpeedGlobal>0.12</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.28</ArmorRating_Sharp>
+				</statOffsets>
+				<statFactors>
+					<MeleeHitChance>1.12</MeleeHitChance>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>80%</label>
+				<minSeverity>0.8</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>1.35</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>4000</MarketValue>
+					<WorkSpeedGlobal>0.15</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.36</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+				</statOffsets>
+				<statFactors>
+					<MeleeHitChance>1.12</MeleeHitChance>
+				</statFactors>
+			</li>
+
+			<li>
+				<label>完了</label>
+				<minSeverity>1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>1.50</postFactor>
+					</li>
+				</capMods>
+				<statOffsets>
+					<MarketValue>5000</MarketValue>
+					<WorkSpeedGlobal>0.15</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+				</statOffsets>
+				<statFactors>
+					<MeleeHitChance>1.15</MeleeHitChance>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!--
+	<HediffDef ParentName="Multi_Invisible" Name="Multi_Arm" Abstract="True">
+		<stages>
+			<li>
+				<label>完了</label>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>1.05</postFactor>
+					</li>
+				</capMods>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<MarketValue>500</MarketValue>
+					<IncomingDamageFactor>-0.01</IncomingDamageFactor>
+					<ArmorRating_Blunt>0.01</ArmorRating_Blunt>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	鎖骨
+	<HediffDef ParentName="Multi_Arm">
+		<defName>AR_Multi_Clavicle</defName>
+		<label>MI-鎖骨</label>
+	</HediffDef>
+
+	<HediffDef ParentName="Multi_Arm">
+		<defName>AR_Multi_Arm</defName>
+		<label>MI-腕</label>
+	</HediffDef>
+
+	<HediffDef ParentName="Multi_Arm">
+		<defName>AR_Multi_Finger</defName>
+		<label>MI-指</label>
+	</HediffDef>-->
+
+	<!--============================================================================-->
+</Defs>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<ThingDef ParentName="AntiRealWeapons_BaseMelee" Name="AntiReal">
+		<defName>AntiReal_Hands</defName>
+		<label>PN-非現実の腕</label>
+		<description>[Tier1]虚構エネルギーを直接的に利用する計画「PN計画」の試作品の一つ。\n物理的な障害を無視して攻撃できる。</description>
+
+		<graphicData>
+			<texPath>Things/Weapons/MeleeWeapons/others/W1</texPath>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<uiIconScale>1.9</uiIconScale>
+
+		<statBases>
+			<WorkToMake>20000</WorkToMake>
+			<Mass>0.5</Mass>
+			<Beauty>5</Beauty>
+		</statBases>
+
+		<costStuffCount>100</costStuffCount>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>	
+		<costList>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<ComponentSpacer>1</ComponentSpacer>
+			<Fiction_Core>1</Fiction_Core>
+		</costList>	
+
+		<tools>
+			<li>
+				<label>破壊</label>
+				<capacities>
+					<li>Demolish</li>
+				</capacities>
+				<power>32</power>
+				<armorPenetration>0</armorPenetration>
+				<cooldownTime>1.5</cooldownTime>
+			</li>
+			<li>
+				<label>浸透</label>
+				<capacities>
+					<li>Osmosis</li>
+				</capacities>
+				<power>28</power>
+				<armorPenetration>100</armorPenetration>
+				<cooldownTime>2.1</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+</Defs>

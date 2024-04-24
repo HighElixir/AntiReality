@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--
+  1
+  FixBrokenDownBuildingSuccessChance
+  ConstructSuccessChance
+  ConstructionSpeed
+  HuntingStealth
+  PlantHarvestYield
+  
+  2
+  PlantWorkSpeed
+  AnimalGatherYield
+  AnimalGatherSpeed
+  ResearchSpeed
+  SmoothingSpeed
+  
+  3
+  MiningYield
+  MiningSpeed
+  WorkSpeedGlobal
+  NegotiationAbility
+  PawnBeauty
+  
+  4
+  ArrestSuccessChance
+  TradePriceImprovement
+  SocialImpact
+  TameAnimalChance
+  TrainAnimalChance
+
+  5
+  SmeltingSpeed
+  GeneralLaborSpeed
+  DrugSynthesisSpeed
+  CookSpeed
+  FoodPoisonChance
+  
+  6
+  DrugCookingSpeed
+  ButcheryFleshSpeed
+  ButcheryMechanoidSpeed
+  ButcheryFleshEfficiency
+  ButcheryMechanoidEfficiency
+
+  7
+  MoveSpeed
+  MentalBreakThreshold
+  PsychicSensitivity
+  PsychicEntropyMax
+  PsychicEntropyRecoveryRate
+  
+  8
+  PsychicEntropyGain
+  ToxicResistance
+  GlobalLearningFactor
+  HungerRateMultiplier
+  RestRateMultiplier
+  
+  9
+  EatingSpeed
+  ComfyTemperatureMin
+  ComfyTemperatureMax
+  ImmunityGainSpeed
+  CarryingCapacity
+  
+  10
+  MeatAmount
+  LeatherAmount
+  MinimumHandlingSkill
+  PainShockThreshold
+  ForagedNutritionPerDay
+
+  11
+  MeleeDPS
+  MeleeArmorPenetration
+  MeleeHitChance
+  MeleeDodgeChance
+  ShootingAccuracyPawn
+  
+  12
+  AimingDelayFactor
+  PawnTrapSpringChance
+  IncomingDamageFactor
+  MedicalTendSpeed
+  MedicalTendQuality
+  
+  13
+  MedicalOperationSpeed
+  MedicalSurgerySuccessChance
+  -->
+
+  <TraitDef>
+    <defName>AR_Traits1</defName>
+    <commonality>0.01</commonality>
+    <degreeDatas>
+      <li>
+        <label>虚構への適応</label>
+        <description>{PAWN_nameDef}は生まれつき虚構エネルギーへの適応性を持っています。</description>
+        <statFactors>
+
+        </statFactors>
+        <statOffsets>
+          <AR_Resistance>1</AR_Resistance>
+        </statOffsets>
+      
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+</Defs>

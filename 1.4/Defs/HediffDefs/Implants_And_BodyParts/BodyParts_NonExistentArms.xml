@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 非現実性の腕-->
+
+  <HediffDef ParentName="AR_BodyPartsBase">
+    <defName>Non_Existent_Hands</defName>
+    <label>非実在性の腕</label>
+    <labelNoun>非実在性の腕</labelNoun>
+    <description>それは確かに存在している。</description>
+    <descriptionHyperlinks><ThingDef>Fiction_Energy_Liqid</ThingDef></descriptionHyperlinks>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>浸透</label>
+            <capacities>
+              <li>Osmosis</li>
+            </capacities>
+            <power>22</power>
+            <armorPenetration>1000</armorPenetration>
+            <cooldownTime>2.8</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved />
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.05</partEfficiency>
+    </addedPartProps>
+
+    <stages>
+        <li>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <postFactor>0.95</postFactor>
+            </li>
+          </capMods>
+          <statOffsets>
+            <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.5</ArmorRating_Heat>
+            <PawnBeauty>0.5</PawnBeauty>
+          </statOffsets>
+        </li>
+      </stages>
+  </HediffDef>
+
+
+
+  <ThingDef ParentName="BodyPartAntiRealityBase_M">
+    <defName>Fiction_Energy_Liqid</defName>
+    <label>液体化した虚構エネルギー</label>
+    <description>なぜか液体化した状態で安定した虚構エネルギー。宇宙のような底の見えない力を感じる。原理は不明だが、腕を浸すことで虚構エネルギーと同化した腕を手に入れられる。\nこれは兵器開発部のバカが発見した。</description>
+    <descriptionHyperlinks><RecipeDef>AR_SoakHandIn</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Fiction_Core>1</Fiction_Core>
+      <Uranium>122</Uranium>
+    </costList>
+    <statBases>
+      <Mass>0.01</Mass>
+      <WorkToMake>22000</WorkToMake>
+    </statBases>
+  </ThingDef>
+
+
+
+  <RecipeDef>
+    <defName>AR_SoakHandIn</defName>
+    <label>手を虚構エネルギーに浸す</label>
+    <description>手を虚構エネルギーに浸す。これは一瞬で終わります。</description>
+    <descriptionHyperlinks>
+      <ThingDef>Fiction_Energy_Liqid</ThingDef>
+      <HediffDef>Non_Existent_Hands</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>手を浸す。。。</jobString>
+
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Fiction_Energy_Liqid</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Fiction_Energy_Liqid</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Arm</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>Non_Existent_Hands</addsHediff>
+
+    <workAmount>1</workAmount>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+
+    <skillRequirements>
+      <Medicine>1</Medicine>
+  </skillRequirements>
+  </RecipeDef>
+
+</Defs>

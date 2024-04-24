@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--
+  1
+  FixBrokenDownBuildingSuccessChance
+  ConstructSuccessChance
+  ConstructionSpeed
+  HuntingStealth
+  PlantHarvestYield
+  
+  2
+  PlantWorkSpeed
+  AnimalGatherYield
+  AnimalGatherSpeed
+  ResearchSpeed
+  SmoothingSpeed
+  
+  3
+  MiningYield
+  MiningSpeed
+  WorkSpeedGlobal
+  NegotiationAbility
+  PawnBeauty
+  
+  4
+  ArrestSuccessChance
+  TradePriceImprovement
+  SocialImpact
+  TameAnimalChance
+  TrainAnimalChance
+
+  5
+  SmeltingSpeed
+  GeneralLaborSpeed
+  DrugSynthesisSpeed
+  CookSpeed
+  FoodPoisonChance
+  
+  6
+  DrugCookingSpeed
+  ButcheryFleshSpeed
+  ButcheryMechanoidSpeed
+  ButcheryFleshEfficiency
+  ButcheryMechanoidEfficiency
+
+  7
+  MoveSpeed
+  MentalBreakThreshold
+  PsychicSensitivity
+  PsychicEntropyMax
+  PsychicEntropyRecoveryRate
+  
+  8
+  PsychicEntropyGain
+  ToxicResistance
+  GlobalLearningFactor
+  HungerRateMultiplier
+  RestRateMultiplier
+  
+  9
+  EatingSpeed
+  ComfyTemperatureMin
+  ComfyTemperatureMax
+  ImmunityGainSpeed
+  CarryingCapacity
+  
+  10
+  MeatAmount
+  LeatherAmount
+  MinimumHandlingSkill
+  PainShockThreshold
+  ForagedNutritionPerDay
+
+  11
+  MeleeDPS
+  MeleeArmorPenetration
+  MeleeHitChance
+  MeleeDodgeChance
+  ShootingAccuracyPawn
+  
+  12
+  AimingDelayFactor
+  PawnTrapSpringChance
+  IncomingDamageFactor
+  MedicalTendSpeed
+  MedicalTendQuality
+  
+  13
+  MedicalOperationSpeed
+  MedicalSurgerySuccessChance
+  Flammability
+  IncomingDamageFactor
+  
+  14
+  ArmorRating_Sharp
+  ArmorRating_Blunt
+  ArmorRating_Heat
+  -->
+
+    <ThingDef Name="BodyPartAntiRealityBase" ParentName="BodyPartBase" Abstract="True">
+        <techLevel>Archotech</techLevel>
+        <thingCategories>
+          <li>AR_BodyAdd</li>
+        </thingCategories>
+        <graphicData>
+          <texPath>Things/Item/Health/HealthItem</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>0.80</drawSize>
+          <color>(45,11,80)</color>
+        </graphicData>
+        <statBases>
+          <WorkToMake>100</WorkToMake>
+        </statBases>
+
+        <recipeMaker>
+
+            <researchPrerequisite></researchPrerequisite>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<effectWorking>Smelt</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>20</Crafting>
+			</skillRequirements>
+
+          <displayPriority>600</displayPriority>
+        </recipeMaker>
+        <techHediffsTags>
+            <li>Advanced</li>
+        </techHediffsTags>
+      </ThingDef>
+    
+      <ThingDef Name="BodyPartAntiRealityBase_M" ParentName="BodyPartAntiRealityBase" Abstract="True">
+        <recipeMaker>
+          <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+          <workSkill>Crafting</workSkill>
+          <effectWorking>Smith</effectWorking>
+          <soundWorking>Recipe_Smith</soundWorking>
+          <unfinishedThingDef>UnfinishedHealthItemProsthetic</unfinishedThingDef>
+          <researchPrerequisite Inherit="False">AR_FictionsEnergy</researchPrerequisite>
+        </recipeMaker>
+
+		  <statBases>
+			  <MarketValue>14000</MarketValue>
+			  <Mass>0.8</Mass>
+		  </statBases>
+		  
+      </ThingDef>
+    
+    
+      <HediffDef Name="AR_ImplantBase" ParentName="ImplantHediffBase" Abstract="True">
+            <hediffClass>Hediff_Implant</hediffClass>
+            <defaultLabelColor>(0.25, 0.12, 0.38)</defaultLabelColor>
+        <initialSeverity>0.5</initialSeverity>
+            <isBad>false</isBad>
+            <priceImpact>true</priceImpact>
+        </HediffDef>
+    
+        <HediffDef Name="AR_BodyPartsBase" ParentName="AddedBodyPartBase" Abstract="True">
+            <hediffClass>Hediff_AddedPart</hediffClass>
+            <defaultLabelColor>(0.17, 0.04, 0.31)</defaultLabelColor>
+        <initialSeverity>0.5</initialSeverity>
+            <isBad>false</isBad>
+            <priceImpact>true</priceImpact>
+        </HediffDef>
+
+        <!-- レシピ-->
+
+        <RecipeDef Name="AR_Surgery" Abstract="True">
+            <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+            <recipeUsers>
+              <li>Human</li>
+            </recipeUsers>
+
+            <skillRequirements>
+              <Medicine>8</Medicine>
+          </skillRequirements>
+        </RecipeDef>
+    
+        <RecipeDef Name="AR_InstallImplants" ParentName="AR_Surgery" Abstract="True">
+            <workerClass>Recipe_InstallImplant</workerClass>
+        </RecipeDef>
+
+        <RecipeDef Name="AR_AddBodyParts" ParentName="AR_Surgery" Abstract="True">
+            <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+        </RecipeDef>
+</Defs>

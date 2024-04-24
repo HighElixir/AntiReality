@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--浸透-->
+
+	<ManeuverDef>
+		<defName>Osmosis</defName>
+		<requiredCapacity>Osmosis</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>Osmosis</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	  </ManeuverDef>
+
+	<ToolCapacityDef>
+		<defName>Osmosis</defName>
+		<label>浸透</label>
+	</ToolCapacityDef>
+	
+	<!--凍傷-->
+
+	<ManeuverDef Name="AR_FlostBite">
+		<defName>AR_FlostBite</defName>
+		<requiredCapacity>AR_FlostBite</requiredCapacity>
+		<verb>
+		  <verbClass>Verb_MeleeAttackDamage</verbClass>
+		  <meleeDamageDef>AR_FlostBiteDamage</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	  </ManeuverDef>
+
+	<ToolCapacityDef>
+		<defName>AR_FlostBite</defName>
+		<label>斬る</label>
+	</ToolCapacityDef>
+
+	<ManeuverDef ParentName="AR_FlostBite">
+		<defName>AR_FlostBite_Stab</defName>
+		<requiredCapacity>AR_FlostBite_Stab</requiredCapacity>
+	</ManeuverDef>
+
+	<ToolCapacityDef>
+		<defName>AR_FlostBite_Stab</defName>
+		<label>刺す</label>
+	</ToolCapacityDef>
+</Defs>

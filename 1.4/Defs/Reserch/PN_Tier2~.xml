@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+
+	<!--ティア２ 低効率な装備、建築物群-->
+	<ResearchProjectDef ParentName="AR_ReseartchBase">
+		<defName>AR_AntiReal_PNWeapons_T2</defName>
+		<label>「PN計画」</label>
+		<description>[Tier2]虚構エネルギーの特性を利用し、エネルギー兵器を開発する。\nちなみにPNはペンのこと。</description>
+
+		<baseCost>4500</baseCost>
+
+		<prerequisites>
+			<li>AR_AntiReal_LowWeapons</li>
+		</prerequisites>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>4.10</researchViewY>
+		<tags>
+
+		</tags>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="AR_ReseartchBase">
+		<defName>PN_Inplant_T2</defName>
+		<label>構築：バイオレンス</label>
+		<description>[Tier2]手から刃型のエネルギー体を導出し、手持ち武器の必要性を排除する。</description>
+
+		<baseCost>4500</baseCost>
+
+		<prerequisites>
+			<li>AR_AntiReal_ResearchThree</li>
+		</prerequisites>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>0.15</researchViewY>
+		<tags>
+
+		</tags>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="AR_ReseartchBase">
+		<defName>Researtch_MultiInplantor</defName>
+		<label>構築：マルチインプランター</label>
+		<description>[Tier3]虚構エネルギーを利用し、全身を改造するインプラント、「マルチインプランター」を開発する。</description>
+
+		<baseCost>8000</baseCost>
+
+		<prerequisites>
+			<li>PN_Inplant_T2</li>
+		</prerequisites>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>0.10</researchViewY>
+		<tags>
+
+		</tags>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="AR_ReseartchBase">
+		<defName>Researtch_InfinityAncor</defName>
+		<label>構築：インフィニティアンカー</label>
+		<description>[Tier4]身体を虚構エネルギーへと同化させ、文字通り人間をやめる。\nこの先、一本道。</description>
+
+		<baseCost>400000</baseCost>
+
+		<prerequisites>
+			<li>Researtch_MultiInplantor</li>
+		</prerequisites>
+		<researchViewX>3.50</researchViewX>
+		<researchViewY>0.10</researchViewY>
+		<tags>
+
+		</tags>
+	</ResearchProjectDef>
+	
+</Defs>

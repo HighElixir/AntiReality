@@ -1,0 +1,124 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09253F3E-44DB-403B-AE9F-C9E3328E1142}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>HE_AntiReality</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>1.4\Assemblies\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>HE_AntiReality</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include=".vs\AntiReality.csproj.dtbcache.json" />
+    <None Include=".vs\AntiReality\FileContentIndex\064c2d70-a452-4508-8198-231418044dfd.vsidx" />
+    <None Include=".vs\AntiReality\v17\.suo" />
+    <None Include=".vs\ProjectSettings.json" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\MultiImplanter.xml" />
+    <None Include="Anti-Reality.code-workspace" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1.4\Defs\.ModDef\modDef.xml" />
+    <Content Include="1.4\Defs\DamageDefs\Osmosis.xml" />
+    <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\.Base.xml" />
+    <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\BodyParts_NonExistentArms.xml" />
+    <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\Anchor.xml" />
+    <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\[Tier1]Implants.xml" />
+    <Content Include="1.4\Defs\HediffDefs\Injures\FrostBite.xml" />
+    <Content Include="1.4\Defs\HediffDefs\Injures\Osmosis_Injure.xml" />
+    <Content Include="1.4\Defs\HediffDefs\Other\LostReality.xml" />
+    <Content Include="1.4\Defs\HediffDefs\Other\Resistance.xml" />
+    <Content Include="1.4\Defs\HediffDefs\Other\実在性の崩壊.xml" />
+    <Content Include="1.4\Defs\ManeuverDefs_And_ToolCaps\OsmosisMelee.xml" />
+    <Content Include="1.4\Defs\Reserch\PN_Tier2~.xml" />
+    <Content Include="1.4\Defs\Reserch\Resertch.xml" />
+    <Content Include="1.4\Defs\Stats\stat.xml" />
+    <Content Include="1.4\Defs\Things\Items\Fictions_Core.xml" />
+    <Content Include="1.4\Defs\Things\Projectile\PN_Gun.xml" />
+    <Content Include="1.4\Defs\Things\ThingCategory.xml" />
+    <Content Include="1.4\Defs\Things\Thought\Thought_Situation_BodyParts.xml" />
+    <Content Include="1.4\Defs\Things\Weapons\.WeaponsBase.xml" />
+    <Content Include="1.4\Defs\Things\Weapons\Melee\EL-アンパルスブレード.xml" />
+    <Content Include="1.4\Defs\Things\Weapons\Melee\PN-非現実の腕.xml" />
+    <Content Include="1.4\Defs\Things\Weapons\Ranged\EL-慟哭.xml" />
+    <Content Include="1.4\Defs\Things\Weapons\Ranged\PC-マルチランス.xml" />
+    <Content Include="1.4\Defs\Things\Weapons\Ranged\PN-PEACEMAKER.xml" />
+    <Content Include="1.4\Defs\Things\Weapons\Ranged\PN-ZYOUBUTSU.xml" />
+    <Content Include="1.4\Defs\TraitsDef\Traits.xml" />
+    <Content Include="About\About.xml" />
+    <Content Include="Cont\Textures\Things\Resource\FictionsCore.dds" />
+    <Content Include="Cont\Textures\Things\Resource\FictionsCore.png" />
+    <Content Include="Cont\Textures\Things\Weapons\MeleeWeapons\others\W1.dds" />
+    <Content Include="Cont\Textures\Things\Weapons\MeleeWeapons\others\W1.png" />
+    <Content Include="Cont\Textures\Things\Weapons\MeleeWeapons\tier1\W1.dds" />
+    <Content Include="Cont\Textures\Things\Weapons\MeleeWeapons\tier1\W1.png" />
+    <Content Include="Cont\Textures\Things\Weapons\RangedWeapons\T1\ZYOUBUTSU.dds" />
+    <Content Include="Cont\Textures\Things\Weapons\RangedWeapons\T1\ZYOUBUTSU.png" />
+    <Content Include="Cont\Textures\UI\Overlays\FictionsCore.dds" />
+    <Content Include="Cont\Textures\UI\Overlays\FictionsCore.png" />
+    <Content Include="LoadFolders.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="1.4\Assemblies\CS files\HarmonyPatches_AbsorbedDamage.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_forceDeath.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HediffComp_forceDeath.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_MakeBodyParts.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HediffComp_MakeBodyParts.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_NeedMultiInplantor.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HediffComp_NeedMultiInplanter.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HediffComp_NeedHediff.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_NeedHediff.cs" />
+    <Compile Include="1.4\Assemblies\CS files\DefOf.cs" />
+    <Compile Include="1.4\Assemblies\CS files\ThoughtWorker_AddBodyParts_AntiReal_Hand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HarmonyMod">
+      <HintPath>..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\HarmonyMod.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="1.4\Defs\AbilityDefs\" />
+    <Folder Include="1.5\" />
+    <Folder Include="Cont\Textures\Things\Projectile\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

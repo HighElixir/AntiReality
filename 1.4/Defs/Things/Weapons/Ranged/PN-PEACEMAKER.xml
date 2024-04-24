@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <ThingDef ParentName="AntiRealWeapons_BaseGun">
+        <defName>PN_PEACEMAKER</defName>
+        <label>PN-PEACEMAKER</label>
+        <description>[Tier1]虚構エネルギーを直接的に利用する計画「PN計画」の試作品の一つ。\n\n非合理なまでに弾速が遅く、扱いずらいですが、それでも強力です。</description>
+        <possessionCount>1</possessionCount>
+        <graphicData>
+          <texPath>Things/Item/Equipment/WeaponRanged/Revolver</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <uiIconScale>1.4</uiIconScale>
+        <soundInteract>Interact_Revolver</soundInteract>
+        <statBases>
+          <WorkToMake>4000</WorkToMake>
+          <Mass>1.4</Mass>
+          <AccuracyTouch>0.99</AccuracyTouch>
+          <AccuracyShort>0.87</AccuracyShort>
+          <AccuracyMedium>0.82</AccuracyMedium>
+          <AccuracyLong>0.80</AccuracyLong>
+          <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+        </statBases>
+        <equippedAngleOffset>-45</equippedAngleOffset>
+
+		<costList>
+			<ComponentIndustrial>6</ComponentIndustrial>
+			<Fiction_Core>1</Fiction_Core>
+            <Gun_Revolver>1</Gun_Revolver>
+		</costList>	
+        <recipeMaker>
+          <skillRequirements>
+            <Crafting>3</Crafting>
+          </skillRequirements>
+          <displayPriority>400</displayPriority>
+        </recipeMaker>
+        <verbs>
+          <li>
+            <verbClass>Verb_Shoot</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>PN_PEACEMAKER_B</defaultProjectile>
+            <warmupTime>0.3</warmupTime>
+            <range>25.9</range>
+            <soundCast>Shot_Revolver</soundCast>
+            <soundCastTail>GunTail_Light</soundCastTail>
+            <muzzleFlashScale>9</muzzleFlashScale>
+          </li>
+        </verbs>
+        <tools>
+          <li>
+            <label>grip</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>9</power>
+            <cooldownTime>2</cooldownTime>
+          </li>
+          <li>
+            <label>barrel</label>
+            <capacities>
+              <li>Blunt</li>
+              <li>Poke</li>
+            </capacities>
+            <power>9</power>
+            <cooldownTime>2</cooldownTime>
+          </li>
+        </tools>
+    </ThingDef>
+</Defs>

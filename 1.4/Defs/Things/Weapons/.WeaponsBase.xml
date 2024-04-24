@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<ThingDef ParentName="BaseWeapon" Name="AntiRealWeapons_Base" Abstract="True">
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+
+		<techLevel>Archotech</techLevel>
+		<smeltable>false</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+
+		<equippedAngleOffset>45</equippedAngleOffset>
+
+		<costList>
+			<Fiction_Core>1</Fiction_Core>
+		</costList>	
+
+		<comps>
+			<li>
+			  <compClass>CompQuality</compClass>
+			</li>
+		</comps>
+		
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Beauty>0</Beauty>
+			<SellPriceFactor>2</SellPriceFactor>
+		</statBases>
+
+		<recipeMaker>
+			<researchPrerequisite>AR_AntiReal_LowWeapons</researchPrerequisite>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<effectWorking>Smelt</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>20</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+
+		<weaponTags>
+			<li>AntiReal</li>
+		</weaponTags>
+
+        <inspectorTabs>
+            <li>ITab_Art</li>
+        </inspectorTabs>
+	</ThingDef>
+
+
+	<ThingDef Name="AntiRealWeapons_BaseGun" Abstract="True" ParentName="AntiRealWeapons_Base">
+		<thingCategories>
+		  <li>AR_Ranged</li>
+		</thingCategories>
+		<weaponClasses>
+		  <li>Ranged</li>
+		</weaponClasses>
+
+		<comps>
+			<li Class="CompProperties_Art">
+			  <nameMaker>NamerArtWeaponGun</nameMaker>
+			  <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+			  <minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>      
+		</comps>
+	</ThingDef>
+
+
+	<ThingDef Name="AntiRealWeapons_BaseMelee" Abstract="True" ParentName="AntiRealWeapons_Base">
+		<thingCategories>
+		  <li>AR_Melee</li>
+		</thingCategories>
+		<weaponClasses>
+		  <li>Melee</li>
+		</weaponClasses>
+
+		<comps>
+			<li Class="CompProperties_Art">
+			  <nameMaker>NamerArtWeaponMelee</nameMaker>
+			  <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+			  <minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		  </comps>
+	</ThingDef>
+
+</Defs>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <MVCF.ModDef>
+        <defName>HE_AntiReality</defName>
+        <label>AntiReality</label>
+        <description>複数の攻撃手段を持つ武器、遠距離攻撃機能付きhediff</description>
+        <ActivateFeatures>
+            <li>HediffVerbs</li>
+            <li>ExtraEquipmentVerbs</li>
+        </ActivateFeatures>
+    </MVCF.ModDef>
+
+</Defs>
