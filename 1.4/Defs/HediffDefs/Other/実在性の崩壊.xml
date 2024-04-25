@@ -16,25 +16,23 @@
 	<HediffDef>
 		<defName>ExistanceFusion_wound</defName>
 		<label>実在性崩壊</label>
-		<description>魂はすでに霧散している。（内部的には意識の最大値を０にすることにより死亡させているため、場合によっては効かないこともある）</description>
+		<description>魂はすでに霧散している。</description>
 		<defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
 		<displayWound>false</displayWound>
-		<hediffClass>HediffWithComps</hediffClass>
+		<hediffClass>HE_AntiReality.ExistanceFusion_wound</hediffClass>
 		<tendable>false</tendable>
 		<isBad>false</isBad>
 		<labelNounPretty>{0}の{1}</labelNounPretty>
 
 		<comps>
 			<li Class="HE_AntiReality.HediffCompProperties_forceDeath">
-				<exceptionDefs>
-					<li>
-						<hediffDef>AR_Resistance</hediffDef>
-						<traitDef MayRequire="HighElixir.DRClothes">AR_Traits1</traitDef>
-					</li>
-					<li>
-						<traitDef>AR_Traits1</traitDef>
-					</li>
-				</exceptionDefs>
+				<exceptionHediffDefs>
+					<li>AR_Resistance</li>
+				</exceptionHediffDefs>
+				<exceptionTraitDefs>
+					<li MayRequire="HighElixir.DRClothes">HE_DR_Artificial_God</li>
+					<li>AR_Traits1</li>
+				</exceptionTraitDefs>
 			</li>
 		</comps>
 		<stages>

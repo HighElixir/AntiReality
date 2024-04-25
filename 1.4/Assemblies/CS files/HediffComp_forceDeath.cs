@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,6 @@ namespace HE_AntiReality
             Pawn p = base.Pawn;
 
             List<Trait> traits = p.story.traits.allTraits;
-            bool b = false;
             for (int i = 0; i < traits.Count; i++)
             {
                 if (traits[i].def.defName == traitDef.defName)
@@ -33,40 +33,50 @@ namespace HE_AntiReality
             }
             return false;
         }
+        private bool ChackPawnHasHediffs(HediffDef hediffDef)
+        {
+            Pawn p = base.Pawn;
+
+            if (p.health.hediffSet.HasHediff(hediffDef))
+            {
+                return true;
+            }
+            return false;
+        }
 
         public override void CompPostMake()
         {
-            
+
             Pawn p = this.parent.pawn;
             if (p.health.Dead)
-            {   
-                
-                return; 
+            {
+                return;
             }
-            for (int i = 0; i < this.Props.exceptionDefs.Count; i++) 
-            {  
-                ExceptionDefs exep = this.Props.exceptionDefs[i];
-                if (exep.hediffDef != null) {
-                    Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(exep.hediffDef, false);
-                    if (firstHediffOfDef != null)
-                    {
-                        return;
-                    }
-                }
-                if (exep.traitDef != null)
+
+            if (Props.exceptionHediffDefs.Count > 0)
+            {
+                foreach (HediffDef item in Props.exceptionHediffDefs)
                 {
-                    if (ChackPawnHasTraits(exep.traitDef)) { return; }
-}
+                    if (ChackPawnHasHediffs(item)) { return; }
+                }
             }
+            if (Props.exceptionTraitDefs.Count > 0)
+            {
+                foreach (TraitDef item in Props.exceptionTraitDefs)
+                {
+                    if (ChackPawnHasTraits(item)) { return; }
+                }
+            }
+
             p.health.SetDead();
-            
+
         }
 
         public override void Notify_PawnKilled()
         {
             Pawn p = this.parent.pawn;
-            if (p.health.Dead) 
-            { 
+            if (p.health.Dead)
+            {
                 p.Destroy();
             }
         }

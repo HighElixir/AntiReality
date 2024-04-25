@@ -11,8 +11,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_SMG</soundInteract>
-    <equippedAngleOffset>-45</equippedAngleOffset>
-
+	  
     <statBases>
       <WorkToMake>32000</WorkToMake>
       <Mass>2.9</Mass>

@@ -8,14 +8,10 @@ using Verse;
 
 namespace HE_AntiReality
 {
-    public class ExceptionDefs
-    {
-        public HediffDef hediffDef;
-        public TraitDef traitDef;
-    }
     public class HediffCompProperties_forceDeath : HediffCompProperties
     {
-        public List<ExceptionDefs> exceptionDefs;
+        public List<HediffDef> exceptionHediffDefs;
+        public List<TraitDef> exceptionTraitDefs;
 
         public HediffCompProperties_forceDeath()
         {
