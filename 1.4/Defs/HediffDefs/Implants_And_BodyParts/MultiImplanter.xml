@@ -525,7 +525,12 @@
 		</addedPartProps>
 		
 		<comps>
-			<li Class="HE_AntiReality.HediffCompProperties_NeedMultiInplantor"/>
+			<li Class="HE_AntiReality.HediffComp_NeedHediff">
+				<needHediffs>
+					<li>AR_MultiImplantor</li>
+				</needHediffs>
+				<mode>Multi</mode>
+			</li>
 		</comps>
 	</HediffDef>
 

@@ -34,12 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="1.4\Assemblies\HE_AntiReality.dll" />
-    <None Include=".vs\AntiReality.csproj.dtbcache.json" />
     <None Include=".vs\AntiReality\FileContentIndex\064c2d70-a452-4508-8198-231418044dfd.vsidx" />
     <None Include=".vs\AntiReality\v17\.suo" />
-    <None Include=".vs\ProjectSettings.json" />
-    <None Include=".vs\slnx.sqlite" />
-    <None Include=".vs\VSWorkspaceState.json" />
     <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\MultiImplanter.xml" />
     <None Include="Anti-Reality.code-workspace" />
   </ItemGroup>
@@ -60,6 +56,7 @@
     <Content Include="1.4\Defs\Reserch\Resertch.xml" />
     <Content Include="1.4\Defs\Stats\stat.xml" />
     <Content Include="1.4\Defs\Things\Items\Fictions_Core.xml" />
+    <Content Include="1.4\Defs\Things\Items\Displacement_Plasteel.xml" />
     <Content Include="1.4\Defs\Things\Projectile\PN_Gun.xml" />
     <Content Include="1.4\Defs\Things\ThingCategory.xml" />
     <Content Include="1.4\Defs\Things\Thought\Thought_Situation_BodyParts.xml" />
@@ -92,8 +89,6 @@
     <Compile Include="1.4\Assemblies\CS files\HediffComp_forceDeath.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_MakeBodyParts.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffComp_MakeBodyParts.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_NeedMultiInplantor.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffComp_NeedMultiInplanter.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffComp_NeedHediff.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_NeedHediff.cs" />
     <Compile Include="1.4\Assemblies\CS files\DefOf.cs" />

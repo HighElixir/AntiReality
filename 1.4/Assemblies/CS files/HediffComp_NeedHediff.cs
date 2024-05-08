@@ -13,14 +13,26 @@ namespace HE_AntiReality
                 return (HediffCompProperties_NeedHediff)this.props;
             }
         }
+
+		private bool Multi()
+		{
+			Hediff hediff = base.Pawn.health.hediffSet.GetFirstHediffOfDef(base.Def);
+            if (hediff != null && hediff.Severity >= 1.0) { return true; }
+			return false;
+		}
         private bool ChackPawnHasHediff()
 		{
 			Pawn p = base.Pawn;
-
-			Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(this.Props.needHediff, false);
-            if (firstHediffOfDef == null || firstHediffOfDef.def.stages == null)
-			{
+            if (Props.mode == "Multi" && Multi())
+            {
 				return false;
+            }
+            for (int i = 0;	i>10; i++) { 
+				bool hasHediff = p.health.hediffSet.HasHediff(Props.needHediffs[i]);
+				if (hasHediff)
+				{
+					return false;
+				}
 			}
 			return true;
 		}

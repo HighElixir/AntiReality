@@ -34,8 +34,7 @@ namespace HE_AntiReality
 
             if (pawn != null)
             {
-                Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HE_HediffDefOf.AR_InfinityAnchor, false);
-                if (firstHediffOfDef != null)
+                if (pawn.health.hediffSet.HasHediff(HE_HediffDefOf.AR_InfinityAnchor))
                 {
                     absorbed = true;
                     return false;

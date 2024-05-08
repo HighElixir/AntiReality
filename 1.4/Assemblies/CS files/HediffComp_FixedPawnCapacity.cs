@@ -35,12 +35,7 @@ namespace HE_AntiReality
         public override void CompPostTick(ref float severityAdjustment)
         {
             Pawn p = Pawn;
-            Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(HE_HediffDefOf.AR_InfinityAnchor, false);
-            if (firstHediffOfDef == null)
-            {
-                Log.Error(string.Concat(p, " don't have InfinityAnchor."));
-                return;
-            }
+            if (!p.health.hediffSet.HasHediff(HE_HediffDefOf.AR_InfinityAnchor, false)) { return; }
             List<PawnCapacityDef> capacityDefs = DefDatabase<PawnCapacityDef>.AllDefsListForReading;
             if (p != null) 
             {
