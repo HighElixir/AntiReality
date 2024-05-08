@@ -16,7 +16,7 @@ namespace HE_AntiReality
 
 		private bool Multi()
 		{
-			Hediff hediff = base.Pawn.health.hediffSet.GetFirstHediffOfDef(base.Def);
+			Hediff hediff = base.Pawn.health.hediffSet.GetFirstHediffOfDef(this.parent.def);
             if (hediff != null && hediff.Severity >= 1.0) { return true; }
 			return false;
 		}
