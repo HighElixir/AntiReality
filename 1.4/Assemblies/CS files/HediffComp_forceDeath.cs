@@ -71,14 +71,5 @@ namespace HE_AntiReality
             p.health.SetDead();
 
         }
-
-        public override void Notify_PawnKilled()
-        {
-            Pawn p = this.parent.pawn;
-            if (p.health.Dead)
-            {
-                p.Destroy();
-            }
-        }
     }
 }
