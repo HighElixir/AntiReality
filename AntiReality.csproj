@@ -33,9 +33,9 @@
     <RootNamespace>HE_AntiReality</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="1.4\Assemblies\HE_AntiReality.dll" />
     <None Include=".vs\AntiReality\FileContentIndex\064c2d70-a452-4508-8198-231418044dfd.vsidx" />
     <None Include=".vs\AntiReality\v17\.suo" />
+    <Content Include="1.4\Assemblies\HE_AntiReality.dll" />
     <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\MultiImplanter.xml" />
     <None Include="Anti-Reality.code-workspace" />
   </ItemGroup>

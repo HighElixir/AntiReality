@@ -529,7 +529,7 @@
 				<needHediffs>
 					<li>AR_MultiImplantor</li>
 				</needHediffs>
-				<mode>Multi</mode>
+				<mode>Multi</mode><!--必要ない時はNone-->
 			</li>
 		</comps>
 	</HediffDef>

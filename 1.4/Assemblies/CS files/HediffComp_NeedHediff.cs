@@ -23,9 +23,13 @@ namespace HE_AntiReality
         private bool ChackPawnHasHediff()
 		{
 			Pawn p = base.Pawn;
-            if (Props.mode == "Multi" && Multi())
+            if (Props.mode!=null)
             {
-				return false;
+				if (Props.mode == "Multi" && Multi())
+				{
+					return false;
+				}
+                    
             }
             for (int i = 0;	i>10; i++) { 
 				bool hasHediff = p.health.hediffSet.HasHediff(Props.needHediffs[i]);
