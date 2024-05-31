@@ -2,33 +2,33 @@
 using HarmonyLib;
 using RimWorld;
 using Verse;
+using static Verse.PawnCapacityUtility;
 
 namespace HE_AntiReality
 {
-    [StaticConstructorOnStartup]
-    public static class HarmonyPatches_FixedPawnCapacity
-    {
-        static HarmonyPatches_FixedPawnCapacity()
-        {
-            var harmony = new Harmony("rimworld.HE.AntiReality");
-            harmony.PatchAll();
-        }
-    }
+    
 
-    [HarmonyPatch(typeof(PawnCapacityUtility), "CalculateCapacityLevel")]
+    [HarmonyPatch(typeof(PawnCapacityUtility), nameof(CalculateCapacityLevel))]
     public static class Patch_PawnCapacityUtility_CalculateCapacityLevel
     {
-        [HarmonyPostfix]
-        public static void Postfix(Pawn pawn, PawnCapacityDef capacity, ref float __result)
+        static Patch_PawnCapacityUtility_CalculateCapacityLevel()
         {
-            if (pawn.health.hediffSet.HasHediff(HE_HediffDefOf.AR_InfinityAnchor))
+            // Harmonyのインスタンスを作成
+            Harmony harmony = new Harmony("HE_AntiReality");
+            harmony.PatchAll();
+        }
+
+        [HarmonyPostfix]
+        public static void Postfix(ref float __result, HediffSet diffSet, PawnCapacityDef capacity, List<CapacityImpactor> impactors = null, bool forTradePrice = false)
+        {
+            if (diffSet.pawn.health.hediffSet.HasHediff(HE_HediffDefOf.AR_InfinityAnchor))
             {
-                Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HE_HediffDefOf.AR_InfinityAnchor, false);
+                Hediff firstHediffOfDef = diffSet.pawn.health.hediffSet.GetFirstHediffOfDef(HE_HediffDefOf.AR_InfinityAnchor, false);
                 if (firstHediffOfDef != null)
                 {
                     float severityLevel = firstHediffOfDef.Severity;
                     float[] fixedCapacity = { 1f, 1.5f, 2f, 2.5f, 5f };
-                    int level = 4;
+                    int level;
 
                     switch (severityLevel)
                     {
