@@ -2,55 +2,62 @@
 
 <Defs>
 
-  <ThingDef ParentName="AntiRealWeapons_BaseGun">
-    <defName>EL_SHRIEKING</defName>
-    <label>EL-慟哭</label>
-    <description>[Tier1]虚構エネルギーを動力などに使用し、様々なものの性能向上を図る計画「EL計画」の試作品の一つ。\n\nこの後進的なフォルムの銃器からは、まるで悲哀に暮れて止まらない涙のように、大量の弾丸が延々と降り注ぎます。\nまた、低出力ながらエネルギーブレードも搭載しているため、ある程度なら格闘戦も対応できます。</description>
-    <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/HeavySMG</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Interact_SMG</soundInteract>
-	  
-    <statBases>
-      <WorkToMake>32000</WorkToMake>
-      <Mass>2.9</Mass>
-      <AccuracyTouch>0.85</AccuracyTouch>
-      <AccuracyShort>0.78</AccuracyShort>
-      <AccuracyMedium>0.75</AccuracyMedium>
-      <AccuracyLong>0.72</AccuracyLong>
-      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
-    </statBases>
-    <costList>
+	<ThingDef ParentName="AntiRealWeapons_BaseGun">
+		<defName>EL_SHRIEKING</defName>
+		<label>EL-慟哭</label>
+		<description>[Tier1]虚構エネルギーを動力などに使用し、様々なものの性能向上を図る計画「EL計画」の試作品の一つ。\n\nこの後進的なフォルムの銃器からは、まるで悲哀に暮れて止まらない涙のように、大量の弾丸が延々と降り注ぎます。\nまた、低出力ながらエネルギーブレードも搭載しているため、ある程度なら格闘戦も対応できます。</description>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/HeavySMG</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<equippedAngleOffset>-45</equippedAngleOffset>
+		<soundInteract>Interact_SMG</soundInteract>
+
+		<statBases>
+			<WorkToMake>32000</WorkToMake>
+			<Mass>2.9</Mass>
+			<AccuracyTouch>0.85</AccuracyTouch>
+			<AccuracyShort>0.78</AccuracyShort>
+			<AccuracyMedium>0.75</AccuracyMedium>
+			<AccuracyLong>0.72</AccuracyLong>
+			<RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
 			<ComponentSpacer>6</ComponentSpacer>
 			<Fiction_Core>1</Fiction_Core>
-      <Gun_Revolver>1</Gun_Revolver>
-    </costList>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>EL_SHRIEKING_B</defaultProjectile>
-        <warmupTime>0.9</warmupTime>
-        <range>22.9</range>
-        <burstShotCount>48</burstShotCount>
-        <ticksBetweenBurstShots>2</ticksBetweenBurstShots>
-        <soundCast>Shot_HeavySMG</soundCast>
-        <soundCastTail>GunTail_Heavy</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-      </li>
-    </verbs>
+			<Gun_Revolver>1</Gun_Revolver>
+		</costList>
+		
+		<recipeMaker>
+			<displayPriority>400</displayPriority>
+		</recipeMaker>
+		
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>EL_SHRIEKING_B</defaultProjectile>
+				<warmupTime>0.9</warmupTime>
+				<range>22.9</range>
+				<burstShotCount>48</burstShotCount>
+				<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
+				<soundCast>Shot_HeavySMG</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>			
+		</verbs>
 
-    <tools>
-      <li>
-        <label>殴打</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-      <li>
+		<tools>
+			<li>
+				<label>殴打</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<!--<li>
 				<label>浸透</label>
 				<capacities>
 					<li>Osmosis</li>
@@ -58,21 +65,21 @@
 				<power>10</power>
 				<armorPenetration>100</armorPenetration>
 				<cooldownTime>2.1</cooldownTime>
-      </li>
-    </tools>
-  </ThingDef>
+			</li>-->
+		</tools>
+	</ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
-    <defName>EL_SHRIEKING_B</defName>
-    <label>弾</label>
-    <graphicData>
-      <texPath>Things/Projectile/Bullet_Small</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>9</damageAmountBase>
-      <speed>77</speed>
-    </projectile>
-  </ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>EL_SHRIEKING_B</defName>
+		<label>弾</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>9</damageAmountBase>
+			<speed>77</speed>
+		</projectile>
+	</ThingDef>
 </Defs>

@@ -15,9 +15,13 @@
 				<labelTendedWellInner>tended</labelTendedWellInner>
 				<labelSolidTendedWell>tended</labelSolidTendedWell>
 			</li>
-			<li Class="HediffCompProperties_GiveHediff">
-				<hediffDef>Vulnerability</hediffDef>
-				<skipIfAlreadyExists>true</skipIfAlreadyExists>
+			<li Class="HE_AntiReality.HediffCompProperties_GiveHediffs">
+				<hediffs>
+					<li>
+						<hediffDef>Vulnerability</hediffDef>
+						<skipIfAlreadyExists>true</skipIfAlreadyExists>
+					</li>
+				</hediffs>
 			</li>
 			<li Class="HediffCompProperties_GetsPermanent">
 				<permanentLabel>凍傷潰瘍痕</permanentLabel>

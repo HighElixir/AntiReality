@@ -16,9 +16,13 @@
 
 		<hediffClass>Hediff_Implant</hediffClass>
 		<comps>
-			<li Class="HediffCompProperties_GiveHediff">
-				<hediffDef>AR_Resistance</hediffDef>
-				<skipIfAlreadyExists>true</skipIfAlreadyExists>
+			<li Class="HE_AntiReality.HediffCompProperties_GiveHediffs">
+				<hediffs>
+					<li>
+						<hediffDef>AR_Resistance</hediffDef>
+						<skipIfAlreadyExists>true</skipIfAlreadyExists>
+					</li>
+				</hediffs>
 			</li>
 		</comps>
 

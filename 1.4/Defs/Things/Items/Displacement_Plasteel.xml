@@ -8,14 +8,15 @@
 			<texPath>Things/Resource/Displacement_Plasteel</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
+		<techLevel>Archotech</techLevel>
+		
 		<soundInteract>Metal_Drop</soundInteract>
 		<!-- Silver_Drop Metal_Drop Wood_Drop ChunkRock_Drop -->
 		<soundDrop>Metal_Drop</soundDrop>
 		<statBases>
-			<stackLimit>150</stackLimit>
 			<MarketValue>17000</MarketValue>
 			<!-- silver 1 gold 10 steel 1.9 plasteel 9 wood 1.2 uranium 6 jade 5 stone 0.9 -->
-			<Mass>0.01</Mass>
+			<Mass>0.04</Mass>
 			<!-- silver 0.008 gold 0.008 steel 0.5 plasteel 0.25 wood 0.4 uranium 1 jade 0.5; 0.0001 = ~1.6kg/m3 -->
 			<!-- <Flammability>value</Flammability> -->
 			<!-- wood 1.0 - flammability of the item itself!! -->
@@ -42,7 +43,7 @@
 		<!-- should raw resource item have hitpoints -->
 		<healthAffectsPrice>false</healthAffectsPrice>
 		<thingCategories>
-			<li>AR_Resource_Core</li>
+			<li>AR_Resource</li>
 		</thingCategories>
 		<burnableByRecipe>false</burnableByRecipe>
 		<smeltable>false</smeltable>
@@ -92,5 +93,49 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<!-- Light Medium Heavy -->
 	</ThingDef>
-	
+
+	<RecipeDef>
+		<defName>Displacement_Plasteel</defName>
+		<label>変位プラスチールを50個作っている</label>
+		<description>プラスチールと虚構エネルギーを積層させて変位プラスチールを作成する。</description>
+		<jobString>変位プラスチールを作っている</jobString>
+		
+		<recipeUsers>
+			<li>FabricationBench</li>
+		</recipeUsers>
+		<researchPrerequisite>AR_AntiReal_LowWeapons</researchPrerequisite>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<allowMixingIngredients>false</allowMixingIngredients>
+		
+		<workAmount>10000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Fiction_Core</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Fiction_Core</li>
+				<li>Plasteel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Displacement_Plasteel>50</Displacement_Plasteel>
+		</products>
+	</RecipeDef>
 </Defs>

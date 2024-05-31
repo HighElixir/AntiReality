@@ -43,16 +43,22 @@ namespace HE_AntiReality
                 {
                     if (level != 4 && p.health.capacities.GetLevel(capacityDefs[i]) != fixedCapacity[level])
                     {
-
-                    }else if (level == 4 && p.health.capacities.GetLevel(capacityDefs[i]) < fixedCapacity[level])
+                        SetCapacityLevel(p, capacityDefs[i], fixedCapacity[level]);
+                    }
+                    else if (level == 4 && p.health.capacities.GetLevel(capacityDefs[i]) < fixedCapacity[level])
                     {
-
+                        SetCapacityLevel(p, capacityDefs[i], fixedCapacity[level]);
                     }
                 }
                 
             }
         }
 
-
+        private void SetCapacityLevel(Pawn pawn, PawnCapacityDef capacityDef, float level)
+        {
+            // このメソッドはポーンのキャパシティを設定するロジックを追加します
+            // 必要に応じて、カスタムのHediffを追加してキャパシティを操作することができます
+            HealthUtility.AdjustSeverity(pawn, capacityDef, level);
+        }
     }
 }

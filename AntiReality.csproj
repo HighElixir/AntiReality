@@ -28,6 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>HE_AntiReality</RootNamespace>
@@ -66,7 +67,6 @@
     <Content Include="1.4\Defs\Things\Weapons\Ranged\EL-慟哭.xml" />
     <Content Include="1.4\Defs\Things\Weapons\Ranged\PC-マルチランス.xml" />
     <Content Include="1.4\Defs\Things\Weapons\Ranged\PN-PEACEMAKER.xml" />
-    <Content Include="1.4\Defs\Things\Weapons\Ranged\PN-ZYOUBUTSU.xml" />
     <Content Include="1.4\Defs\TraitsDef\Traits.xml" />
     <Content Include="About\About.xml" />
     <Content Include="Cont\Textures\Things\Resource\FictionsCore.dds" />
@@ -82,8 +82,11 @@
     <Content Include="LoadFolders.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1.4\Assemblies\CS files\HediffComp_GiveHediffs.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_GiveHediffs.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HarmonyPatches_FixedPawnCapacity.cs" />
     <Compile Include="1.4\Assemblies\CS files\ExistanceFusion_wound.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffComp_FixedPawnCapacity.cs" />
+    <None Include="1.4\Assemblies\CS files\HediffComp_FixedPawnCapacity.cs_" />
     <Compile Include="1.4\Assemblies\CS files\HarmonyPatches_AbsorbedDamage.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_forceDeath.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffComp_forceDeath.cs" />

@@ -7,7 +7,7 @@ using Verse;
 
 namespace HE_AntiReality
 {
-public class AddBodyParts
+    public class AddBodyParts
     {    //１に義体を追加する場所、２で義体を指定して追加できる. もし同じdefNameのパーツが２か所以上存在する場合、
          //3にuntranslatedCustomLabelを記入すればその場所に追加できる
 
@@ -17,7 +17,7 @@ public class AddBodyParts
 
         public string partsLabel;//3
     }
-public class HediffCompProperties_MakeBodyParts : HediffCompProperties
+    public class HediffCompProperties_MakeBodyParts : HediffCompProperties
     {
         public List<AddBodyParts> addBodyParts;
 

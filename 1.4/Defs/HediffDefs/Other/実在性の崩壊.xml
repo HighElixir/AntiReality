@@ -6,9 +6,13 @@
 		<defName>Osmosis_H3</defName>
 		<label>致命的な浸透</label>
 		<comps>
-			<li Class="HediffCompProperties_GiveHediff">
-				<hediffDef>ExistanceFusion_wound</hediffDef>
-				<skipIfAlreadyExists>true</skipIfAlreadyExists>
+			<li Class="HE_AntiReality.HediffCompProperties_GiveHediffs">
+				<hediffs>
+					<li>
+						<hediffDef>ExistanceFusion_wound</hediffDef>
+						<skipIfAlreadyExists>true</skipIfAlreadyExists>
+					</li>
+				</hediffs>
 			</li>
 		</comps>
 	</HediffDef>
@@ -46,7 +50,7 @@
 				</capMods>
 			</li>
 		</stages>
-</HediffDef>
+	</HediffDef>
 
 
 </Defs>
