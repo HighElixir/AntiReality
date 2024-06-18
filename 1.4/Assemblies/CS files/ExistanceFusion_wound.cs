@@ -2,6 +2,7 @@
 
 namespace HE_AntiReality
 {
+    //削除を防ぐ
     public class ExistanceFusion_wound : HediffWithComps
     {
         public override bool ShouldRemove => false;

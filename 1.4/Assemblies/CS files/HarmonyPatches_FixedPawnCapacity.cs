@@ -6,9 +6,8 @@ using static Verse.PawnCapacityUtility;
 
 namespace HE_AntiReality
 {
-    
 
-    [HarmonyPatch(typeof(PawnCapacityUtility), nameof(CalculateCapacityLevel))]
+    [StaticConstructorOnStartup]
     public static class Patch_PawnCapacityUtility_CalculateCapacityLevel
     {
         static Patch_PawnCapacityUtility_CalculateCapacityLevel()
@@ -18,6 +17,7 @@ namespace HE_AntiReality
             harmony.PatchAll();
         }
 
+        [HarmonyPatch(typeof(PawnCapacityUtility), nameof(CalculateCapacityLevel))]
         [HarmonyPostfix]
         public static void Postfix(ref float __result, HediffSet diffSet, PawnCapacityDef capacity, List<CapacityImpactor> impactors = null, bool forTradePrice = false)
         {

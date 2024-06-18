@@ -82,6 +82,9 @@
     <Content Include="LoadFolders.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1.4\Assemblies\CS files\HediffComp_TransportGizmo.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_TransportGizmo.cs" />
+    <Compile Include="1.4\Assemblies\CS files\TargetingParameters_Extensions.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffComp_GiveHediffs.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_GiveHediffs.cs" />
     <Compile Include="1.4\Assemblies\CS files\HarmonyPatches_FixedPawnCapacity.cs" />
@@ -110,13 +113,12 @@
       <HintPath>..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\HarmonyMod.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="MoreDragonianItems">
-      <HintPath>..\..\..\..\workshop\content\294100\2825714781\1.5\Assemblies\MoreDragonianItems.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

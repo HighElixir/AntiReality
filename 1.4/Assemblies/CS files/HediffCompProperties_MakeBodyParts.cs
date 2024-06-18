@@ -8,8 +8,10 @@ using Verse;
 namespace HE_AntiReality
 {
     public class AddBodyParts
-    {    //１に義体を追加する場所、２で義体を指定して追加できる. もし同じdefNameのパーツが２か所以上存在する場合、
-         //3にuntranslatedCustomLabelを記入すればその場所に追加できる
+    {    //１に義体を追加する場所、２で義体を指定して追加できる.
+         //もし同じdefNameのパーツが２か所以上存在する場合、
+         //3にuntranslatedCustomLabelを記入すればその場所に追加できる。
+         //ほかModへの適応性を考慮して、なるべく簡単な英単語を入れる
 
         public BodyPartDef createHediffOn;//1
 

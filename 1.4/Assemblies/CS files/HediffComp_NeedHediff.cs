@@ -27,18 +27,18 @@ namespace HE_AntiReality
             {
 				if (Props.mode == "Multi" && Multi())
 				{
-					return false;
+					return true;
 				}
                     
             }
-            for (int i = 0;	i>10; i++) { 
-				bool hasHediff = p.health.hediffSet.HasHediff(Props.needHediffs[i]);
+            foreach (HediffDef needhediff in Props.needHediffs){ 
+				bool hasHediff = p.health.hediffSet.HasHediff(needhediff);
 				if (hasHediff)
 				{
-					return false;
+					return true;
 				}
 			}
-			return true;
+			return false;
 		}
 
 		public override bool CompShouldRemove

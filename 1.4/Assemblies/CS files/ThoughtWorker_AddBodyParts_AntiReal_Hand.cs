@@ -8,8 +8,7 @@ namespace HE_AntiReality
     {
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
-            Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(HE_HediffDefOf.Non_Existent_Hands, false);
-            if (firstHediffOfDef == null || firstHediffOfDef.def.stages == null)
+            if (p.health.hediffSet.HasHediff(HE_HediffDefOf.Non_Existent_Hands, false))
             {
                 return ThoughtState.Inactive;
             }
