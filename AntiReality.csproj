@@ -87,10 +87,9 @@
     <Compile Include="1.4\Assemblies\CS files\TargetingParameters_Extensions.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffComp_GiveHediffs.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_GiveHediffs.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HarmonyPatches_FixedPawnCapacity.cs" />
+    <Compile Include="1.4\Assemblies\CS files\HE_Patches.cs" />
     <Compile Include="1.4\Assemblies\CS files\ExistanceFusion_wound.cs" />
     <None Include="1.4\Assemblies\CS files\HediffComp_FixedPawnCapacity.cs_" />
-    <Compile Include="1.4\Assemblies\CS files\HarmonyPatches_AbsorbedDamage.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_forceDeath.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffComp_forceDeath.cs" />
     <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_MakeBodyParts.cs" />

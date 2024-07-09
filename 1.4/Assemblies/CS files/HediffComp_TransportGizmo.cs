@@ -15,7 +15,7 @@ namespace HE_AntiReality
         {
             get
             {
-                return (HediffCompProperties_TransportGizmo)this.props;
+                return (HediffCompProperties_TransportGizmo)props;
             }
         }
 

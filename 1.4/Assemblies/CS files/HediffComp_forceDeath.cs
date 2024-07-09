@@ -15,18 +15,16 @@ namespace HE_AntiReality
         {
             get
             {
-                return (HediffCompProperties_forceDeath)this.props;
+                return (HediffCompProperties_forceDeath)props;
             }
         }
 
         private bool ChackPawnHasTraits(TraitDef traitDef)
         {
-            Pawn p = base.Pawn;
-
-            List<Trait> traits = p.story.traits.allTraits;
-            for (int i = 0; i < traits.Count; i++)
+            List<Trait> traits = Pawn.story.traits.allTraits;
+            foreach (Trait item in traits)
             {
-                if (traits[i].def.defName == traitDef.defName)
+                if (item.def.defName == traitDef.defName)
                 {
                     return true;
                 }
@@ -35,9 +33,7 @@ namespace HE_AntiReality
         }
         private bool ChackPawnHasHediffs(HediffDef hediffDef)
         {
-            Pawn p = base.Pawn;
-
-            if (p.health.hediffSet.HasHediff(hediffDef))
+            if (Pawn.health.hediffSet.HasHediff(hediffDef))
             {
                 return true;
             }
@@ -47,8 +43,8 @@ namespace HE_AntiReality
         public override void CompPostMake()
         {
 
-            Pawn p = this.parent.pawn;
-            if (p.health.Dead)
+            
+            if (Pawn.health.Dead)
             {
                 return;
             }
@@ -68,7 +64,7 @@ namespace HE_AntiReality
                 }
             }
 
-            p.health.SetDead();
+            Pawn.Destroy(mode: DestroyMode.KillFinalize);
 
         }
     }
