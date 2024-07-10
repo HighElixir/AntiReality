@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PipeSystem.PipeNetDef>
+	<defName>HE_FictionPipeSystem</defName>
+	<!-- Tanks marked for transfer will output the bellow amount each net tick (each 100 game ticks)-->
+	<transferAmount>2000</transferAmount>
+	<!-- Maximum converted at once by CompThingToResource (default to -1: no limits) -->
+	<convertAmount>1</convertAmount>
+	<!-- If you want an alert to be displayed when there isn't any storage built for the network (off by default)-->
+	<noStorageAlert>true</noStorageAlert>
+	<resource>
+		<!-- This is the name used in all the comps inspect panels -->
+		<name>FictionEnergy</name>
+		<!-- This is the unit, also used in all comps inspect panels -->
+		<unit>fu</unit>
+		<!-- This is the resource color, it will be used by all storages of this net -->
+		<color>(0.25, 0.12, 0.38)</color>
+		<!-- If this is true, all things connected to net will have this line:
+             {name} stored in network: {storedAmount} {unit} 
+         Else: {name} excess (stored) in network: {production} {unit}/d ({storedAmount} {unit})
+         The latter should only be used if you plan to use CompResourceTrader.
+    -->
+		<onlyShowStored>True</onlyShowStored>
+		<!-- This is the texture that will be used to indicate a building is missing resource -->
+		<texPath>Things/Resource/FictionsCore</texPath>
+	</resource>
+	<!-- All the pipe defs that can be part of this net -->
+	<pipeDefs>
+		<li>HE_FicitionEnergyPipe</li>
+	</pipeDefs>
+	<!-- Automatically create a designator that will only deconstructs net pipe(s) -->
+	<designator>
+		<!-- Texture-->
+		<deconstructIconPath>UI/Gizmos/ChemfuelPipes_Deconstruct</deconstructIconPath>
+		<!-- Designation category -->
+		<designationCategoryDef>VCHE_PipeNetworks</designationCategoryDef>
+	</designator>
+	<!-- The overlay show up when you select any building that connect to the net -->
+	<overlayOptions>
+		<!-- <transmitterAtlas></transmitterAtlas> If you don't want to use the premade atlas -->
+		<!-- The color of the overlay -->
+		<overlayColor>(0.25, 0.12, 0.38)</overlayColor>
+	</overlayOptions>
+	<!-- If you want the net to automatically connect and refuel other buildings -->
+	<linkToRefuelables>
+		<!-- You can add as many as you want -->
+		<li>
+			<!-- Connect to all chemfuel building -->
+			<thing>Fiction_Core</thing>
+			<!-- 1 in pipenet: 1 when refueling -->
+			<ratio>100</ratio>
+		</li>
+	</linkToRefuelables>
+</PipeSystem.PipeNetDef>
