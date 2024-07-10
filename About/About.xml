@@ -10,8 +10,8 @@
 	<description>
 		次元の外にあるエネルギー「虚構エネルギー」を利用した武器や施設、衣服を追加します。強すぎる追加種族やらに普通の人間でも対抗できるようにするためややop気味
 	</description>
-	
-	<!--
+
+
 	<modDependencies>
 		<li>
 			<packageId>brrainz.harmony</packageId>
@@ -27,7 +27,7 @@
 	<loadAfter>
 		<li>brrainz.harmony</li>
 		<li>Ludeon.RimWorld.Biotech</li>
-	</loadAfter>-->
+	</loadAfter>
 
 	<modDependencies>
 		<li>
@@ -35,7 +35,7 @@
 			<displayName>Vanilla Expanded Framework</displayName>
 			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
 			<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
-		  </li>
+		</li>
 	</modDependencies>
 	<loadAfter>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>

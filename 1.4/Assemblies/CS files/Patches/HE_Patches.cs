@@ -18,27 +18,25 @@ namespace HE_AntiReality
 
         static HE_Patches()
         {
+            try
+            {
+                // Harmonyのインスタンスを作成
+                Harmony harmony = new Harmony("HE_AntiReality");
 
-            // Harmonyのインスタンスを作成
-            Harmony harmony = new Harmony("HE_AntiReality");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
+                harmony.Patch(original: AccessTools.Method(typeof(PawnCapacityUtility), nameof(CalculateCapacityLevel)),
+                    postfix: new HarmonyMethod(patchType, nameof(Postfix)));
 
-            harmony.Patch(original: AccessTools.Method(type: typeof(PawnCapacityUtility), name: "CalculateCapacityLevel"),
-                postfix: new HarmonyMethod(patchType, nameof(Postfix)));
-
-            harmony.Patch(original: AccessTools.Method(type: typeof(Pawn_HealthTracker), name: "PreApplyDamage"),
+                harmony.Patch(original: AccessTools.Method(typeof(Pawn_HealthTracker), "PreApplyDamage"),
                     prefix: new HarmonyMethod(patchType, nameof(PreApplyDamage_Prefix)));
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Failed to create Harmony instance: {ex}");
+            }
         }
 
         // キャパシティ補正
         private static readonly float[] FixedCapacity = { 1f, 1.5f, 2f, 2.5f, 5f };
-        private static readonly Dictionary<float, int> SeverityLevelToIndex = new Dictionary<float, int>
-        {
-            { 0.01f, 0 },
-            { 0.05f, 1 },
-            { 0.1f, 2 },
-            { 0.5f, 3 }
-        };
 
         public static void Postfix(ref float __result, HediffSet diffSet, PawnCapacityDef capacity, List<CapacityImpactor> impactors = null, bool forTradePrice = false)
         {
@@ -47,19 +45,36 @@ namespace HE_AntiReality
                 Hediff firstHediffOfDef = diffSet.pawn.health.hediffSet.GetFirstHediffOfDef(HE_HediffDefOf.AR_InfinityAnchor, false);
                 if (firstHediffOfDef != null)
                 {
-                    float severityLevel = firstHediffOfDef.Severity;
-                    int level = SeverityLevelToIndex.TryGetValue(severityLevel, out int index) ? index : 4;
-
-                    if (level < FixedCapacity.Length && __result != FixedCapacity[level])
+                    int level = CheckSeverarity(firstHediffOfDef.Severity);
+                    if (level == 4 && __result < FixedCapacity[4])
                     {
-                        __result = FixedCapacity[level];
+                        __result = FixedCapacity[4];
+                        return;
                     }
-                    else if (level == 4 && __result < FixedCapacity[level])
+                    if (__result != FixedCapacity[level])
                     {
                         __result = FixedCapacity[level];
                     }
                 }
             }
+        }
+
+        private static int CheckSeverarity(float sev)
+        {
+            if (sev <= 0.01f)
+            {
+                return 0;
+            }else if (sev <= 0.05f)
+            {
+                return 1;
+            }else if (sev <= 0.1f)
+            {
+                return 2;
+            }else if (sev <= 0.5f)
+            {
+                return 3;
+            }
+            return 4;
         }
 
         //ダメージ吸収
@@ -69,7 +84,7 @@ namespace HE_AntiReality
             Pawn pawn = Traverse.Create(root: __instance).Field(name: "pawn").GetValue<Pawn>();
             if (pawn == null || !(pawn.Faction?.IsPlayer ?? true)) return true;
 
-            if (pawn != null && pawn.health.hediffSet.HasHediff(HE_HediffDefOf.AR_InfinityAnchor))
+            if (pawn.health.hediffSet.HasHediff(HE_HediffDefOf.AR_InfinityAnchor))
             {
 
                 Log.Message("Absorbed Sucsess");

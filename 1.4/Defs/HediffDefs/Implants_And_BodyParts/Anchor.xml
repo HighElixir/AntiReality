@@ -12,7 +12,7 @@
 			<ThingDef>Fiction_Core</ThingDef>
 		</descriptionHyperlinks>
 		<defaultLabelColor>(0.25, 0.12, 0.38)</defaultLabelColor>
-		<initialSeverity>0.5</initialSeverity>
+		<initialSeverity>0.01</initialSeverity>
 
 		<hediffClass>Hediff_Implant</hediffClass>
 		<comps>
