@@ -121,4 +121,49 @@
 		</skillRequirements>
 	</RecipeDef>
 
+
+	<RecipeDef>
+		<defName>InfinityAnchorAdjustSeverity</defName>
+		<label>ｲﾝﾌｨﾆﾃｨｱﾝｶｰの調整</label>
+		<jobString>調整を行っている。</jobString>
+		<descriptionHyperlinks>
+			<HediffDef>AR_InfinityAnchor</HediffDef>
+		</descriptionHyperlinks>
+		<workerClass>HE_AntiReality.RecipeWorker_InfinityAdjustSeverity</workerClass>
+		<anesthetize>true</anesthetize>
+		<surgerySuccessChanceFactor>1.0</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Fiction_Core</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Fiction_Core</li>
+			</thingDefs>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+
+		<workAmount>2200</workAmount>
+		<addsHediff>AR_InfinityAnchor</addsHediff>
+		<skillRequirements>
+			<Medicine>12</Medicine>
+		</skillRequirements>
+	</RecipeDef>
+
 </Defs>

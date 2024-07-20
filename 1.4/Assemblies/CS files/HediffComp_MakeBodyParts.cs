@@ -15,52 +15,66 @@ namespace HE_AntiReality
         {
             get
             {
-                return (HediffCompProperties_MakeBodyParts)this.props;
+                return (HediffCompProperties_MakeBodyParts)props;
             }
         }
 
+        //指定されたボディラベルを検索し、見つかった場合Hediffを追加する
         private void SeartchBodyPart(List<BodyPartRecord> parts, AddBodyParts add)
         {
             for (int i = 0; i < parts.Count; i++)
             {
                 if (parts[i].def == add.createHediffOn && parts[i].untranslatedCustomLabel.IndexOf(add.partsLabel, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
-                    this.parent.pawn.health.AddHediff(add.createHediff, parts[i], null, null);
+                    
+                    Pawn.health.AddHediff(add.createHediff, parts[i], null, null);
                 }
             }
             return;
         }
 
+/*        private bool SeartchHediffOnBodyParts(BodyPartRecord part)
+        {
+            List<Hediff> hediffs = Pawn.health.hediffSet.hediffs;
+            foreach(Hediff item in hediffs)
+            {
+                if (item.Part.untranslatedCustomLabel == part.untranslatedCustomLabel)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }*/
 
         private void SetHediff(AddBodyParts add)
         {
             if (add.createHediff != null)
             {
-                BodyPartRecord part = this.parent.Part;
+                BodyPartRecord part = parent.Part;
                 if (add.createHediffOn != null)
                 {
                     if (add.partsLabel != null)
                     {
-                        List<BodyPartRecord> parts = this.parent.pawn.RaceProps.body.AllParts;
+                        List<BodyPartRecord> parts = Pawn.RaceProps.body.AllParts;
                         SeartchBodyPart(parts, add);
                     }
                     else
                     {
-                        part = this.parent.pawn.RaceProps.body.AllParts.FirstOrFallback((BodyPartRecord p) => p.def == add.createHediffOn, null);
-                        this.parent.pawn.health.AddHediff(add.createHediff, part, null, null);
+                        part = Pawn.RaceProps.body.AllParts.FirstOrFallback((BodyPartRecord p) => p.def == add.createHediffOn, null);
+                        Pawn.health.AddHediff(add.createHediff, part, null, null);
                     }
                 }
 
-                
+
             }
         }
-        
+
 
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
-            for (int i = 0; i < this.Props.addBodyParts.Count; i++)
+            for (int i = 0; i < Props.addBodyParts.Count; i++)
             {
-                SetHediff(this.Props.addBodyParts[i]);
+                SetHediff(Props.addBodyParts[i]);
             }
         }
     }

@@ -46,9 +46,9 @@ namespace HE_AntiReality
                 if (firstHediffOfDef != null)
                 {
                     int level = CheckSeverarity(firstHediffOfDef.Severity);
-                    if (level == 4 && __result < FixedCapacity[4])
+                    if (level == 4)
                     {
-                        __result = FixedCapacity[4];
+                        if (__result < FixedCapacity[4]) { __result = FixedCapacity[4]; }
                         return;
                     }
                     if (__result != FixedCapacity[level])
@@ -61,16 +61,19 @@ namespace HE_AntiReality
 
         private static int CheckSeverarity(float sev)
         {
-            if (sev <= 0.01f)
+            if (sev < 0.01f)
             {
                 return 0;
-            }else if (sev <= 0.05f)
+            }
+            else if (sev < 0.05f)
             {
                 return 1;
-            }else if (sev <= 0.1f)
+            }
+            else if (sev < 0.1f)
             {
                 return 2;
-            }else if (sev <= 0.5f)
+            }
+            else if (sev < 0.5f)
             {
                 return 3;
             }
@@ -78,15 +81,16 @@ namespace HE_AntiReality
         }
 
         //ダメージ吸収
+        //ｲﾝﾌｨﾆﾃｨｱﾝｶｰの重症度が0.5以上の時、ダメージを無効化し、重症度を0.01減らす
         public static bool PreApplyDamage_Prefix(DamageInfo dinfo, ref bool absorbed, Pawn_HealthTracker __instance)
         {
             absorbed = false;
             Pawn pawn = Traverse.Create(root: __instance).Field(name: "pawn").GetValue<Pawn>();
             if (pawn == null || !(pawn.Faction?.IsPlayer ?? true)) return true;
-
-            if (pawn.health.hediffSet.HasHediff(HE_HediffDefOf.AR_InfinityAnchor))
+            Hediff anchor = __instance.hediffSet.GetFirstHediffOfDef(HE_HediffDefOf.AR_InfinityAnchor);
+            if (anchor != null && anchor.Severity > 0.5f)
             {
-
+                anchor.Severity -= 0.01f;
                 Log.Message("Absorbed Sucsess");
                 absorbed = true;
                 return false;
