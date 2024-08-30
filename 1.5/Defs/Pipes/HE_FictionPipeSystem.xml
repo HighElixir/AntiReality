@@ -12,7 +12,7 @@
 			<li>HE_FictionEnergyPipe</li>
 		</pipeDefs>
 		<designator>
-			<deconstructIconPath>UI/Command/FictionEnergyPipeDeconstruct_MenuIcon</deconstructIconPath>
+			<deconstructIconPath>UI/Commands/FictionEnergyPipeDeconstruct_MenuIcon</deconstructIconPath>
 			<designationCategoryDef>AR_PipeNetworks</designationCategoryDef>
 		</designator>
 		<overlayOptions>

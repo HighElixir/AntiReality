@@ -39,6 +39,7 @@
     <Content Include="1.5\Assemblies\HE_AntiReality.dll" />
     <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\MultiImplanter.xml" />
     <None Include="Anti-Reality.code-workspace" />
+    <None Include="Cont\Textures\UI\Commands\Teleport.clip" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.5\Defs\.ModDef\modDef.xml" />
@@ -53,8 +54,9 @@
     <Content Include="1.5\Defs\HediffDefs\Other\Resistance.xml" />
     <Content Include="1.5\Defs\HediffDefs\Other\実在性の崩壊.xml" />
     <Content Include="1.5\Defs\ManeuverDefs_And_ToolCaps\OsmosisMelee.xml" />
-    <Content Include="1.5\Defs\Pipes\HE_FicitionEnergyPipe.xml" />
+    <Content Include="1.5\Defs\Pipes\HE_FictionEnergyPipe.xml" />
     <Content Include="1.5\Defs\Pipes\HE_FictionPipeSystem.xml" />
+    <Content Include="1.5\Defs\Pipes\Designation.xml" />
     <Content Include="1.5\Defs\Reserch\PN_Tier2~.xml" />
     <Content Include="1.5\Defs\Reserch\Resertch.xml" />
     <Content Include="1.5\Defs\Reserch\Items_Structure.xml" />
@@ -68,12 +70,13 @@
     <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Female_north.png" />
     <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Female_south.png" />
     <Content Include="Cont\Textures\Things\Building\Linked\BuriedHE_FicitionEnergyPipe_MenuIcon.png" />
-    <Content Include="Cont\Textures\Things\Building\Linked\HE_FicitionEnergyPipe_Atlas.png" />
+    <Content Include="Cont\Textures\Things\Building\Linked\HE_FictionEnergyPipe_Atlas.png" />
     <Content Include="Cont\Textures\Things\Building\Linked\HE_FicitionEnergyPipe_Blueprint_Atlas.png" />
-    <Content Include="Cont\Textures\Things\Building\Linked\HE_FicitionEnergyPipe_MenuIcon.png" />
+    <Content Include="Cont\Textures\Things\Building\Linked\HE_FictionEnergyPipe_MenuIcon.png" />
     <Content Include="Cont\Textures\Things\Special\Fluid\GasTransmitterAtlas.png" />
     <Content Include="Cont\Textures\Things\Special\Fluid\VHGE_OverlayBase.png" />
-    <Content Include="Cont\Textures\UI\Command\FictionEnergyPipeDeconstruct_MenuIcon.png" />
+    <Content Include="Cont\Textures\UI\Commands\FictionEnergyPipeDeconstruct_MenuIcon.png" />
+    <Content Include="Cont\Textures\UI\Commands\Teleport.png" />
     <Content Include="Mods\Kiiro\Defs\Apparel\Pants.xml" />
     <Content Include="1.5\Defs\Things\Items\Fictions_Core.xml" />
     <Content Include="1.5\Defs\Things\Items\Displacement_Plasteel.xml" />
@@ -101,14 +104,15 @@
     <Content Include="LoadFolders.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\TeleportTargetingSource.cs" />
     <Compile Include="1.5\Assemblies\CS files\HediffComp_DeleteAlreadyExistAncors.cs" />
     <Compile Include="1.5\Assemblies\CS files\HediffCompProperties_DeleteAlreadyExistAncors.cs" />
     <Compile Include="1.5\Assemblies\CS files\DefOf\DefOf.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComp_TransportGizmo.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffCompProperties_TransportGizmo.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\HediffComp_TransportGizmo.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\HediffCompProperties_TransportGizmo.cs" />
     <Compile Include="1.5\Assemblies\CS files\Patches\HE_Patches.cs" />
     <Compile Include="1.5\Assemblies\CS files\Recipe\RecipeWorker_InfinityAdjustSeverity.cs" />
-    <Compile Include="1.5\Assemblies\CS files\TargetingParameters_Extensions.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\TargetingParameters_Extensions.cs" />
     <Compile Include="1.5\Assemblies\CS files\HediffComp_GiveHediffs.cs" />
     <Compile Include="1.5\Assemblies\CS files\HediffCompProperties_GiveHediffs.cs" />
     <Compile Include="1.5\Assemblies\CS files\ExistanceFusion_wound.cs" />
