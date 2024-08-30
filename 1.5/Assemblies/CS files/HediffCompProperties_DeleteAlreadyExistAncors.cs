@@ -9,11 +9,11 @@ namespace HE_AntiReality
 {
     public class HediffCompProperties_DeleteAlreadyExistAncors : HediffCompProperties
     {
-        public Hediff hediff;
+        public HediffDef hediffDef;
 
         public HediffCompProperties_DeleteAlreadyExistAncors()
         {
-            this.compClass = typeof(HediffComp_DeleteAlreadyExistAncors);
+            compClass = typeof(HediffComp_DeleteAlreadyExistAncors);
         }
     }
 }

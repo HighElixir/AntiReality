@@ -103,7 +103,7 @@
 		<recipeUsers>
 			<li>FabricationBench</li>
 		</recipeUsers>
-		<researchPrerequisite>AR_AntiReal_LowWeapons</researchPrerequisite>
+		<researchPrerequisite>Research_Displacement_Plasteel</researchPrerequisite>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Smelt</effectWorking>
 		<soundWorking>Recipe_Smelt</soundWorking>
@@ -135,7 +135,7 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
-			<Displacement_Plasteel>50</Displacement_Plasteel>
+			<Displacement_Plasteel>75</Displacement_Plasteel>
 		</products>
 	</RecipeDef>
 </Defs>

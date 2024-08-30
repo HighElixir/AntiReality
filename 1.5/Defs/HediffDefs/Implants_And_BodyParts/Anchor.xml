@@ -1,7 +1,5 @@
 <Defs>
-
 	<!-- インフィニティアンカー-->
-
 	<HediffDef ParentName="AR_ImplantBase">
 		<defName>AR_InfinityAnchor</defName>
 		<label>インフィニティアンカー</label>
@@ -13,7 +11,6 @@
 		</descriptionHyperlinks>
 		<defaultLabelColor>(0.25, 0.12, 0.38)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
-
 		<hediffClass>Hediff_Implant</hediffClass>
 		<comps>
 			<li Class="HE_AntiReality.HediffCompProperties_GiveHediffs">
@@ -24,11 +21,10 @@
 					</li>
 				</hediffs>
 			</li>
-			<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAncors">
-				<hediff>AR_InfinityAnchor</hediff>
-			</li>
+			<!--<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAncors">
+				<hediffDef>AR_InfinityAnchor</hediffDef>
+			</li>-->
 		</comps>
-
 		<stages>
 			<li>
 				<partEfficiencyOffset>0.25</partEfficiencyOffset>
@@ -43,14 +39,10 @@
 				</statOffsets>
 			</li>
 		</stages>
-
 		<tags>
 			<li>Brain</li>
 		</tags>
 	</HediffDef>
-
-
-
 	<ThingDef ParentName="BodyPartAntiRealityBase_M">
 		<defName>AR_InfinityAnchor_Implant</defName>
 		<label>インフィニティアンカー</label>
@@ -68,12 +60,9 @@
 		</statBases>
 
 		<recipeMaker>
-			<researchPrerequisite>AR_AntiReal_ResearchThree</researchPrerequisite>
+			<researchPrerequisite>Research_InfinityAncor</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
-
-
-
 	<RecipeDef ParentName="AR_InstallImplants">
 		<defName>AR_InfinityAnchor_Recipe</defName>
 		<label>インフィニティアンカーを移植する</label>
@@ -83,7 +72,6 @@
 			<HediffDef>AR_InfinityAnchor</HediffDef>
 		</descriptionHyperlinks>
 		<jobString>インフィニティアンカーを移植している</jobString>
-
 		<ingredients>
 			<li>
 				<filter>
@@ -123,8 +111,6 @@
 			<Medicine>12</Medicine>
 		</skillRequirements>
 	</RecipeDef>
-
-
 	<RecipeDef>
 		<defName>InfinityAnchorAdjustSeverity</defName>
 		<label>ｲﾝﾌｨﾆﾃｨｱﾝｶｰの調整</label>
@@ -170,7 +156,6 @@
 
 
 	<!-- ゼロディメンションアンカー-->
-
 	<HediffDef ParentName="AR_ImplantBase">
 		<defName>AR_ZeroDimensionAnchor</defName>
 		<label>ゼロディメンションアンカー</label>
@@ -194,9 +179,9 @@
 				</hediffs>
 			</li>
 			<li Class="HE_AntiReality.HediffCompProperties_TransportGizmo"/>
-			<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAncors">
-				<hediff>AR_ZeroDimensionAnchor</hediff>
-			</li>
+			<!--<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAncors">
+				<hediffDef>AR_ZeroDimensionAnchor</hediffDef>
+			</li>-->
 		</comps>
 
 		<stages>
@@ -239,7 +224,7 @@
 		</statBases>
 
 		<recipeMaker>
-			<researchPrerequisite>AR_AntiReal_ResearchThree</researchPrerequisite>
+			<researchPrerequisite>Research_ZeroDimensionAncor</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
 

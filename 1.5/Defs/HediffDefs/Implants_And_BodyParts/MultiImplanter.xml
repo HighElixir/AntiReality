@@ -452,7 +452,7 @@
 		</statBases>
 
 		<recipeMaker>
-			<researchPrerequisite>Researtch_MultiInplantor</researchPrerequisite>
+			<researchPrerequisite>Research_MultiInplantor</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
 
@@ -506,7 +506,7 @@
 			<li>Pelvis</li>
 		</appliedOnFixedBodyParts>
 		
-		<researchPrerequisite>Researtch_MultiInplantor</researchPrerequisite>
+		<researchPrerequisite>Research_MultiInplantor</researchPrerequisite>
 	</RecipeDef>
 	
 

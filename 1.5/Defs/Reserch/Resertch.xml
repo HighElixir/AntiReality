@@ -14,7 +14,7 @@
 		<label>虚構エネルギーの研究</label>
 	</ResearchTabDef>
 
-	<ResearchProjectDef Name="AR_ReseartchBase" Abstract="True">
+	<ResearchProjectDef Name="AR_ResearchBase" Abstract="True">
 		<description>準備中</description>
 		
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -31,7 +31,7 @@
 		
 
 	
-	<ResearchProjectDef ParentName="AR_ReseartchBase">
+	<ResearchProjectDef ParentName="AR_ResearchBase">
 		<defName>AR_FictionsEnergy</defName>
 		<label>虚構エネルギーの封じ込め</label>
 		<description>[Tier0]現実の綻びから生じたエネルギーを小さなカプセルに封じ込める。いくつかの低効率な近接武器も追加される。\n\n奇妙なエネルギーだ。なんにでも活用できる可能性を秘めているが、何の役にも立たない可能性も秘めている。</description>
@@ -41,16 +41,16 @@
 		<prerequisites>
 			<li>ShipReactor</li>
 		</prerequisites>
-		<researchViewX>0</researchViewX>
-		<researchViewY>3</researchViewY>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>2.50</researchViewY>
 		<tags>
 			<li>AR_Start</li>
 			<li>AR_Senario</li>
 		</tags>
 	</ResearchProjectDef>
 
-	<!--ティア１ 低効率な装備、建築物群-->
-	<ResearchProjectDef ParentName="AR_ReseartchBase">
+	<!--ティア１ 低効率な装備-->
+	<ResearchProjectDef ParentName="AR_ResearchBase">
 		<defName>AR_AntiReal_LowWeapons</defName>
 		<label>虚構エネルギーの研究</label>
 		<description>[Tier1]フィクションコアを動力源とした低効率な銃器を開発する。\n\nとりあえず、銃器と弾丸の両方にエネルギーを用いるのはよそう。何故だか知らないが、アサルトライフルがミントチョコになってしまった。成分分析の結果、たしかにミントチョコそのままだったが非常に”えぐみ”が強く、とてもたべられたものではない。</description>
@@ -61,14 +61,14 @@
 			<li>AR_FictionsEnergy</li>
 		</prerequisites>
 		<researchViewX>1.00</researchViewX>
-		<researchViewY>3.15</researchViewY>
+		<researchViewY>2.50</researchViewY>
 		<tags>
 			<li>AR_Start</li>
 			<li>AR_Senario</li>
 		</tags>
 	</ResearchProjectDef>
 
-	<ResearchProjectDef ParentName="AR_ReseartchBase">
+	<ResearchProjectDef ParentName="AR_ResearchBase">
 		<defName>AR_AntiReal_ResearchThree</defName>
 		<label>インプラントの開発</label>
 		<description>[Tier1]虚構エネルギーを利用したいくつかのインプラントを追加する。\n\n虚構エネルギーには確かに脈絡はないが、法則がないわけではない。研究を続けよう</description>
@@ -76,10 +76,10 @@
 		<baseCost>2000</baseCost>
 
 		<prerequisites>
-			<li>AR_FictionsEnergy</li>
+			<li>AR_AntiReal_LowWeapons</li>
 		</prerequisites>
-		<researchViewX>1.00</researchViewX>
-		<researchViewY>1.20</researchViewY>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>0.20</researchViewY>
 		<tags>
 			<li>AR_Start</li>
 			<li>AR_Senario</li>

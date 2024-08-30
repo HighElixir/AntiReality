@@ -57,6 +57,8 @@
     <Content Include="1.5\Defs\Pipes\HE_FictionPipeSystem.xml" />
     <Content Include="1.5\Defs\Reserch\PN_Tier2~.xml" />
     <Content Include="1.5\Defs\Reserch\Resertch.xml" />
+    <Content Include="1.5\Defs\Reserch\Items_Structure.xml" />
+    <Content Include="1.5\Defs\Reserch\Ancor.xml" />
     <Content Include="1.5\Defs\Stats\stat.xml" />
     <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant.png" />
     <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Child_east.png" />
@@ -65,6 +67,13 @@
     <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Female_east.png" />
     <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Female_north.png" />
     <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Female_south.png" />
+    <Content Include="Cont\Textures\Things\Building\Linked\BuriedHE_FicitionEnergyPipe_MenuIcon.png" />
+    <Content Include="Cont\Textures\Things\Building\Linked\HE_FicitionEnergyPipe_Atlas.png" />
+    <Content Include="Cont\Textures\Things\Building\Linked\HE_FicitionEnergyPipe_Blueprint_Atlas.png" />
+    <Content Include="Cont\Textures\Things\Building\Linked\HE_FicitionEnergyPipe_MenuIcon.png" />
+    <Content Include="Cont\Textures\Things\Special\Fluid\GasTransmitterAtlas.png" />
+    <Content Include="Cont\Textures\Things\Special\Fluid\VHGE_OverlayBase.png" />
+    <Content Include="Cont\Textures\UI\Command\FictionEnergyPipeDeconstruct_MenuIcon.png" />
     <Content Include="Mods\Kiiro\Defs\Apparel\Pants.xml" />
     <Content Include="1.5\Defs\Things\Items\Fictions_Core.xml" />
     <Content Include="1.5\Defs\Things\Items\Displacement_Plasteel.xml" />

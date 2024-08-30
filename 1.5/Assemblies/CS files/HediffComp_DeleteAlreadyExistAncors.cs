@@ -25,13 +25,13 @@ namespace HE_AntiReality
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
             Pawn p = parent.pawn;
-            Hediff hediff = Props.hediff;
-            if (hediff != null) 
+            HediffDef hediffDef = Props.hediffDef;
+            if (hediffDef != null) 
             {
                 foreach(HediffDef def in ancors)
                 {
                     Hediff target = p.health.hediffSet.GetFirstHediffOfDef(def);
-                    if (target != null && target != hediff)
+                    if (target != null && def != hediffDef)
                     {
                         p.health.RemoveHediff(target);
                     }
