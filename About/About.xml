@@ -8,7 +8,7 @@
 		<li>1.5</li>
 	</supportedVersions>
 	<description>
-		次元の外にあるエネルギー「虚構エネルギー」を利用した武器や施設、衣服を追加します。強すぎる追加種族やらに普通の人間でも対抗できるようにするためややop気味
+		数多ある世界の外にある「虚構エネルギー」を利用した武器や施設、衣服を追加します
 	</description>
 
 
@@ -23,13 +23,6 @@
 			<packageId>Ludeon.RimWorld.Biotech</packageId>
 			<displayName>Biotech</displayName>
 		</li>
-	</modDependencies>
-	<loadAfter>
-		<li>brrainz.harmony</li>
-		<li>Ludeon.RimWorld.Biotech</li>
-	</loadAfter>
-
-	<modDependencies>
 		<li>
 			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
 			<displayName>Vanilla Expanded Framework</displayName>
@@ -38,6 +31,9 @@
 		</li>
 	</modDependencies>
 	<loadAfter>
+		<li>brrainz.harmony</li>
+		<li>Ludeon.RimWorld.Biotech</li>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>Ancot.KiiroRace</li>
 	</loadAfter>
 </ModMetaData>

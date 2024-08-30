@@ -31,7 +31,7 @@
 	<HediffDef>
 	<defName>Vulnerability</defName>
 	<label>脆弱な体</label>
-	<description>突然虚構エネルギーに触れたことによる副反応。\n痛覚がややマヒすることにより痛みに強くなるが、戦闘能力がかなり弱体化する</description>
+	<description>突然虚構エネルギーに触れたことによる副反応。\n戦闘能力がかなり弱体化する</description>
 	<defaultLabelColor>(0.7, 0.7, 0.9)</defaultLabelColor>
 	<displayWound>false</displayWound>
 	<makesSickThought>true</makesSickThought>
@@ -46,7 +46,6 @@
 	</comps>
 	<stages>
 		<li>
-			<painFactor>0.5</painFactor>
 			<capMods>
 				<li>
 					<capacity>Moving</capacity>

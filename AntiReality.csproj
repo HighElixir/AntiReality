@@ -36,38 +36,48 @@
   <ItemGroup>
     <None Include=".vs\AntiReality\FileContentIndex\064c2d70-a452-4508-8198-231418044dfd.vsidx" />
     <None Include=".vs\AntiReality\v17\.suo" />
-    <Content Include="1.4\Assemblies\HE_AntiReality.dll" />
-    <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\MultiImplanter.xml" />
+    <Content Include="1.5\Assemblies\HE_AntiReality.dll" />
+    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\MultiImplanter.xml" />
     <None Include="Anti-Reality.code-workspace" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="1.4\Defs\.ModDef\modDef.xml" />
-    <Content Include="1.4\Defs\DamageDefs\Osmosis.xml" />
-    <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\.Base.xml" />
-    <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\BodyParts_NonExistentArms.xml" />
-    <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\Anchor.xml" />
-    <Content Include="1.4\Defs\HediffDefs\Implants_And_BodyParts\[Tier1]Implants.xml" />
-    <Content Include="1.4\Defs\HediffDefs\Injures\FrostBite.xml" />
-    <Content Include="1.4\Defs\HediffDefs\Injures\Osmosis_Injure.xml" />
-    <Content Include="1.4\Defs\HediffDefs\Other\LostReality.xml" />
-    <Content Include="1.4\Defs\HediffDefs\Other\Resistance.xml" />
-    <Content Include="1.4\Defs\HediffDefs\Other\実在性の崩壊.xml" />
-    <Content Include="1.4\Defs\ManeuverDefs_And_ToolCaps\OsmosisMelee.xml" />
-    <Content Include="1.4\Defs\Reserch\PN_Tier2~.xml" />
-    <Content Include="1.4\Defs\Reserch\Resertch.xml" />
-    <Content Include="1.4\Defs\Stats\stat.xml" />
-    <Content Include="1.4\Defs\Things\Items\Fictions_Core.xml" />
-    <Content Include="1.4\Defs\Things\Items\Displacement_Plasteel.xml" />
-    <Content Include="1.4\Defs\Things\Projectile\PN_Gun.xml" />
-    <Content Include="1.4\Defs\Things\ThingCategory.xml" />
-    <Content Include="1.4\Defs\Things\Thought\Thought_Situation_BodyParts.xml" />
-    <Content Include="1.4\Defs\Things\Weapons\.WeaponsBase.xml" />
-    <Content Include="1.4\Defs\Things\Weapons\Melee\EL-アンパルスブレード.xml" />
-    <Content Include="1.4\Defs\Things\Weapons\Melee\PN-非現実の腕.xml" />
-    <Content Include="1.4\Defs\Things\Weapons\Ranged\EL-慟哭.xml" />
-    <Content Include="1.4\Defs\Things\Weapons\Ranged\PC-マルチランス.xml" />
-    <Content Include="1.4\Defs\Things\Weapons\Ranged\PN-PEACEMAKER.xml" />
-    <Content Include="1.4\Defs\TraitsDef\Traits.xml" />
+    <Content Include="1.5\Defs\.ModDef\modDef.xml" />
+    <Content Include="1.5\Defs\DamageDefs\Osmosis.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\.Base.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\BodyParts_NonExistentArms.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\Anchor.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\[Tier1]Implants.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Injures\FrostBite.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Injures\Osmosis_Injure.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Other\LostReality.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Other\Resistance.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Other\実在性の崩壊.xml" />
+    <Content Include="1.5\Defs\ManeuverDefs_And_ToolCaps\OsmosisMelee.xml" />
+    <Content Include="1.5\Defs\Pipes\HE_FicitionEnergyPipe.xml" />
+    <Content Include="1.5\Defs\Pipes\HE_FictionPipeSystem.xml" />
+    <Content Include="1.5\Defs\Reserch\PN_Tier2~.xml" />
+    <Content Include="1.5\Defs\Reserch\Resertch.xml" />
+    <Content Include="1.5\Defs\Stats\stat.xml" />
+    <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant.png" />
+    <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Child_east.png" />
+    <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Child_north.png" />
+    <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Child_south.png" />
+    <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Female_east.png" />
+    <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Female_north.png" />
+    <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Female_south.png" />
+    <Content Include="Mods\Kiiro\Defs\Apparel\Pants.xml" />
+    <Content Include="1.5\Defs\Things\Items\Fictions_Core.xml" />
+    <Content Include="1.5\Defs\Things\Items\Displacement_Plasteel.xml" />
+    <Content Include="1.5\Defs\Things\Projectile\PN_Gun.xml" />
+    <Content Include="1.5\Defs\Things\ThingCategory.xml" />
+    <Content Include="1.5\Defs\Things\Thought\Thought_Situation_BodyParts.xml" />
+    <Content Include="1.5\Defs\Things\Weapons\.WeaponsBase.xml" />
+    <Content Include="1.5\Defs\Things\Weapons\Melee\EL-アンパルスブレード.xml" />
+    <Content Include="1.5\Defs\Things\Weapons\Melee\PN-非現実の腕.xml" />
+    <Content Include="1.5\Defs\Things\Weapons\Ranged\EL-慟哭.xml" />
+    <Content Include="1.5\Defs\Things\Weapons\Ranged\PC-マルチランス.xml" />
+    <Content Include="1.5\Defs\Things\Weapons\Ranged\PN-PEACEMAKER.xml" />
+    <Content Include="1.5\Defs\TraitsDef\Traits.xml" />
     <Content Include="About\About.xml" />
     <Content Include="Cont\Textures\Things\Resource\FictionsCore.dds" />
     <Content Include="Cont\Textures\Things\Resource\FictionsCore.png" />
@@ -82,22 +92,24 @@
     <Content Include="LoadFolders.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1.4\Assemblies\CS files\DefOf\DefOf.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffComp_TransportGizmo.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_TransportGizmo.cs" />
-    <Compile Include="1.4\Assemblies\CS files\Patches\HE_Patches.cs" />
-    <Compile Include="1.4\Assemblies\CS files\Recipe\RecipeWorker_InfinityAdjustSeverity.cs" />
-    <Compile Include="1.4\Assemblies\CS files\TargetingParameters_Extensions.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffComp_GiveHediffs.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_GiveHediffs.cs" />
-    <Compile Include="1.4\Assemblies\CS files\ExistanceFusion_wound.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_forceDeath.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffComp_forceDeath.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_MakeBodyParts.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffComp_MakeBodyParts.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffComp_NeedHediff.cs" />
-    <Compile Include="1.4\Assemblies\CS files\HediffCompProperties_NeedHediff.cs" />
-    <Compile Include="1.4\Assemblies\CS files\ThoughtWorker_AddBodyParts_AntiReal_Hand.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComp_DeleteAlreadyExistAncors.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffCompProperties_DeleteAlreadyExistAncors.cs" />
+    <Compile Include="1.5\Assemblies\CS files\DefOf\DefOf.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComp_TransportGizmo.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffCompProperties_TransportGizmo.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Patches\HE_Patches.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Recipe\RecipeWorker_InfinityAdjustSeverity.cs" />
+    <Compile Include="1.5\Assemblies\CS files\TargetingParameters_Extensions.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComp_GiveHediffs.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffCompProperties_GiveHediffs.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ExistanceFusion_wound.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffCompProperties_forceDeath.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComp_forceDeath.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffCompProperties_MakeBodyParts.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComp_MakeBodyParts.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComp_NeedHediff.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffCompProperties_NeedHediff.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThoughtWorker_AddBodyParts_AntiReal_Hand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
@@ -121,8 +133,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="1.4\Defs\AbilityDefs\" />
-    <Folder Include="1.5\" />
+    <Folder Include="1.5\Defs\AbilityDefs\" />
+    <Folder Include="1.5\Defs\Things\Cloth\" />
     <Folder Include="Cont\Textures\Things\Projectile\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
