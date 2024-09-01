@@ -22,7 +22,7 @@
 		<altitudeLayer>Item</altitudeLayer>
 		<stackLimit>100</stackLimit>
 		<statBases>
-			<WorkToMake>50000</WorkToMake>
+			<WorkToMake>5000</WorkToMake>
 			<MarketValue>35000</MarketValue>
 			<MaxHitPoints>1</MaxHitPoints>
 			<Flammability>0.5</Flammability>
@@ -45,7 +45,6 @@
 				<explosiveRadius>13</explosiveRadius>
 				<explosiveDamageType>Bathed_in_Energy</explosiveDamageType>
 				<explodeOnKilled>true</explodeOnKilled>
-
 			</li>
 		</comps>
 		<alwaysHaulable>true</alwaysHaulable>
@@ -65,7 +64,7 @@
 			<soundWorking>Recipe_Smith</soundWorking>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
 			<skillRequirements>
-				<Crafting>20</Crafting>
+				<Crafting>8</Crafting>
 			</skillRequirements>
 		</recipeMaker>
 

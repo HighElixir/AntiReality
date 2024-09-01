@@ -41,6 +41,7 @@ namespace HE_AntiReality
 
         public bool CanHitTarget(LocalTargetInfo target)
         {
+            
             // 距離と視界の判定
             return target.Cell.IsValid
                 && casterPawn.Position.InHorDistOf(target.Cell, maxDistance)
@@ -78,6 +79,7 @@ namespace HE_AntiReality
 
         public void OnGUI(LocalTargetInfo target)
         {
+            DrawHighlight(target);
             // 必要に応じて、ターゲット選択時にGUIで何かを描画する場合に実装
         }
     }

@@ -56,12 +56,12 @@
 		<neverMultiSelect>true</neverMultiSelect>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<!--<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>-->
 		<designationCategory>AR_PipeNetworks</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>
 		<clearBuildingArea>false</clearBuildingArea>
 		<researchPrerequisites>
 			<li>Research_Displacement_Plasteel</li>
 		</researchPrerequisites>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
 	</ThingDef>
 </Defs>

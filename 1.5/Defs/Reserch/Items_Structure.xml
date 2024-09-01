@@ -40,7 +40,7 @@
 		<label>構築：ワープ機構・輸送</label>
 		<description>[Tier3]「0dストレージ」を開発する。（未実装）</description>
 
-		<baseCost>82000</baseCost>
+		<baseCost>120000</baseCost>
 
 		<prerequisites>
 			<li>Research_AR_WarpStone</li>

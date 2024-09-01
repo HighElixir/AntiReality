@@ -15,6 +15,7 @@
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 
 		<statBases>
+			<WorkToMake>32000</WorkToMake>
 			<Mass>3.2</Mass>
 			<AccuracyTouch>0.55</AccuracyTouch>
 			<AccuracyShort>0.98</AccuracyShort>
@@ -22,6 +23,11 @@
 			<AccuracyLong>0.91</AccuracyLong>
 			<RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
 		</statBases>
+		<costList>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Fiction_Core>1</Fiction_Core>
+			<Gun_ChargeLance>1</Gun_ChargeLance>
+		</costList>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>

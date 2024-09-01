@@ -24,7 +24,7 @@ namespace HE_AntiReality
         {
             Command_Action teleportCommand = new Command_Action
             {
-                defaultLabel = "座標替え",
+                defaultLabel = "座標変換",
                 defaultDesc = "視界の通る範囲内に座標を変える",
                 icon = ContentFinder<Texture2D>.Get("UI/Commands/Teleport"),
                 action = () =>

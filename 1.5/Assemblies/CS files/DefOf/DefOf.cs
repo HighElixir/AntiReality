@@ -20,6 +20,7 @@ namespace HE_AntiReality
             DefOfHelper.EnsureInitializedInCtor(typeof(HE_HediffDefOf));
         }
     }
+    [DefOf]
     public static class HE_DamageDefOf
     {
         public static DamageDef SurgicalCut;
@@ -27,6 +28,15 @@ namespace HE_AntiReality
         static HE_DamageDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(HE_DamageDefOf));
+        }
+    }
+    [DefOf]
+    public static class HE_ThingDefOf
+    {
+        public static ThingDef AR_DimensionAnchor;
+        static HE_ThingDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(HE_ThingDefOf));
         }
     }
 }

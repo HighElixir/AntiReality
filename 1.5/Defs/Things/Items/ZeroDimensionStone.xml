@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ArtifactBase">
+		<defName>ZeroDimensionStone</defName>
+		<label>ゼロディメンションストーン</label>
+		<description>「ディメンションアンカー」を目指してワープするための手持ちアイテム。</description>
+		<descriptionHyperlinks>
+			<ThingDef>AR_DimensionAnchor</ThingDef>
+		</descriptionHyperlinks>
+		<thingClass>ThingWithComps</thingClass>
+		<graphicData>
+			<texPath>Things/Item/ZeroDimensionStone</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<altitudeLayer>Item</altitudeLayer>
+		<stackLimit>1</stackLimit>
+		<statBases>
+			<WorkToMake>20000</WorkToMake>
+			<MarketValue>15000</MarketValue>
+			<Mass>0.2</Mass>
+			<MaxHitPoints>200</MaxHitPoints>
+		</statBases>
+		<comps>
+			<!-- 使用効果コンポーネント（カスタム） -->
+			<li Class="HE_AntiReality.CompProperties_WarpToAnchor"/>
+		</comps>
+		<verbs>
+			<li>
+				<verbClass>HE_AntiReality.Verb_Warp</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<warmupTime>1.5</warmupTime>
+				<!-- クールダウン時間（ミリ秒） -->
+			</li>
+		</verbs>
+		<costList>
+			<Fiction_Core>2</Fiction_Core>
+			<ComponentSpacer>5</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>Research_AR_WarpStone</researchPrerequisite>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<effectWorking>Smelt</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>12</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+	</ThingDef>
+</Defs>
