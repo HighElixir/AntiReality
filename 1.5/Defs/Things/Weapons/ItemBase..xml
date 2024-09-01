@@ -42,7 +42,7 @@
 			<soundWorking>Recipe_Smith</soundWorking>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
 			<skillRequirements>
-				<Crafting>20</Crafting>
+				<Crafting>14</Crafting>
 			</skillRequirements>
 		</recipeMaker>
 
@@ -90,5 +90,43 @@
 			</li>
 		  </comps>
 	</ThingDef>
+	
+	<ThingDef ParentName="ApparelNoQualityBase" Name="AR_ApparelNoQualityBase" Abstract="True">
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>Apparel</thingClass>
+		<thingCategories>
+			<li>AR_Apparel</li>
+		</thingCategories>
+		<techLevel>Archotech</techLevel>
+		<costList>
+			<Fiction_Core>1</Fiction_Core>
+		</costList>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Beauty>0</Beauty>
+			<SellPriceFactor>2</SellPriceFactor>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>AR_AntiReal_LowWeapons</researchPrerequisite>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<effectWorking>Smelt</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>11</Crafting>
+			</skillRequirements>
+		</recipeMaker>
 
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+	</ThingDef>
 </Defs>

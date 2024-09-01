@@ -3,8 +3,8 @@
 <Defs>
 	<ResearchProjectDef ParentName="AR_ResearchBase">
 		<defName>Research_Displacement_Plasteel</defName>
-		<label>構築：変異プラスチール</label>
-		<description>[Tier1]変異プラスチールと、それに関連する装備、構造物の研究開発を行う。</description>
+		<label>構築：変位プラスチール</label>
+		<description>[Tier1]変位プラスチールと、それに関連する装備、構造物の研究開発を行う。</description>
 
 		<baseCost>18000</baseCost>
 
@@ -13,6 +13,23 @@
 		</prerequisites>
 		<researchViewX>3.00</researchViewX>
 		<researchViewY>1.60</researchViewY>
+		<tags>
+
+		</tags>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="AR_ResearchBase">
+		<defName>Research_VoidOut_Plasteel</defName>
+		<label>構築：虚展プラスチール</label>
+		<description>[Tier2]虚展プラスチールと、それに関連する装備、構造物の研究開発を行う。</description>
+
+		<baseCost>32000</baseCost>
+
+		<prerequisites>
+			<li>Research_Displacement_Plasteel</li>
+		</prerequisites>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>0.9</researchViewY>
 		<tags>
 
 		</tags>
