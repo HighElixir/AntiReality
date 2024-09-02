@@ -1,38 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<ThingDef ParentName="ArtifactBase">
+	<ThingDef ParentName="AR_ApparelNoQualityBase">
 		<defName>ZeroDimensionStone</defName>
 		<label>ゼロディメンションストーン</label>
-		<description>「ディメンションアンカー」を目指してワープするための手持ちアイテム。</description>
+		<description>生身のままで０次元に存在するための装備。最低一つの使用可能な「ディメンションアンカー」が存在しないと使用できない。</description>
 		<descriptionHyperlinks>
 			<ThingDef>AR_DimensionAnchor</ThingDef>
 		</descriptionHyperlinks>
-		<thingClass>ThingWithComps</thingClass>
+		<thingClass>HE_AntiReality.WarptoAnchor</thingClass>
 		<graphicData>
 			<texPath>Things/Item/ZeroDimensionStone</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1,1)</drawSize>
 		</graphicData>
-		<altitudeLayer>Item</altitudeLayer>
-		<stackLimit>1</stackLimit>
+		<techLevel>Archotech</techLevel>
 		<statBases>
 			<WorkToMake>20000</WorkToMake>
 			<MarketValue>15000</MarketValue>
 			<Mass>0.2</Mass>
 			<MaxHitPoints>200</MaxHitPoints>
 		</statBases>
-		<comps>
-			<!-- 使用効果コンポーネント（カスタム） -->
-			<li Class="HE_AntiReality.CompProperties_WarpToAnchor"/>
-		</comps>
-		<verbs>
-			<li>
-				<verbClass>HE_AntiReality.Verb_Warp</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<warmupTime>1.5</warmupTime>
-				<!-- クールダウン時間（ミリ秒） -->
-			</li>
-		</verbs>
+		<tickerType>Normal</tickerType>
+		<thingCategories>
+			<li>ApparelUtility</li>
+		</thingCategories>
+		<apparel>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<scoreOffset>4</scoreOffset>
+			<careIfWornByCorpse>false</careIfWornByCorpse>
+			<careIfDamaged>false</careIfDamaged>
+			<ignoredByNonViolent>false</ignoredByNonViolent>
+			<wearPerDay>0</wearPerDay>
+			<bodyPartGroups>
+				<li>Waist</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Belt</li>
+			</layers>
+		</apparel>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<tradeNeverStack>true</tradeNeverStack>
+		<smeltable>false</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+		<drawGUIOverlay>false</drawGUIOverlay>
 		<costList>
 			<Fiction_Core>2</Fiction_Core>
 			<ComponentSpacer>5</ComponentSpacer>

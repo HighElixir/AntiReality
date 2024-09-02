@@ -119,10 +119,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\TeleportTargetingSource.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Buildings\WarpSystem\CompProperties_WarpToAnchor.cs" />
     <Compile Include="1.5\Assemblies\CS files\Buildings\WarpSystem\CompProperties_WarpSystem.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Buildings\WarpSystem\Verb_Warp.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Buildings\WarpSystem\CompUseEffect_WarpToAnchor.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Buildings\WarpSystem\WarptoAnchor.cs" />
     <Compile Include="1.5\Assemblies\CS files\HediffComp_DeleteAlreadyExistAncors.cs" />
     <Compile Include="1.5\Assemblies\CS files\HediffCompProperties_DeleteAlreadyExistAncors.cs" />
     <Compile Include="1.5\Assemblies\CS files\DefOf\DefOf.cs" />
@@ -165,6 +163,14 @@
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.TextCoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VFECore">

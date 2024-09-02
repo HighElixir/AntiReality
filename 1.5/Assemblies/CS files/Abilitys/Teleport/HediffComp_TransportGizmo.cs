@@ -22,6 +22,10 @@ namespace HE_AntiReality
 
         public override IEnumerable<Gizmo> CompGetGizmos()
         {
+            if (DebugSettings.godMode)
+            {
+                countTick = 0;
+            }
             Command_Action teleportCommand = new Command_Action
             {
                 defaultLabel = "座標変換",
@@ -45,7 +49,7 @@ namespace HE_AntiReality
             // クールダウン中は無効化
             if (countTick != 0)
             {
-                teleportCommand.Disable("クールダウン中です");
+                teleportCommand.Disable("使用可能まであと " + ((float)countTick / 60f).ToString("0.0") + " 秒");
             }
 
             yield return teleportCommand;
