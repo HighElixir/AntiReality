@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<ThoughtDef ParentName="DeathMemory">
+		<defName>WitnessedLostOfRealityDeath</defName>
+		<durationDays>6</durationDays>
+		<stackLimit>5</stackLimit>
+		<doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+		<nullifyingTraits>
+			<li>Psychopath</li>
+			<li MayRequire="HighElixir.DRClothes">HE_DR_Artificial_God</li>
+		</nullifyingTraits>
+		<stages>
+			<li>
+				<label>恐ろしい死を目撃した。</label>
+				<description>怖い</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

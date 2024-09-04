@@ -50,5 +50,20 @@
           <speed>240</speed>
         </projectile>
       </ThingDef>
-    
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>PN_FireWorksMaker_B</defName>
+		<label>火炎弾</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Osmosis</damageDef>
+			<damageAmountBase>2</damageAmountBase>
+			<armorPenetrationBase>1000</armorPenetrationBase>
+			<stoppingPower>0.7</stoppingPower>
+			<speed>92</speed>
+		</projectile>
+	</ThingDef>
 </Defs>

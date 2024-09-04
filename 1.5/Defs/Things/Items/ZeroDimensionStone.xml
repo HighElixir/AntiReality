@@ -7,7 +7,6 @@
 		<descriptionHyperlinks>
 			<ThingDef>AR_DimensionAnchor</ThingDef>
 		</descriptionHyperlinks>
-		<thingClass>HE_AntiReality.WarptoAnchor</thingClass>
 		<graphicData>
 			<texPath>Things/Item/ZeroDimensionStone</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -23,20 +22,20 @@
 		<tickerType>Normal</tickerType>
 		<thingCategories>
 			<li>ApparelUtility</li>
+			<li>AR_NeedFE</li>
 		</thingCategories>
 		<apparel>
-			<countsAsClothingForNudity>false</countsAsClothingForNudity>
-			<scoreOffset>4</scoreOffset>
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<countsAsClothingForNudity>true</countsAsClothingForNudity>
 			<careIfWornByCorpse>false</careIfWornByCorpse>
 			<careIfDamaged>false</careIfDamaged>
-			<ignoredByNonViolent>false</ignoredByNonViolent>
-			<wearPerDay>0</wearPerDay>
-			<bodyPartGroups>
-				<li>Waist</li>
-			</bodyPartGroups>
+			<wearPerDay>0.4</wearPerDay>
 			<layers>
 				<li>Belt</li>
 			</layers>
+			<bodyPartGroups>
+				<li>Waist</li>
+			</bodyPartGroups>
 		</apparel>
 		<resourceReadoutPriority>Middle</resourceReadoutPriority>
 		<tradeNeverStack>true</tradeNeverStack>
@@ -61,5 +60,15 @@
 				<Crafting>12</Crafting>
 			</skillRequirements>
 		</recipeMaker>
+		<comps>
+			<li Class="HE_AntiReality.CompProperties_StoreFE">
+				<maxFE>50</maxFE>
+				<requireFE>11</requireFE>
+			</li>
+			<li Class="HE_AntiReality.CompProperties_WarptoAnchor">
+				<cooldownTicks>6000</cooldownTicks>
+			</li>
+		</comps>
 	</ThingDef>
+	
 </Defs>

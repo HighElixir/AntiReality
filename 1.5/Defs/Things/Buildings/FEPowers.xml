@@ -73,4 +73,150 @@
 		<designationCategory>AR_PipeNetworks</designationCategory>
 		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
 	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>AR_FECharger_1</defName>
+		<label>FE流入機</label>
+		<description>FEを誘引し、動力を回復させる。
+チャージFE：250fu/h
+チャージ効率：1.2/fu</description><!--2500tick => １時間-->
+		<thingClass>Building_Storage</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Furniture/ShelfSmall</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="HE_AntiReality.CompProperties_FECharge">
+				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<category>AR_NeedFE</category>
+				<consumptionPerTick>0.03</consumptionPerTick>
+				<chargepertick>0.02</chargepertick>
+				<chargeEfficiency>1.2</chargeEfficiency>
+				<!--
+				chargepertick -> 1tickあたりの充電数
+				chargeEfficiency -> 1chargepertickあたりのリソースの消費数の割合。1以上で効率が悪くなり、１未満で効率が良くなる.
+				-->
+			</li>
+		</comps>
+		<building>
+			<preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+			<ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+			<maxItemsInCell>1</maxItemsInCell>
+			<blueprintClass>Blueprint_Storage</blueprintClass>
+			<fixedStorageSettings>
+				<filter>
+					<categories>
+						<li>AR_NeedFE</li>
+					</categories>
+				</filter>
+			</fixedStorageSettings>
+			<defaultStorageSettings>
+				<priority>Important</priority>
+				<filter>
+					<categories>
+						<li>AR_NeedFE</li>
+					</categories>
+				</filter>
+			</defaultStorageSettings>
+		</building>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>20000</MaxHitPoints>
+			<WorkToBuild>4000</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<costList>
+			<Displacement_Plasteel>45</Displacement_Plasteel>
+			<ComponentSpacer>1</ComponentSpacer>
+		</costList>
+		<inspectorTabs>
+			<li>ITab_Storage</li>
+		</inspectorTabs>
+		<surfaceType>Item</surfaceType>
+		<researchPrerequisites>
+			<li>Research_Displacement_Plasteel</li>
+		</researchPrerequisites>
+		<designationCategory>AR_PipeNetworks</designationCategory>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>AR_FEProducer</defName>
+		<label>半現実圧縮機構</label>
+		<description>ノーコストでFEを生産するが、巨大で扱いずらく、万が一破壊されると現在のマップごと消滅する。</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AR_FictionEnergyGenerator</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(1.93,1,1.69)</volume>
+				<offset>(-0.03,0,-0.1)</offset>
+			</shadowData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>150</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>1.0</fillPercent>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>4000</MaxHitPoints>
+			<WorkToBuild>82000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>5</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(5,5)</size>
+		<costList>
+			<Displacement_Plasteel>300</Displacement_Plasteel>
+			<VoidOut_Plasteel>35</VoidOut_Plasteel>
+			<Fiction_Core>1</Fiction_Core>
+			<ComponentSpacer>8</ComponentSpacer>
+		</costList>
+		<comps>
+			<!--<li Class="PipeSystem.CompProperties_DeepExtractor">
+				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<deepThing>VHGE_Helixien</deepThing>
+				<ticksPerPortion>250</ticksPerPortion>
+				<onlyExtractToNet>true</onlyExtractToNet>
+				<showDeepCountLeft>false</showDeepCountLeft>
+			</li>-->
+			<li Class="CompProperties_Power">
+				<transmitsPower>true</transmitsPower>
+				<compClass>PipeSystem.CompPowerPlantNeedResource</compClass>
+				<basePowerConsumption>-1500</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VHGE_OverlayBase</commandTexture>
+				<commandLabelKey>AR_CommandToggleFE_Label</commandLabelKey>
+				<commandDescKey>AR_CommandToggleFE_Desc</commandDescKey>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>12</glowRadius>
+				<glowColor>(90, 110, 110, 140)</glowColor>
+			</li>
+			<li Class="CompProperties_Breakdownable" />
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>200</explosiveRadius>
+				<explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+				<explosiveDamageType>Bathed_in_Energy</explosiveDamageType>
+				<destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+				<startWickHitPointsPercent>0.01</startWickHitPointsPercent>
+				<wickTicks>70~150</wickTicks>
+			</li>
+		</comps>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationHotKey>Misc4</designationHotKey>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>Electricity</li>
+			<li>Research_Displacement_Plasteel</li>
+		</researchPrerequisites>
+		<designationCategory>AR_PipeNetworks</designationCategory>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+	</ThingDef>
 </Defs>

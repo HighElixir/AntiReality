@@ -4,7 +4,7 @@
 
 	<HediffDef>
 		<defName>LostOfReality</defName>
-		<label>現実性の喪失</label>
+		<label>現実性喪失</label>
 		<description>だんだんと存在が薄れていく</description>
 		<makesSickThought>true</makesSickThought>
 		<hediffClass>HediffWithComps</hediffClass>
@@ -14,6 +14,13 @@
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-2</severityPerDay>
+			</li>
+			<li Class="HE_AntiReality.HediffCompProperties_GiveThoughtToWitnesses">
+				<!-- 死亡した際に目撃者にデバフを与える -->
+				<giveThoughtDef>WitnessedLostOfRealityDeath</giveThoughtDef>
+				<radius>22</radius>
+				<isWallThrough>false</isWallThrough>
+				<pattern>PawnDaed</pattern>
 			</li>
 		</comps>
 
@@ -103,7 +110,6 @@
 				</capMods>
 			</li>
 		</stages>
-
 	</HediffDef>
-	
+
 </Defs>

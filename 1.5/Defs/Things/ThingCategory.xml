@@ -42,7 +42,11 @@
 	</ThingCategoryDef>
 
 	<!-- 衣服-->
-
+	<ThingCategoryDef>
+		<defName>AR_Apparel</defName>
+		<label>AR 衣服</label>
+		<parent>AR_Weapon</parent>
+	</ThingCategoryDef>
 
 	<!-- インプラント・義肢-->
 	<ThingCategoryDef>
@@ -59,8 +63,14 @@
 	</ThingCategoryDef>
 
 	<ThingCategoryDef>
-		<defName>AR_Powoers</defName>
+		<defName>AR_Powers</defName>
 		<label>FE関連構築物群</label>
 		<parent>AR_Buildings</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>AR_NeedFE</defName>
+		<label>FE動力</label>
+		<parent>AR_Powers</parent>
 	</ThingCategoryDef>
 </Defs>

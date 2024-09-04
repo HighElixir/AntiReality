@@ -111,7 +111,6 @@
 			<SellPriceFactor>2</SellPriceFactor>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>AR_AntiReal_LowWeapons</researchPrerequisite>
 			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 			<workSkill>Crafting</workSkill>
 			<recipeUsers>

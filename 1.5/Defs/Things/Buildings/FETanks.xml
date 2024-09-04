@@ -25,7 +25,7 @@
 		<tickerType>Normal</tickerType>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<thingCategories>
-			<li>AR_Powoers</li>
+			<li>AR_Powers</li>
 		</thingCategories>
 		<statBases>
 			<MaxHitPoints>2500</MaxHitPoints>
