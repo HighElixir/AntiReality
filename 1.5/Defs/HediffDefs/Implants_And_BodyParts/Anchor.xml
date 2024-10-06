@@ -3,7 +3,7 @@
 	<HediffDef ParentName="AR_ImplantBase">
 		<defName>AR_InfinityAnchor</defName>
 		<label>インフィニティアンカー</label>
-		<labelNoun>IF-Ancor</labelNoun>
+		<labelNoun>IF-Anchor</labelNoun>
 		<description>[Tier4]このポーンの全機能は常に100%に保たれ、上げることも下げることもできない。また、実在性崩壊の影響から逃れられるようになる。(Wip)</description>
 		<descriptionHyperlinks>
 			<ThingDef>AR_InfinityAnchor_Implant</ThingDef>
@@ -21,7 +21,7 @@
 					</li>
 				</hediffs>
 			</li>
-			<!--<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAncors">
+			<!--<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAnchors">
 				<hediffDef>AR_InfinityAnchor</hediffDef>
 			</li>-->
 		</comps>
@@ -60,7 +60,7 @@
 		</statBases>
 
 		<recipeMaker>
-			<researchPrerequisite>Research_InfinityAncor</researchPrerequisite>
+			<researchPrerequisite>Research_InfinityAnchor</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
 	<RecipeDef ParentName="AR_InstallImplants">
@@ -179,7 +179,7 @@
 				</hediffs>
 			</li>
 			<li Class="HE_AntiReality.HediffCompProperties_TransportGizmo"/>
-			<!--<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAncors">
+			<!--<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAnchors">
 				<hediffDef>AR_ZeroDimensionAnchor</hediffDef>
 			</li>-->
 		</comps>
@@ -224,7 +224,7 @@
 		</statBases>
 
 		<recipeMaker>
-			<researchPrerequisite>Research_ZeroDimensionAncor</researchPrerequisite>
+			<researchPrerequisite>Research_ZeroDimensionAnchor</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
 

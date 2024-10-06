@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ResearchProjectDef ParentName="AR_ResearchBase">
-		<defName>Research_InfinityAncor</defName>
+		<defName>Research_InfinityAnchor</defName>
 		<label>構築：インフィニティアンカー</label>
 		<description>[Tier4]身体を虚構エネルギーへと同化させ、文字通り人間をやめる。\nこの先、一本道。</description>
 
@@ -18,7 +18,7 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="AR_ResearchBase">
-		<defName>Research_ZeroDimensionAncor</defName>
+		<defName>Research_ZeroDimensionAnchor</defName>
 		<label>構築：ゼロディメンションアンカー</label>
 		<description>[Tier4]生身で０次元を移動するすべを手に入れる。</description>
 
@@ -26,7 +26,7 @@
 
 		<prerequisites>
 			<li>Research_AR_ZeroStorage</li>
-			<li>Research_InfinityAncor</li>
+			<li>Research_InfinityAnchor</li>
 		</prerequisites>
 		<researchViewX>6.00</researchViewX>
 		<researchViewY>0.20</researchViewY>

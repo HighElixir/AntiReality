@@ -7,13 +7,13 @@ using Verse;
 
 namespace HE_AntiReality
 {
-    public class HediffCompProperties_DeleteAlreadyExistAncors : HediffCompProperties
+    public class HediffCompProperties_DeleteAlreadyExistAnchors : HediffCompProperties
     {
         public HediffDef hediffDef;
 
-        public HediffCompProperties_DeleteAlreadyExistAncors()
+        public HediffCompProperties_DeleteAlreadyExistAnchors()
         {
-            compClass = typeof(HediffComp_DeleteAlreadyExistAncors);
+            compClass = typeof(HediffComp_DeleteAlreadyExistAnchors);
         }
     }
 }

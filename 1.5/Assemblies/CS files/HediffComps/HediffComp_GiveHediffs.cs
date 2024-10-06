@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace HE_AntiReality
 {
+    // Pawnに複数のHediffを付与するためのHediffComp
     public class HediffComp_GiveHediffs : HediffComp
     {
+        // プロパティを取得。HediffCompProperties_GiveHediffsを参照
         private HediffCompProperties_GiveHediffs Props
         {
             get
@@ -17,17 +16,21 @@ namespace HE_AntiReality
             }
         }
 
+        // Hediffが追加された後に呼ばれるメソッド
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
+            // Props.hediffsに定義されたHediffを順番に処理
             foreach (var prop in Props.hediffs)
             {
+                // 既に同じHediffがある場合はスキップするオプション
                 if (prop.skipIfAlreadyExists && this.parent.pawn.health.hediffSet.HasHediff(prop.hediffDef, false))
                 {
-                    continue;
+                    continue; // 既にHediffが存在する場合、次のループにスキップ
                 }
+
+                // Pawnに新しいHediffを付与
                 this.parent.pawn.health.AddHediff(prop.hediffDef, null, null, null);
             }
-
         }
     }
 }

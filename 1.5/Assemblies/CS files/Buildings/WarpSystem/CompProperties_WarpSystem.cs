@@ -11,7 +11,7 @@ namespace HE_AntiReality
     {
         public CompProperties_WarpSystem()
         {
-            this.compClass = typeof(CompWarpSystem);
+            compClass = typeof(CompWarpSystem);
         }
     }
 
@@ -24,8 +24,12 @@ namespace HE_AntiReality
         {
             base.Initialize(props);
             trader = parent.GetComp<CompResourceTrader>();
+            WarpAnchorHelper.AddAnchor(parent);
         }
-
+        public override void PostDeSpawn(Map map)
+        {
+            WarpAnchorHelper.RemoveAnchor(parent);
+        }
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             Command_Action command = new Command_Action

@@ -12,14 +12,16 @@ namespace HE_AntiReality
 
     public class Comp_WarptoAnchor : Comp_FEUserBase
     {
-
-        public Pawn UserPawn { get; private set; } // 次元帰還を使うポーン
-
+        // フィールド
+        private Pawn userPawn;
         private StringBuilder sb;
-        private CompProperties_WarptoAnchor Props
-        {
-            get { return (CompProperties_WarptoAnchor)props; }
-        }
+
+        // プロパティ
+        public Pawn UserPawn => userPawn; // 次元帰還を使うポーン
+        
+        private CompProperties_WarptoAnchor Props => (CompProperties_WarptoAnchor)props;
+
+        // メソッド
         public override void Initialize(CompProperties props)
         {
             base.Initialize(props);
@@ -39,7 +41,7 @@ namespace HE_AntiReality
                 {
                     if (parent.ParentHolder is Pawn_ApparelTracker pawn_ApparelTracker)
                     {
-                        UserPawn = pawn_ApparelTracker.pawn;
+                        userPawn = pawn_ApparelTracker.pawn;
                     }
                     if (!IsCooldownComplete())
                     {
@@ -51,8 +53,7 @@ namespace HE_AntiReality
                     }
                     else
                     {
-                        var anchors = FindAllDimensionAnchors();
-                        if (anchors != null && anchors.Count > 0)
+                        if (WarpAnchorHelper.FindAllowAnchors(out var anchors))
                         {
                             Find.WindowStack.Add(new Window_SelectDimensionAnchor(anchors, this));
                         }
@@ -88,32 +89,7 @@ namespace HE_AntiReality
         }
         public override void Notify_Equipped(Pawn pawn)
         {
-            UserPawn = pawn;
-        }
-        private List<Thing> FindAllDimensionAnchors()
-        {
-            List<Thing> allAnchors = new List<Thing>();
-
-            foreach (var map in Find.Maps)
-            {
-                var anchors = map.listerThings.ThingsOfDef(HE_ThingDefOf.AR_DimensionAnchor);
-                List<Thing> allowAnchors = new List<Thing>();
-                foreach (var item in anchors)
-                {
-                    var comp = item.TryGetComp<CompResourceTrader>();
-                    if (comp != null && comp.ResourceOn)
-                    {
-                        allowAnchors.Add(item);
-                    }
-                    else if (comp == null)
-                    {
-                        Messages.Message("Anchor doesn't have CompResourceTrader.", MessageTypeDefOf.RejectInput);
-                    }
-                }
-                allAnchors.AddRange(allowAnchors);
-            }
-
-            return allAnchors;
+            userPawn = pawn;
         }
 
         public void WarpPawn(Pawn pawn, Thing anchor)
@@ -147,6 +123,11 @@ namespace HE_AntiReality
     {
         private readonly List<Thing> dimensionAnchors;
         private readonly Comp_WarptoAnchor warptoAnchor;
+        private Vector2 scrollPosition = Vector2.zero; // スクロール位置の管理
+
+        private const float ButtonHeight = 30f;
+        private const float Spacing = 10f;
+        private const float ScrollBarWidth = 16f; // スクロールバーの幅
 
         public Window_SelectDimensionAnchor(List<Thing> anchors, Comp_WarptoAnchor warptoAnchor)
         {
@@ -166,13 +147,19 @@ namespace HE_AntiReality
             Text.Font = GameFont.Medium;
             Widgets.Label(new Rect(0f, 15f, inRect.width, 30f), "移動先のアンカーを選択");
 
-            float buttonHeight = 30f;
-            float spacing = 10f;
-            float currentY = 18f;
+            Text.Font = GameFont.Small; // フォントを小さくしてボタンのテキストに適応
 
+            // スクロールビューの設定
+            float viewHeight = (ButtonHeight + Spacing) * dimensionAnchors.Count; // コンテンツの総高さ
+            Rect outRect = new Rect(inRect.x, 50f, inRect.width, inRect.height - 65f); // スクロール可能な外部領域
+            Rect viewRect = new Rect(0f, 0f, inRect.width - ScrollBarWidth, viewHeight); // 内部コンテンツの領域
+
+            Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect); // スクロール開始
+
+            float currentY = 0f;
             for (int i = 0; i < dimensionAnchors.Count; i++)
             {
-                Rect buttonRect = new Rect(0, currentY, inRect.width, buttonHeight);
+                Rect buttonRect = new Rect(0f, currentY, viewRect.width, ButtonHeight);
                 if (Widgets.ButtonText(buttonRect, MakeName(dimensionAnchors[i], i)))
                 {
                     // Perform warp using the UserPawn stored in WarptoAnchor
@@ -187,8 +174,10 @@ namespace HE_AntiReality
                         Messages.Message("No suitable pawn found for warping.", MessageTypeDefOf.RejectInput);
                     }
                 }
-                currentY += buttonHeight + spacing;
+                currentY += ButtonHeight + Spacing;
             }
+
+            Widgets.EndScrollView(); // スクロール終了
         }
 
         public string MakeName(Thing anchor, int idx)
@@ -204,4 +193,5 @@ namespace HE_AntiReality
             }
         }
     }
+
 }
