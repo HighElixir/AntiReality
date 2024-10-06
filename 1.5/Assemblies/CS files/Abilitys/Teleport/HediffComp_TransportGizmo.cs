@@ -1,87 +1,82 @@
-﻿using HE_AntiReality;
-using System.Collections.Generic;
-using System;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using System;
 
-public class HediffComp_TransportGizmo : HediffComp
+namespace HE_AntiReality
 {
-    private int countTick = 0;
-    private const int CooldownTicks = 6000;
-    private const float MaxTeleportDistance = 20f;
-
-    public HediffCompProperties_TransportGizmo Props
+    public class HediffComp_TransportGizmo : HediffComp
     {
-        get
-        {
-            return (HediffCompProperties_TransportGizmo)props;
-        }
-    }
+        private int countTick = 0; // 最後にテレポートを使用したゲーム内時間（Tick）
+        private const int CooldownTicks = 6000; // クールダウンの時間（600 ticks = 10秒）
+        private const float MaxTeleportDistance = 20f; // テレポートの最大距離
 
-    public override IEnumerable<Gizmo> CompGetGizmos()
-    {
-        if (DebugSettings.godMode)
+        public HediffCompProperties_TransportGizmo Props
         {
-            countTick = 0;
-        }
-        Command_Action teleportCommand = new Command_Action
-        {
-            defaultLabel = "座標変換",
-            defaultDesc = "視界の通る範囲内に座標を変える",
-            icon = ContentFinder<Texture2D>.Get("UI/Commands/Teleport"),
-            action = () =>
+            get
             {
-                if (countTick > 0)
-                {
-                    Messages.Message("クールダウン中。あと " + ((float)countTick / 60f).ToString("0.0") + " 秒", MessageTypeDefOf.RejectInput, false);
-                }
-                else
-                {
-                    TeleportTargetingSource targetingSource = new TeleportTargetingSource(parent.pawn, MaxTeleportDistance);
-
-                    Find.Targeter.BeginTargeting(targetingSource.targetParams, OnTargetSelected(targetingSource));
-                }
-            },
-            onHover = () =>
-            {
-                GenDraw.DrawRadiusRing(parent.pawn.Position, MaxTeleportDistance);
+                return (HediffCompProperties_TransportGizmo)props;
             }
-        };
-
-        if (countTick != 0)
-        {
-            teleportCommand.Disable("使用可能まであと " + ((float)countTick / 60f).ToString("0.0") + " 秒");
         }
 
-        yield return teleportCommand;
-    }
-
-    private Action<LocalTargetInfo> OnTargetSelected(TeleportTargetingSource targetingSource)
-    {
-        GenDraw.DrawRadiusRing(parent.pawn.Position, MaxTeleportDistance);
-        return target =>
+        public override IEnumerable<Gizmo> CompGetGizmos()
         {
-            if (!targetingSource.ValidateTarget(target))
+            if (DebugSettings.godMode)
             {
-                Messages.Message("無効なターゲットです。", MessageTypeDefOf.RejectInput, false);
-                return;
+                countTick = 0;
+            }
+            Command_Action teleportCommand = new Command_Action
+            {
+                defaultLabel = "座標変換",
+                defaultDesc = "視界の通る範囲内に座標を変える",
+                icon = ContentFinder<Texture2D>.Get("UI/Commands/Teleport"),
+                action = () =>
+                {
+                    if (countTick > 0)
+                    {
+                        Messages.Message("クールダウン中。あと " + ((float)countTick / 60f).ToString("0.0") + " 秒", MessageTypeDefOf.RejectInput, false);
+                    }
+                    else
+                    {
+                        TeleportTargetingSource targetingSource = new TeleportTargetingSource(parent.pawn, MaxTeleportDistance);
+
+                        Find.Targeter.BeginTargeting(targetingSource.targetParams, OnTargetSelected(targetingSource));
+                    }
+                }
+            };
+
+            // クールダウン中は無効化
+            if (countTick != 0)
+            {
+                teleportCommand.Disable("使用可能まであと " + ((float)countTick / 60f).ToString("0.0") + " 秒");
             }
 
-            targetingSource.OrderForceTarget(target);
-            countTick = CooldownTicks;
-        };
-    }
-
-    public override void CompPostTick(ref float severityAdjustment)
-    {
-        if (countTick > 0)
-        {
-            countTick--;
+            yield return teleportCommand;
         }
-        if (countTick < 0)
+
+        private Action<LocalTargetInfo> OnTargetSelected(TeleportTargetingSource targetingSource)
         {
-            countTick = 0;
+            return target =>
+            {
+                if (targetingSource.ValidateTarget(target))
+                {
+                    targetingSource.OrderForceTarget(target);
+                    countTick = CooldownTicks; // 使用時間を更新
+                }
+            };
+        }
+
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            if (countTick > 0)
+            {
+                countTick--;
+            }
+            if (countTick < 0)
+            {
+                countTick = 0;
+            }
         }
     }
 }

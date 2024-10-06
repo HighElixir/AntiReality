@@ -38,39 +38,6 @@
 		<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
 	</DamageDef>
 
-	<DamageDef ParentName="Osmosis_Damage">
-		<defName>Osmosis_burn</defName>
-
-		<additionalHediffs>
-			<li>
-				<hediff>LostOfReality</hediff>
-				<!-- 与えたいhediffのdefName-->
-				<severityPerDamageDealt>0.01</severityPerDamageDealt>
-				<!-- このダメージ1につき与えられる進行度-->
-				<victimSeverityScaling>AR_Resistance</victimSeverityScaling>
-				<inverseStatScaling>true</inverseStatScaling>
-				<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
-			</li>
-			<li>
-				<hediff>Vulnerability</hediff>
-				<victimSeverityScaling>AR_Resistance</victimSeverityScaling>
-				<inverseStatScaling>false</inverseStatScaling>
-				<victimSeverityScalingByInvBodySize>false</victimSeverityScalingByInvBodySize>
-			</li>
-			<li>
-				<hediff>Burn</hediff>
-				<!-- 発火効果のヘディフ-->
-				<severityPerDamageDealt>0.02</severityPerDamageDealt>
-				<!-- 発火による進行度-->
-				<victimSeverityScaling>AR_Resistance</victimSeverityScaling>
-				<inverseStatScaling>false</inverseStatScaling>
-				<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
-			</li>
-		</additionalHediffs>
-
-		<buildingDamageFactor>17</buildingDamageFactor>
-	</DamageDef>
-
 	<DamageDef>
 		<defName>effluence</defName>
 		<label>流出</label>

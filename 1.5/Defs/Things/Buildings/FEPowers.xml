@@ -149,7 +149,7 @@
 		<graphicData>
 			<texPath>Things/Building/AR_FictionEnergyGenerator</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(4,4)</drawSize>
+			<drawSize>(2,2)</drawSize>
 			<shadowData>
 				<volume>(1.93,1,1.69)</volume>
 				<offset>(-0.03,0,-0.1)</offset>
@@ -169,7 +169,7 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<canOverlapZones>false</canOverlapZones>
-		<size>(4,4)</size>
+		<size>(5,5)</size>
 		<costList>
 			<Displacement_Plasteel>300</Displacement_Plasteel>
 			<VoidOut_Plasteel>35</VoidOut_Plasteel>

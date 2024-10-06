@@ -81,7 +81,6 @@ namespace HE_AntiReality
         {
             DrawHighlight(target);
             // 必要に応じて、ターゲット選択時にGUIで何かを描画する場合に実装
-            GenDraw.DrawRadiusRing(Caster.Position, maxDistance);
         }
     }
 }

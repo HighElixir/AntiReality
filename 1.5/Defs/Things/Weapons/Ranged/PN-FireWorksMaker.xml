@@ -39,12 +39,9 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>PN_FireWorksMaker_B</defaultProjectile>
+				<defaultProjectile>PN_PEACEMAKER_B</defaultProjectile>
 				<warmupTime>0.3</warmupTime>
 				<range>25.9</range>
-				<burstShotCount>48</burstShotCount>
-				<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
-				<soundCast>Shot_HeavySMG</soundCast>
 				<soundCast>Shot_Revolver</soundCast>
 				<soundCastTail>GunTail_Light</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
