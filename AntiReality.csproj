@@ -69,6 +69,7 @@
     <Content Include="1.5\Defs\Things\Buildings\DimensionAncor.xml" />
     <Content Include="1.5\Defs\Things\Items\ZeroDimensionStone.xml" />
     <Content Include="1.5\Defs\Things\Weapons\ItemBase..xml" />
+    <Content Include="1.5\Defs\Things\Weapons\Melee\XMLFile1.xml" />
     <Content Include="1.5\Defs\Things\Weapons\Ranged\PN-FireWorksMaker.xml" />
     <Content Include="1.5\Defs\Thought\BadMemories.xml" />
     <Content Include="Cont\Languages\Japanese\Commands.xml" />

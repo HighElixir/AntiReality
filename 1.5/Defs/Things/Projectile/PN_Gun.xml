@@ -59,11 +59,25 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
-			<damageDef>Osmosis</damageDef>
+			<damageDef>Osmosis_burn</damageDef>
 			<damageAmountBase>2</damageAmountBase>
 			<armorPenetrationBase>1000</armorPenetrationBase>
 			<stoppingPower>0.7</stoppingPower>
 			<speed>92</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>EL_SHRIEKING_B</defName>
+		<label>弾</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>4</damageAmountBase>
+			<speed>77</speed>
 		</projectile>
 	</ThingDef>
 </Defs>

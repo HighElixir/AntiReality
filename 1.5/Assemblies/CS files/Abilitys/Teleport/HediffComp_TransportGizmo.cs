@@ -1,82 +1,87 @@
-﻿using System.Collections.Generic;
+﻿using HE_AntiReality;
+using System.Collections.Generic;
+using System;
 using UnityEngine;
 using Verse;
 using RimWorld;
-using System;
 
-namespace HE_AntiReality
+public class HediffComp_TransportGizmo : HediffComp
 {
-    public class HediffComp_TransportGizmo : HediffComp
+    private int countTick = 0;
+    private const int CooldownTicks = 6000;
+    private const float MaxTeleportDistance = 20f;
+
+    public HediffCompProperties_TransportGizmo Props
     {
-        private int countTick = 0; // 最後にテレポートを使用したゲーム内時間（Tick）
-        private const int CooldownTicks = 6000; // クールダウンの時間（600 ticks = 10秒）
-        private const float MaxTeleportDistance = 20f; // テレポートの最大距離
-
-        public HediffCompProperties_TransportGizmo Props
+        get
         {
-            get
-            {
-                return (HediffCompProperties_TransportGizmo)props;
-            }
+            return (HediffCompProperties_TransportGizmo)props;
         }
+    }
 
-        public override IEnumerable<Gizmo> CompGetGizmos()
+    public override IEnumerable<Gizmo> CompGetGizmos()
+    {
+        if (DebugSettings.godMode)
         {
-            if (DebugSettings.godMode)
+            countTick = 0;
+        }
+        Command_Action teleportCommand = new Command_Action
+        {
+            defaultLabel = "座標変換",
+            defaultDesc = "視界の通る範囲内に座標を変える",
+            icon = ContentFinder<Texture2D>.Get("UI/Commands/Teleport"),
+            action = () =>
             {
-                countTick = 0;
-            }
-            Command_Action teleportCommand = new Command_Action
-            {
-                defaultLabel = "座標変換",
-                defaultDesc = "視界の通る範囲内に座標を変える",
-                icon = ContentFinder<Texture2D>.Get("UI/Commands/Teleport"),
-                action = () =>
+                if (countTick > 0)
                 {
-                    if (countTick > 0)
-                    {
-                        Messages.Message("クールダウン中。あと " + ((float)countTick / 60f).ToString("0.0") + " 秒", MessageTypeDefOf.RejectInput, false);
-                    }
-                    else
-                    {
-                        TeleportTargetingSource targetingSource = new TeleportTargetingSource(parent.pawn, MaxTeleportDistance);
-
-                        Find.Targeter.BeginTargeting(targetingSource.targetParams, OnTargetSelected(targetingSource));
-                    }
+                    Messages.Message("クールダウン中。あと " + ((float)countTick / 60f).ToString("0.0") + " 秒", MessageTypeDefOf.RejectInput, false);
                 }
-            };
-
-            // クールダウン中は無効化
-            if (countTick != 0)
-            {
-                teleportCommand.Disable("使用可能まであと " + ((float)countTick / 60f).ToString("0.0") + " 秒");
-            }
-
-            yield return teleportCommand;
-        }
-
-        private Action<LocalTargetInfo> OnTargetSelected(TeleportTargetingSource targetingSource)
-        {
-            return target =>
-            {
-                if (targetingSource.ValidateTarget(target))
+                else
                 {
-                    targetingSource.OrderForceTarget(target);
-                    countTick = CooldownTicks; // 使用時間を更新
+                    TeleportTargetingSource targetingSource = new TeleportTargetingSource(parent.pawn, MaxTeleportDistance);
+
+                    Find.Targeter.BeginTargeting(targetingSource.targetParams, OnTargetSelected(targetingSource));
                 }
-            };
+            },
+            onHover = () =>
+            {
+                GenDraw.DrawRadiusRing(parent.pawn.Position, MaxTeleportDistance);
+            }
+        };
+
+        if (countTick != 0)
+        {
+            teleportCommand.Disable("使用可能まであと " + ((float)countTick / 60f).ToString("0.0") + " 秒");
         }
 
-        public override void CompPostTick(ref float severityAdjustment)
+        yield return teleportCommand;
+    }
+
+    private Action<LocalTargetInfo> OnTargetSelected(TeleportTargetingSource targetingSource)
+    {
+        GenDraw.DrawRadiusRing(parent.pawn.Position, MaxTeleportDistance);
+        return target =>
         {
-            if (countTick > 0)
+            if (!targetingSource.ValidateTarget(target))
             {
-                countTick--;
+                Messages.Message("無効なターゲットです。", MessageTypeDefOf.RejectInput, false);
+                return;
             }
-            if (countTick < 0)
-            {
-                countTick = 0;
-            }
+
+            targetingSource.OrderForceTarget(target);
+            countTick = CooldownTicks;
+        };
+    }
+
+    public override void CompPostTick(ref float severityAdjustment)
+    {
+        if (countTick > 0)
+        {
+            countTick--;
+        }
+        if (countTick < 0)
+        {
+            countTick = 0;
         }
     }
 }
