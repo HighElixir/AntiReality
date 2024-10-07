@@ -38,7 +38,7 @@
 	<ResearchProjectDef ParentName="AR_ResearchBase">
 		<defName>Research_AR_WarpStone</defName>
 		<label>構築：ワープ機構・基礎</label>
-		<description>[Tier2]帰還の基点となる「ディメンションアンカー」と、移動するための「ゼロディメンションストーン」を追加する。（未実装）</description>
+		<description>[Tier2]帰還の基点となる「ディメンションアンカー」と、移動するための「ゼロディメンションストーン」を追加する。</description>
 
 		<baseCost>82000</baseCost>
 

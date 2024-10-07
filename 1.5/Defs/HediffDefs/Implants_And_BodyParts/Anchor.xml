@@ -204,8 +204,6 @@
 		</tags>
 	</HediffDef>
 
-
-
 	<ThingDef ParentName="BodyPartAntiRealityBase_M">
 		<defName>AR_ZeroDimensionAnchor_Implant</defName>
 		<label>ゼロディメンションアンカー</label>
