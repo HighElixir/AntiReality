@@ -6,7 +6,7 @@
 		<defName>Osmosis</defName>
 		<label>浸透</label>
 		
-		<workerClass>DamageWorker_AddInjury</workerClass>
+		<workerClass>HE_AntiReality.DamageWorker_FE</workerClass>
 		<externalViolence>true</externalViolence>
 		<deathMessage>{0}はバラバラにされた</deathMessage>
 		
@@ -34,7 +34,7 @@
 		<bluntInnerHitDamageFractionToAdd>0.2~0.35</bluntInnerHitDamageFractionToAdd>
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
 		<impactSoundType>Blunt</impactSoundType>
-		<armorCategory>Blunt</armorCategory>
+		<armorCategory>AR_AntiReal</armorCategory>
 		<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
 	</DamageDef>
 
@@ -55,7 +55,7 @@
 		<hasForcefulImpact>false</hasForcefulImpact>
 		<canInterruptJobs>false</canInterruptJobs>
 		<impactSoundType />
-		<armorCategory>Blunt</armorCategory>
+		<armorCategory>AR_AntiReal</armorCategory>
 	</DamageDef>
 
 	<!--虚構エネルギーに晒された-->
@@ -63,7 +63,7 @@
 		<defName>Bathed_in_Energy</defName>
 		<label>虚構</label>
 		<deathMessage>{0}は死んだ</deathMessage>
-
+		<workerClass>HE_AntiReality.DamageWorker_FE</workerClass>
 		<hediff>Osmosis_H3</hediff>
 		<hediffSolid>Osmosis_H3</hediffSolid>
 
@@ -85,6 +85,8 @@
 
 		<explosionColorCenter>(0.4, 0.3, 0.44)</explosionColorCenter>
 		<explosionColorEdge>(0.2, 0.15, 0.23)</explosionColorEdge>
+
+		<soundExplosion>Bathed_in_Energy_Sound</soundExplosion>
 	</DamageDef>
 
 	<!--凍傷-->

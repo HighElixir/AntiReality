@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<DamageArmorCategoryDef>
+		<defName>AR_AntiReal</defName>
+		<multStat>AR_Indications</multStat>
+		<armorRatingStat>AR_Resistance_combat</armorRatingStat>
+	</DamageArmorCategoryDef>
+</Defs>

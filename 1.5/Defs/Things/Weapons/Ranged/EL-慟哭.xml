@@ -5,7 +5,7 @@
 	<ThingDef ParentName="AntiRealWeapons_BaseGun">
 		<defName>EL_SHRIEKING</defName>
 		<label>EL-慟哭</label>
-		<description>[Tier1]虚構エネルギーを動力などに使用し、様々なものの性能向上を図る計画「EL計画」の試作品の一つ。\n\nこの後進的なフォルムの銃器からは、まるで悲哀に暮れて止まらない涙のように、大量の弾丸が延々と降り注ぎます。\nまた、低出力ながらエネルギーブレードも搭載しているため、ある程度なら格闘戦も対応できます。</description>
+		<description>[Tier1]虚構エネルギーを動力などに使用し、様々なものの性能向上を図る計画「EL計画」の試作品の一つ。\n\nこの後進的なフォルムの銃器からは、まるで悲哀に暮れて止まらない涙のように大量の弾丸が延々と降り注ぎます。\nまた、低出力ながらエネルギーブレードも搭載しているため、ある程度なら格闘戦も対応できます。</description>
 		<possessionCount>1</possessionCount>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/HeavySMG</texPath>
@@ -57,7 +57,7 @@
 				<power>9</power>
 				<cooldownTime>2</cooldownTime>
 			</li>
-			<!--<li>
+			<li>
 				<label>浸透</label>
 				<capacities>
 					<li>Osmosis</li>
@@ -65,7 +65,7 @@
 				<power>10</power>
 				<armorPenetration>100</armorPenetration>
 				<cooldownTime>2.1</cooldownTime>
-			</li>-->
+			</li>
 		</tools>
 	</ThingDef>
 

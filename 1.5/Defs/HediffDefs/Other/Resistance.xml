@@ -4,7 +4,7 @@
 	<HediffDef>
 		<defName>AR_Resistance</defName>
 		<label>非現実への耐性</label>
-		<description>非表示\n実在性崩壊、浸透ダメージを完全無効化(wip)</description>
+		<description>非表示\n実在性崩壊を完全無効化(wip)</description>
 		<makesSickThought>true</makesSickThought>
 		<hediffClass>HediffWithComps</hediffClass>
 		<defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>

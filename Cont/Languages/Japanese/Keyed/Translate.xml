@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<!-- ITab Overload -->
+	<HE_TabOverload>オーバーロード</HE_TabOverload>
+	<NoPawnOrEquipment>このポーンは何も装備していません。</NoPawnOrEquipment>
+	<NoEquipmentFound>装備が見つかりません。</NoEquipmentFound>
+	<EquipmentLabel>{0}</EquipmentLabel>
+	<OverloadValue>オーバーロード: {0} / {1}</OverloadValue>
+	<OverloadHealRate>オーバーロード回復率: {0}</OverloadHealRate>
+	<CooldownTime>クールダウンタイム: {0} 秒</CooldownTime>
+	<PenaltyLevel>ペナルティレベル: {0}</PenaltyLevel>
+	<NoOverloadComponent>このポーンには現状現実超過の危険性はありません。</NoOverloadComponent>
+	
+	<!-- MantalState -->
+	<FictionStateReason>虚構に精神を乱された。</FictionStateReason>
+	
+	<!-- Hint -->
+	<Hint_LostOfReality>喪失の進行</Hint_LostOfReality>
+	<Hint_DeleteAnchor>アンカーを削除しました：{0}</Hint_DeleteAnchor>
+	<Hint_RejectInput>入力エラー</Hint_RejectInput>
+	
+	<!-- Tooltip -->
+	<Tooltip_MoltenHeart_Daytofinish>処置終了まで：{0}</Tooltip_MoltenHeart_Daytofinish>
+	<Tooltip_OverloadHediff_CurrentAmount>現在値/最大値 : {0}/{1}</Tooltip_OverloadHediff_CurrentAmount>
+	<Tooltip_OverloadHediff_InHeal>放熱中</Tooltip_OverloadHediff_InHeal>
+	<Tooltip_OverloadHediff_Penalty>自己喪失：レベル{0}</Tooltip_OverloadHediff_Penalty>
+	
+	<!-- UI -->
+	<Dialog_InputLabel>ラベルを入力</Dialog_InputLabel>
+	<UI_Confirmed>確定</UI_Confirmed>
+	<UI_Cancel>キャンセル</UI_Cancel>
+	
+	<!-- ワープアンカー -->
+	<HE_WarpAnchorNameChange>名前変更</HE_WarpAnchorNameChange>
+	<HE_WarpAnchorDescription>このアンカーの名前を変更する。</HE_WarpAnchorDescription>
+	<AnchorCustomLabel>カスタムラベル：{0}</AnchorCustomLabel>
+	
+</LanguageData>

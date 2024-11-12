@@ -4,7 +4,17 @@ using Verse;
 
 namespace HE_AntiReality
 {
-    public class HediffComp_NeedHediff : HediffComp
+    public class HediffCompProperties_NeedHediff : HediffCompProperties
+    {
+        public List<HediffDef> needHediffs;
+        public string mode;
+        public HediffCompProperties_NeedHediff()
+        {
+            compClass = typeof(NeedHediff);
+        }
+    }
+
+    public class NeedHediff : HediffComp
     {
 
         public HediffCompProperties_NeedHediff Props
@@ -21,7 +31,7 @@ namespace HE_AntiReality
             if (hediff != null && hediff.Severity >= 1.0) { return true; }
             return false;
         }
-        private bool ChackPawnHasHediff()
+        private bool CheckPawnHasHediff()
         {
             if (Props.mode != null)
             {
@@ -47,7 +57,7 @@ namespace HE_AntiReality
             get
             {
 
-                return !ChackPawnHasHediff();
+                return !CheckPawnHasHediff();
             }
         }
     }

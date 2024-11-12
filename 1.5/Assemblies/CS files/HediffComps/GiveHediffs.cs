@@ -4,6 +4,22 @@ using Verse;
 
 namespace HE_AntiReality
 {
+    public class Hediffs
+    {
+        public HediffDef hediffDef;
+
+        public bool skipIfAlreadyExists = true;
+    }
+    public class HediffCompProperties_GiveHediffs : HediffCompProperties
+    {
+        public List<Hediffs> hediffs;
+
+        public HediffCompProperties_GiveHediffs()
+        {
+            this.compClass = typeof(HediffComp_GiveHediffs);
+        }
+    }
+
     // Pawnに複数のHediffを付与するためのHediffComp
     public class HediffComp_GiveHediffs : HediffComp
     {

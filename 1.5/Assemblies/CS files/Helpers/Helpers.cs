@@ -8,10 +8,12 @@ namespace HE_AntiReality
 {
     /// <summary>
     /// ゲーム内で使う汎用的なヘルパーメソッドをまとめたクラス。
-    /// リストや辞書操作、ランダム要素の選択に便利。
     /// </summary>
     public static class Helpers
     {
+
+        public static float GetMin (this float value, float add) => Mathf.Min(value + add, 0);
+
         /// <summary>
         /// リストからランダムに1つの要素を選ぶ。
         /// </summary>

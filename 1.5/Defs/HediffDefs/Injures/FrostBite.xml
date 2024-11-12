@@ -3,7 +3,7 @@
 	<HediffDef ParentName="InjuryBase" Name="FrostBite_Hediff">
 		<defName>AR_FrostBite</defName>
 		<label>凍傷</label>
-		<description>一瞬で凍結され、えぐり取るような痕が残る傷。猛烈な焼けつくような痛みを感じる。</description>
+		<description>一瞬で凍結され、えぐり取るような痕が残る傷。猛烈に焼けつくような痛みを感じる。</description>
 		<hediffClass>Hediff_Injury</hediffClass>
 		<tendable>true</tendable>
 		<labelNounPretty>{0}の{1}</labelNounPretty>

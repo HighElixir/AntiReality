@@ -10,6 +10,6 @@ namespace HE_AntiReality
     public class CompProperties_WarptoAnchor : CompProperties
     {
         public int cooldownTicks;
-        public CompProperties_WarptoAnchor() { compClass = typeof(Comp_WarptoAnchor); }
+        public CompProperties_WarptoAnchor() => compClass = typeof(Comp_WarptoAnchor);
     }
 }

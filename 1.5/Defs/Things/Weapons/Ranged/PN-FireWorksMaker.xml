@@ -15,6 +15,13 @@
 		<uiIconScale>1.4</uiIconScale>
 		<soundInteract>Interact_Revolver</soundInteract>
 
+		<comps>
+			<li Class="HE_AntiReality.CompProperties_HeatGun">
+				<overloadLimit>100</overloadLimit>
+				<overloadHealFactor>0.1</overloadHealFactor>
+				<addOverLoadPerFire>0.5</addOverLoadPerFire>
+			</li>
+		</comps>
 		<statBases>
 			<WorkToMake>24000</WorkToMake>
 			<Mass>5.2</Mass>

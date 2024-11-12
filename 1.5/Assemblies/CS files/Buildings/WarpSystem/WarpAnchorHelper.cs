@@ -58,7 +58,7 @@ namespace HE_AntiReality
             dicDirty = false;
         }
 
-        public static bool FindAllowAnchors(out List<Thing> result)
+        public static bool FindAllowedAnchors(out List<Thing> result)
         {
             result = new List<Thing>();
             if (anchors.Count > 0)
@@ -79,6 +79,36 @@ namespace HE_AntiReality
                 return result.Count > 0;
             }
             return false;
+        }
+
+        /// <summary>
+        /// 距離に応じてコストを決定する
+        /// 研究の進み具合で低減される（未実装）
+        /// Note：現状は元のコストがそのまま返される
+        /// </summary>
+        /// <param name="anchorCostPairs"></param>
+        /// <param name="anchors"></param>
+        /// <returns></returns>
+        public static bool CanUseAnchor(out Dictionary<Thing, float> anchorCostPairs, Comp_WarptoAnchor warptoAnchor)
+        {
+            anchorCostPairs = new Dictionary<Thing, float>();
+            if(!FindAllowedAnchors(out var anchors))
+            {
+                return false;
+            }
+            bool res = false;
+            IntVec3 vec3 = warptoAnchor.UserPawn.Position;
+            foreach (Thing t in anchors)
+            {
+                float f = warptoAnchor.StoreFE.RequiredFE;
+                anchorCostPairs[t] = f;
+                if (f <= warptoAnchor.StoreFE.CurrentFE)
+                {
+                    res = true;
+                }
+            }
+
+            return res;
         }
     }
 }

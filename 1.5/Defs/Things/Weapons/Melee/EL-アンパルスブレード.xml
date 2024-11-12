@@ -56,8 +56,8 @@
           <li>AR_FlostBite</li>
         </capacities>
         <power>28</power>
-        <armorPenetration>0</armorPenetration>
-        <cooldownTime>2.4</cooldownTime>
+        <armorPenetration>1</armorPenetration>
+        <cooldownTime>3</cooldownTime>
       </li>
     </tools>
 		  

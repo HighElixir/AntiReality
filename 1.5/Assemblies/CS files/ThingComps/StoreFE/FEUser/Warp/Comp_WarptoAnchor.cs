@@ -1,6 +1,7 @@
 ﻿using PipeSystem;
 using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
@@ -13,13 +14,12 @@ namespace HE_AntiReality
     public class Comp_WarptoAnchor : Comp_FEUserBase
     {
         // フィールド
-        private Pawn userPawn;
-        private StringBuilder sb;
+        private Pawn _userPawn;
 
         // プロパティ
-        public Pawn UserPawn => userPawn; // 次元帰還を使うポーン
-        
-        private CompProperties_WarptoAnchor Props => (CompProperties_WarptoAnchor)props;
+        public Pawn UserPawn => _userPawn; // 次元帰還を使うポーン
+
+        public CompProperties_WarptoAnchor Props => (CompProperties_WarptoAnchor)props;
 
         // メソッド
         public override void Initialize(CompProperties props)
@@ -28,12 +28,17 @@ namespace HE_AntiReality
         }
         public override IEnumerable<Gizmo> CompGetWornGizmosExtra()
         {
-            sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.AppendLine("");
             sb.AppendLine($"貯蓄FE: {StoreFE.CurrentFE.ToString("0.00")}fu");
             sb.AppendLine($"必要FE: {StoreFE.RequiredFE.ToString("0.00")}fu");
-            Command_Action teleportCommand = new Command_Action
+
+            Command_ActionWithCooldown teleportCommand = new Command_ActionWithCooldown
             {
+                cooldownPercentGetter = () =>
+                {
+                    return (Props.cooldownTicks - countTick) / Props.cooldownTicks;
+                },
                 defaultLabel = "次元帰還",
                 defaultDesc = "任意のディメンションアンカーへ移動する。" + sb.ToString(),
                 icon = ContentFinder<Texture2D>.Get("Things/Item/ZeroDimensionStone"),
@@ -41,21 +46,21 @@ namespace HE_AntiReality
                 {
                     if (parent.ParentHolder is Pawn_ApparelTracker pawn_ApparelTracker)
                     {
-                        userPawn = pawn_ApparelTracker.pawn;
+                        _userPawn = pawn_ApparelTracker.pawn;
                     }
                     if (!IsCooldownComplete())
                     {
                         Messages.Message("クールダウン中。あと " + GetRemainingCooldown().ToString("0.0") + " 秒", MessageTypeDefOf.RejectInput, false);
                     }
-                    else if (!StoreFE.CanUseEffect)
+                    else if (!StoreFE.CanUseEffect())
                     {
                         Messages.Message($"転移に必要なFEが不足しています。必要FE：{StoreFE.RequiredFE.ToString("0.00")}fu", MessageTypeDefOf.RejectInput);
                     }
                     else
                     {
-                        if (WarpAnchorHelper.FindAllowAnchors(out var anchors))
+                        if (WarpAnchorHelper.CanUseAnchor(out var anchors, this))
                         {
-                            Find.WindowStack.Add(new Window_SelectDimensionAnchor(anchors, this));
+                            Find.WindowStack.Add(new Window_SelectDimensionAnchor(this, anchors));
                         }
                         else
                         {
@@ -65,16 +70,25 @@ namespace HE_AntiReality
                 }
             };
 
-            if (countTick != 0)
+            if (!IsCooldownComplete())
             {
                 teleportCommand.Disable("使用可能まであと " + GetRemainingCooldown().ToString("0.0") + " 秒");
             }
-            if (!StoreFE.CanUseEffect)
+            if (!StoreFE.CanUseEffect())
             {
                 teleportCommand.Disable("FE不足。");
             }
             yield return teleportCommand;
 
+            IEnumerator<Command_Action> enumerator = GetInspectorGizmos();
+            while (enumerator.MoveNext())
+            {
+                yield return enumerator.Current;
+            }
+        }
+        // デバッグ用のギズモを追加するための処理
+        protected IEnumerator<Command_Action> GetInspectorGizmos()
+        {
             var tmp = InspectorGizmo();
             if (tmp != null)
             {
@@ -86,10 +100,11 @@ namespace HE_AntiReality
                     }
                 }
             }
+            yield break;
         }
         public override void Notify_Equipped(Pawn pawn)
         {
-            userPawn = pawn;
+            _userPawn = pawn;
         }
 
         public void WarpPawn(Pawn pawn, Thing anchor)
@@ -116,23 +131,26 @@ namespace HE_AntiReality
             // ポーンを指定位置で待機状態にする
             pawn.jobs.StartJob(new Job(JobDefOf.Wait, 36, true), JobCondition.InterruptForced);
         }
-
     }
 
     public class Window_SelectDimensionAnchor : Window
     {
-        private readonly List<Thing> dimensionAnchors;
-        private readonly Comp_WarptoAnchor warptoAnchor;
-        private Vector2 scrollPosition = Vector2.zero; // スクロール位置の管理
+        private readonly Dictionary<Thing, float> _anchorsCost = new Dictionary<Thing, float>();
+        private readonly List<Thing> _anchors = new List<Thing>();
+        private readonly Comp_WarptoAnchor _warptoAnchor;
+        private readonly Pawn _pawn;
+        private Vector2 _scrollPosition = Vector2.zero; // スクロール位置の管理
 
-        private const float ButtonHeight = 30f;
-        private const float Spacing = 10f;
-        private const float ScrollBarWidth = 16f; // スクロールバーの幅
+        private const float BUTTON_HEIGHT = 30f;
+        private const float SPACING = 10f;
+        private const float SCROLL_BAR_WIDTH = 16f; // スクロールバーの幅
 
-        public Window_SelectDimensionAnchor(List<Thing> anchors, Comp_WarptoAnchor warptoAnchor)
+        public Window_SelectDimensionAnchor(Comp_WarptoAnchor warptoAnchor, Dictionary<Thing, float> anchors)
         {
-            dimensionAnchors = anchors;
-            this.warptoAnchor = warptoAnchor;
+            _anchorsCost = anchors;
+            _anchors = _anchorsCost.Keys.ToList();
+            _warptoAnchor = warptoAnchor;
+            _pawn = warptoAnchor.UserPawn;
 
             doCloseButton = true;
             forcePause = true;
@@ -150,23 +168,23 @@ namespace HE_AntiReality
             Text.Font = GameFont.Small; // フォントを小さくしてボタンのテキストに適応
 
             // スクロールビューの設定
-            float viewHeight = (ButtonHeight + Spacing) * dimensionAnchors.Count; // コンテンツの総高さ
+            float viewHeight = (BUTTON_HEIGHT + SPACING) * _anchorsCost.Count; // コンテンツの総高さ
             Rect outRect = new Rect(inRect.x, 50f, inRect.width, inRect.height - 65f); // スクロール可能な外部領域
-            Rect viewRect = new Rect(0f, 0f, inRect.width - ScrollBarWidth, viewHeight); // 内部コンテンツの領域
+            Rect viewRect = new Rect(0f, 0f, inRect.width - SCROLL_BAR_WIDTH, viewHeight); // 内部コンテンツの領域
 
-            Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect); // スクロール開始
+            Widgets.BeginScrollView(outRect, ref _scrollPosition, viewRect); // スクロール開始
 
             float currentY = 0f;
-            for (int i = 0; i < dimensionAnchors.Count; i++)
+            for (int i = 0; i < _anchorsCost.Count; i++)
             {
-                Rect buttonRect = new Rect(0f, currentY, viewRect.width, ButtonHeight);
-                if (Widgets.ButtonText(buttonRect, MakeName(dimensionAnchors[i], i)))
+                Rect buttonRect = new Rect(0f, currentY, viewRect.width, BUTTON_HEIGHT);
+                if (Widgets.ButtonText(buttonRect, MakeName(_anchors[i], i, _anchorsCost[_anchors[i]])))
                 {
                     // Perform warp using the UserPawn stored in WarptoAnchor
-                    if (warptoAnchor.UserPawn != null)
+                    if (_warptoAnchor.UserPawn != null)
                     {
-                        warptoAnchor.WarpPawn(warptoAnchor.UserPawn, dimensionAnchors[i]);
-                        warptoAnchor.StoreFE.UseItemSkills();
+                        _warptoAnchor.WarpPawn(_warptoAnchor.UserPawn, _anchors[i]);
+                        _warptoAnchor.StoreFE.UseItemSkills();
                         Close();
                     }
                     else
@@ -174,23 +192,25 @@ namespace HE_AntiReality
                         Messages.Message("No suitable pawn found for warping.", MessageTypeDefOf.RejectInput);
                     }
                 }
-                currentY += ButtonHeight + Spacing;
+                currentY += BUTTON_HEIGHT + SPACING;
             }
 
             Widgets.EndScrollView(); // スクロール終了
         }
 
-        public string MakeName(Thing anchor, int idx)
+        private string MakeName(Thing anchor, int idx, float cost)
         {
             var warpSystem = anchor.TryGetComp<CompWarpSystem>();
-            if (warpSystem != null && warpSystem.CustamLabel != null)
+            string str = string.Empty;
+            if (warpSystem != null && warpSystem.CustomLabel != null)
             {
-                return warpSystem.CustamLabel;
+                str = warpSystem.CustomLabel;
             }
             else
             {
-                return anchor.Label + idx.ToString();
+                str = anchor.Label + idx.ToString();
             }
+            return $"{str} コスト：{cost}";
         }
     }
 

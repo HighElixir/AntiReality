@@ -37,6 +37,8 @@
     <None Include=".vs\AntiReality\FileContentIndex\064c2d70-a452-4508-8198-231418044dfd.vsidx" />
     <None Include=".vs\AntiReality\v17\.suo" />
     <Content Include="1.5\Assemblies\HE_AntiReality.dll" />
+    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\Anchors\MoltenHeart.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\Anchors\ZeroDimensionAnchor.xml" />
     <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\MultiImplanter.xml" />
     <None Include="Anti-Reality.code-workspace" />
     <None Include="Cont\Textures\UI\Commands\Teleport.clip" />
@@ -46,14 +48,17 @@
     <Content Include="1.5\Defs\DamageDefs\Osmosis.xml" />
     <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\.Base.xml" />
     <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\BodyParts_NonExistentArms.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\Anchor.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\Anchors\InfinityAnchor.xml" />
     <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\[Tier1]Implants.xml" />
     <Content Include="1.5\Defs\HediffDefs\Injures\FrostBite.xml" />
     <Content Include="1.5\Defs\HediffDefs\Injures\Osmosis_Injure.xml" />
     <Content Include="1.5\Defs\HediffDefs\Other\LostReality.xml" />
     <Content Include="1.5\Defs\HediffDefs\Other\Resistance.xml" />
+    <Content Include="1.5\Defs\HediffDefs\Other\精神の負荷.xml" />
     <Content Include="1.5\Defs\HediffDefs\Other\実在性の崩壊.xml" />
     <Content Include="1.5\Defs\ManeuverDefs_And_ToolCaps\OsmosisMelee.xml" />
+    <Content Include="1.5\Defs\Misc\AR_AntiReal.xml" />
+    <Content Include="1.5\Defs\SoundDefs\Bathed_in_Energy_Sound.xml" />
     <Content Include="1.5\Defs\Things\Buildings\Pipes\HE_FictionEnergyPipe.xml" />
     <Content Include="1.5\Defs\Things\Buildings\Pipes\HE_FictionPipeSystem.xml" />
     <Content Include="1.5\Defs\Things\Buildings\Pipes\Designation.xml" />
@@ -61,7 +66,7 @@
     <Content Include="1.5\Defs\Reserch\Resertch.xml" />
     <Content Include="1.5\Defs\Reserch\Items_Structure.xml" />
     <Content Include="1.5\Defs\Reserch\Anchors.xml" />
-    <Content Include="1.5\Defs\Stats\stat.xml" />
+    <Content Include="1.5\Defs\Misc\stat.xml" />
     <Content Include="1.5\Defs\Things\Buildings\Input_OutPut.xml" />
     <Content Include="1.5\Defs\Things\Buildings\FETanks.xml" />
     <Content Include="1.5\Defs\Things\Buildings\FEPowers.xml" />
@@ -72,6 +77,8 @@
     <Content Include="1.5\Defs\Things\Weapons\Ranged\PN-FireWorksMaker.xml" />
     <Content Include="1.5\Defs\Thought\BadMemories.xml" />
     <Content Include="Cont\Languages\Japanese\Commands.xml" />
+    <Content Include="Cont\Languages\Japanese\Keyed\Translate.xml" />
+    <Content Include="Cont\Sounds\Misc\BathedinEnergy.wav" />
     <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant.png" />
     <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Child_east.png" />
     <Content Include="Cont\Textures\Things\Apparel\HotPants\HotPant_Child_north.png" />
@@ -101,7 +108,7 @@
     <Content Include="1.5\Defs\Things\Items\Resources\Displacement_Plasteel.xml" />
     <Content Include="1.5\Defs\Things\Projectile\PN_Gun.xml" />
     <Content Include="1.5\Defs\Things\ThingCategory.xml" />
-    <Content Include="1.5\Defs\Thought\Thought_Situation_BodyParts.xml" />
+    <Content Include="1.5\Defs\Thought\Thought.xml" />
     <Content Include="1.5\Defs\Things\Weapons\Melee\EL-アンパルスブレード.xml" />
     <Content Include="1.5\Defs\Things\Weapons\Melee\PN-非現実の腕.xml" />
     <Content Include="1.5\Defs\Things\Weapons\Ranged\EL-慟哭.xml" />
@@ -127,30 +134,44 @@
     <Compile Include="1.5\Assemblies\CS files\Buildings\ChargeSystem\CompProperties_FECharge.cs" />
     <Compile Include="1.5\Assemblies\CS files\Buildings\WarpSystem\WarpAnchorHelper.cs" />
     <Compile Include="1.5\Assemblies\CS files\Buildings\WarpSystem\CompProperties_WarpSystem.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffCompProperties_GiveThoughtToWitnesses.cs" />
+    <Compile Include="1.5\Assemblies\CS files\DamageWorker\DamageWorker_FE.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\Anchors\HediffCompProperties_AnchorSeverity.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\OverLoad\AddOverLoad.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\OverLoad\OverLoad.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\MoltenHeart.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\DecreaseReality.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\LostofReality.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\GiveThoughtToWitnesses.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Helpers\LoatofRealityUtility.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Helpers\HE_Constants.cs" />
     <Compile Include="1.5\Assemblies\CS files\Helpers\Helpers.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\CompProperties_WarptoAnchor.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\Comp_WarptoAnchor.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffComp_DeleteAlreadyExistAnchors.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffCompProperties_DeleteAlreadyExistAnchors.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Interface\ITab_Overload.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Misc\DebugActions_AddMakeMote.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Misc\DebugActions_BathedInEnergy.cs" />
+    <Compile Include="1.5\Assemblies\CS files\Research\WarpCostResearch.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThingComps\CapsureSlot\CapsureSlot.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThingComps\CapsureSlot\Comp_CapsureSlot.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\Overload\HeatGun.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\Overload\Comp_OverloadFE.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\Overload\CompProperties_OverLoadFE.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\FEUser\Warp\CompProperties_WarptoAnchor.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\FEUser\Warp\Comp_WarptoAnchor.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\Anchors\DeleteAlreadyExistAnchors.cs" />
     <Compile Include="1.5\Assemblies\CS files\DefOf\DefOf.cs" />
     <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\HediffComp_TransportGizmo.cs" />
     <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\HediffCompProperties_TransportGizmo.cs" />
     <Compile Include="1.5\Assemblies\CS files\Patches\HE_Patches.cs" />
     <Compile Include="1.5\Assemblies\CS files\RecipeWorker\RecipeWorker_InfinityAdjustSeverity.cs" />
     <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\TargetingParameters_Extensions.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffComp_GiveHediffs.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffCompProperties_GiveHediffs.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Misc\ExistanceFusion_wound.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffCompProperties_forceDeath.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffComp_forceDeath.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffCompProperties_MakeBodyParts.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffComp_MakeBodyParts.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffComp_NeedHediff.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\HediffCompProperties_NeedHediff.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\.Comp_StoreFE.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\Comp_FEUserBase.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\CompProperties_StoreFE.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\GiveHediffs.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\ExistanceFusion_wound.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\ForceDeath.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\MakeBodyParts.cs" />
+    <Compile Include="1.5\Assemblies\CS files\HediffComps\NeedHediff.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\.Comp_StoreFE.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\FEUser\Comp_FEUserBase.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\CompProperties_StoreFE.cs" />
+    <Compile Include="1.5\Assemblies\CS files\ThoughtWorker\ThoughtWorker_MoltenHeart.cs" />
     <Compile Include="1.5\Assemblies\CS files\ThoughtWorker\ThoughtWorker_AddBodyParts_AntiReal_Hand.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +191,7 @@
       <HintPath>..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System" />
     <Reference Include="UnityEngine">
       <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
@@ -201,6 +223,7 @@
     <Folder Include="1.5\Defs\AbilityDefs\" />
     <Folder Include="1.5\Defs\Things\Cloth\" />
     <Folder Include="1.5\Defs\Things\Items\Apparels\" />
+    <Folder Include="Cont\Sounds\Weapons\" />
     <Folder Include="Cont\Textures\Things\Projectile\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />

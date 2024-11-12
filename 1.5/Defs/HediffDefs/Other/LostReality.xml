@@ -12,7 +12,7 @@
 		<maxSeverity>1</maxSeverity>
 		<initialSeverity>0.2</initialSeverity>
 		<comps>
-			<li Class="HediffCompProperties_SeverityPerDay">
+			<li Class="HE_AntiReality.HediffCompProperties_LostofReality">
 				<severityPerDay>-2</severityPerDay>
 			</li>
 			<li Class="HE_AntiReality.HediffCompProperties_GiveThoughtToWitnesses">
@@ -43,6 +43,7 @@
 					</li>
 					<li>
 						<capacity>Consciousness</capacity>
+						<!--Consciousnes：意識-->
 						<postFactor>0.90</postFactor>
 					</li>
 				</capMods>
@@ -86,6 +87,14 @@
 						<postFactor>0.5</postFactor>
 					</li>
 				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>1</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<forgetMemoryThoughtMtbDays>0.8</forgetMemoryThoughtMtbDays>
+				<pctConditionalThoughtsNullified>0.2</pctConditionalThoughtsNullified>
 			</li>
 
 			<li>
@@ -98,6 +107,14 @@
 						<setMax>0.10</setMax>
 					</li>
 				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>5</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<forgetMemoryThoughtMtbDays>1.0</forgetMemoryThoughtMtbDays>
+				<pctConditionalThoughtsNullified>0.7</pctConditionalThoughtsNullified>
 			</li>
 			<li>
 				<label>消失</label>
@@ -111,5 +128,4 @@
 			</li>
 		</stages>
 	</HediffDef>
-
 </Defs>

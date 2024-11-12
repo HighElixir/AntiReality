@@ -75,7 +75,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>AR_FECharger_1</defName>
+		<defName>AR_FECharger_A</defName>
 		<label>FE流入機</label>
 		<description>FEを誘引し、動力を回復させる。
 チャージFE：250fu/h

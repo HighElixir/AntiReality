@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Reflection;
 using HarmonyLib;
-using HarmonyMod;
 using RimWorld;
+using UnityEngine;
 using Verse;
 using static Verse.PawnCapacityUtility;
 
 namespace HE_AntiReality
 {
 
+    /// <summary>
+    /// Note:今後過負荷を利用したものに変更する
+    /// </summary>
     [StaticConstructorOnStartup]
     public static class HE_Patches
     {
@@ -31,7 +32,7 @@ namespace HE_AntiReality
             }
             catch (Exception ex)
             {
-                Log.Error($"Failed to create Harmony instance: {ex}");
+                Log.Error($"HE__ Failed to create Harmony instance: {ex}");
             }
         }
 
@@ -91,7 +92,7 @@ namespace HE_AntiReality
             if (anchor != null && anchor.Severity > 0.5f)
             {
                 anchor.Severity -= 0.01f;
-                Log.Message("Absorbed Sucsess");
+                MoteMaker.ThrowText(new Vector3((float)pawn.Position.x + 1f, pawn.Position.y, (float)pawn.Position.z + 1f), pawn.Map, "ダメージ無効".Translate(), new Color(0.25f, 0.12f, 0.38f, 1f));
                 absorbed = true;
                 return false;
             }

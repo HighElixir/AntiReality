@@ -20,31 +20,30 @@
 		<maxSeverity>1</maxSeverity>
 		<hediffClass>Hediff_Implant</hediffClass>
 		<comps>
-			<!--<li Class="HediffCompProperties_GiveHediff">
-				<hediffDef>AR_Resistance</hediffDef>
-				<skipIfAlreadyExists>true</skipIfAlreadyExists>
-			</li>-->
+			<li Class="HE_AntiReality.HediffCompProperties_DecreaseReality" />
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-0.1</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
 			</li>
 			<li Class="HE_AntiReality.HediffCompProperties_MakeBodyParts">
 				<addBodyParts>
-					
+
 					<li>
 						<createHediffOn>Brain</createHediffOn>
 						<createHediff>AR_Multi_Brain</createHediff>
 					</li>
-					
+
 					<li>
 						<createHediffOn>Heart</createHediffOn>
 						<createHediff>AR_Multi_Heart</createHediff>
 					</li>
-					
+
 					<!--============================================================================-->
 					<li>
 						<createHediffOn>Leg</createHediffOn>
 						<createHediff>AR_Multi_Leg</createHediff>
-						<partsLabel>leg</partsLabel><!--なるべく単純な英単語-->
+						<partsLabel>leg</partsLabel>
+						<!--なるべく単純な英単語-->
 					</li>
 					<!--============================================================================-->
 
@@ -54,7 +53,7 @@
 						<partsLabel>shoulder</partsLabel>
 					</li>
 					<!--============================================================================-->
-					
+
 					<li>
 						<createHediffOn>Eye</createHediffOn>
 						<createHediff>AR_Multi_Eye</createHediff>
@@ -145,72 +144,72 @@
 				<label>60%</label>
 				<minSeverity>0.2</minSeverity>
 				<capMods>
-						<li>
-							<capacity>Consciousness</capacity>
-							<!--				■身体能力:意識-->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Moving</capacity>
-							<!--						■身体能力:運動-->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Manipulation</capacity>
-							<!--				■身体能力:指-->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>BloodFiltration</capacity>
-							<!--			■身体能力:腎機能-->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Talking</capacity>
-							<!--					■身体能力:会話能力-->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Sight</capacity>
-							<!--						■身体能力:視覚-->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Eating</capacity>
-							<!--						■身体能力:消化機能 -->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Hearing</capacity>
-							<!--					■身体能力:聴覚 -->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Breathing</capacity>
-							<!--					■身体能力:肺機能-->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>BloodPumping</capacity>
-							<!--				■身体能力:心機能-->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Metabolism</capacity>
-							<!--					■身体能力:代謝機能-->
-							<setMax>2</setMax>
-							<!--								■上限100％-->
-						</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<!--				■身体能力:意識-->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<!--						■身体能力:運動-->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<!--				■身体能力:指-->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<!--			■身体能力:腎機能-->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<!--					■身体能力:会話能力-->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<!--						■身体能力:視覚-->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Eating</capacity>
+						<!--						■身体能力:消化機能 -->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<!--					■身体能力:聴覚 -->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<!--					■身体能力:肺機能-->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<!--				■身体能力:心機能-->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Metabolism</capacity>
+						<!--					■身体能力:代謝機能-->
+						<setMax>2</setMax>
+						<!--								■上限100％-->
+					</li>
 				</capMods>
 			</li>
 			<li>
@@ -361,72 +360,72 @@
 				<label>0%</label>
 				<minSeverity>0.8</minSeverity>
 				<capMods>
-						<li>
-							<capacity>Consciousness</capacity>
-							<!--				■身体能力:意識-->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Moving</capacity>
-							<!--						■身体能力:運動-->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Manipulation</capacity>
-							<!--				■身体能力:指-->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>BloodFiltration</capacity>
-							<!--			■身体能力:腎機能-->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Talking</capacity>
-							<!--					■身体能力:会話能力-->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Sight</capacity>
-							<!--						■身体能力:視覚-->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Eating</capacity>
-							<!--						■身体能力:消化機能 -->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Hearing</capacity>
-							<!--					■身体能力:聴覚 -->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Breathing</capacity>
-							<!--					■身体能力:肺機能-->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>BloodPumping</capacity>
-							<!--				■身体能力:心機能-->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
-						<li>
-							<capacity>Metabolism</capacity>
-							<!--					■身体能力:代謝機能-->
-							<setMax>0.8</setMax>
-							<!--								■上限100％-->
-						</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<!--				■身体能力:意識-->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<!--						■身体能力:運動-->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<!--				■身体能力:指-->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<!--			■身体能力:腎機能-->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<!--					■身体能力:会話能力-->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<!--						■身体能力:視覚-->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Eating</capacity>
+						<!--						■身体能力:消化機能 -->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<!--					■身体能力:聴覚 -->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<!--					■身体能力:肺機能-->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<!--				■身体能力:心機能-->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
+					<li>
+						<capacity>Metabolism</capacity>
+						<!--					■身体能力:代謝機能-->
+						<setMax>0.8</setMax>
+						<!--								■上限100％-->
+					</li>
 				</capMods>
 			</li>
 		</stages>
@@ -461,7 +460,8 @@
 	<RecipeDef ParentName="AR_InstallImplants">
 		<defName>AR_MultiImplantor_Recipe</defName>
 		<label>
-			マルチインプランターを移植する</label>
+			マルチインプランターを移植する
+		</label>
 		<description>マルチインプランターを移植する。\n埋め込む場所が厳密に指定されるため、高度な知識と技術が必要になる。</description>
 		<descriptionHyperlinks>
 			<ThingDef>AR_MultiImplantor_Implant</ThingDef>
@@ -505,10 +505,10 @@
 		<appliedOnFixedBodyParts>
 			<li>Pelvis</li>
 		</appliedOnFixedBodyParts>
-		
+
 		<researchPrerequisite>Research_MultiInplantor</researchPrerequisite>
 	</RecipeDef>
-	
+
 
 	<!--マルチインプランターによって追加されるボディパーツ-->
 	<HediffDef ParentName="AR_BodyPartsBase" Name="MultiInplantorBase" Abstract="True">
@@ -523,13 +523,14 @@
 			<solid>true</solid>
 			<partEfficiency>2</partEfficiency>
 		</addedPartProps>
-		
+
 		<comps>
 			<li Class="HE_AntiReality.HediffCompProperties_NeedHediff">
 				<needHediffs>
 					<li>AR_MultiImplantor</li>
 				</needHediffs>
-				<mode>Multi</mode><!--必要ない時はNone-->
+				<mode>Multi</mode>
+				<!--必要ない時はNone-->
 			</li>
 		</comps>
 	</HediffDef>
@@ -686,7 +687,7 @@
 		</stages>
 	</HediffDef>
 	-->
-	
+
 	<!--脳 5日-->
 	<HediffDef ParentName="MultiInplantorBase">
 		<defName>AR_Multi_Brain</defName>
@@ -701,7 +702,7 @@
 				<severityPerDay>0.2</severityPerDay>
 			</li>
 		</comps>
-		
+
 		<stages>
 			<li>
 				<label>0%</label>
@@ -728,8 +729,8 @@
 					<NegotiationAbility>1.05</NegotiationAbility>
 					<ResearchSpeed>1.07</ResearchSpeed>
 				</statFactors>
-			
-		</li>
+
+			</li>
 			<li>
 				<label>20%</label>
 				<minSeverity>0.2</minSeverity>
@@ -756,8 +757,8 @@
 					<NegotiationAbility>1.10</NegotiationAbility>
 					<ResearchSpeed>1.12</ResearchSpeed>
 				</statFactors>
-			
-		</li>
+
+			</li>
 			<li>
 				<label>40%</label>
 				<minSeverity>0.4</minSeverity>
@@ -811,8 +812,8 @@
 					<NegotiationAbility>1.17</NegotiationAbility>
 					<ResearchSpeed>1.23</ResearchSpeed>
 				</statFactors>
-			
-		</li>
+
+			</li>
 			<li>
 				<label>80%</label>
 				<minSeverity>0.8</minSeverity>
@@ -839,8 +840,8 @@
 					<NegotiationAbility>1.2</NegotiationAbility>
 					<ResearchSpeed>1.28</ResearchSpeed>
 				</statFactors>
-			
-		</li>
+
+			</li>
 			<li>
 				<label>完了</label>
 				<minSeverity>1</minSeverity>
@@ -867,11 +868,11 @@
 					<NegotiationAbility>1.25</NegotiationAbility>
 					<ResearchSpeed>1.35</ResearchSpeed>
 				</statFactors>
-			
-		</li>
+
+			</li>
 		</stages>
 	</HediffDef>
-	
+
 	<!--心臓 5日-->
 	<HediffDef ParentName="MultiInplantorBase">
 		<defName>AR_Multi_Heart</defName>
@@ -883,7 +884,7 @@
 				<severityPerDay>0.2</severityPerDay>
 			</li>
 		</comps>
-		
+
 		<stages>
 			<li>
 				<label>0%</label>
@@ -904,7 +905,7 @@
 					<ComfyTemperatureMax>2</ComfyTemperatureMax>
 				</statOffsets>
 			</li>
-			
+
 			<li>
 				<label>20%</label>
 				<minSeverity>0.2</minSeverity>
@@ -925,7 +926,7 @@
 					<ComfyTemperatureMax>4</ComfyTemperatureMax>
 				</statOffsets>
 			</li>
-			
+
 			<li>
 				<label>40%</label>
 				<minSeverity>0.4</minSeverity>
@@ -946,7 +947,7 @@
 					<ComfyTemperatureMax>6</ComfyTemperatureMax>
 				</statOffsets>
 			</li>
-			
+
 			<li>
 				<label>60%</label>
 				<minSeverity>0.6</minSeverity>
@@ -967,7 +968,7 @@
 					<ComfyTemperatureMax>8</ComfyTemperatureMax>
 				</statOffsets>
 			</li>
-			
+
 			<li>
 				<label>80%</label>
 				<minSeverity>0.8</minSeverity>
@@ -988,7 +989,7 @@
 					<ComfyTemperatureMax>8</ComfyTemperatureMax>
 				</statOffsets>
 			</li>
-			
+
 			<li>
 				<label>完了</label>
 				<minSeverity>1</minSeverity>
@@ -1018,7 +1019,8 @@
 		</tags>
 	</HediffDef>
 
-	<!--脚　7日--><!--============================================================================-->
+	<!--脚　7日-->
+	<!--============================================================================-->
 	<HediffDef ParentName="MultiInplantorBase">
 		<defName>AR_Multi_Leg</defName>
 		<label>MI-脚</label>
@@ -1029,7 +1031,7 @@
 				<severityPerDay>0.142</severityPerDay>
 			</li>
 		</comps>
-		
+
 		<stages>
 			<li>
 				<label>0%</label>
@@ -1312,7 +1314,8 @@
 		</stages>
 	</HediffDef>
 
-	<!--肩10日--><!--============================================================================-->
+	<!--肩10日-->
+	<!--============================================================================-->
 	<HediffDef ParentName="MultiInplantorBase">
 		<defName>AR_Multi_Shoulder</defName>
 		<label>MI-肩</label>

@@ -5,6 +5,7 @@
 	<HediffDef ParentName="OsmosisInjurlyBase">
 		<defName>Osmosis_H3</defName>
 		<label>致命的な浸透</label>
+		<description>もう助からない</description>
 		<comps>
 			<li Class="HE_AntiReality.HediffCompProperties_GiveHediffs">
 				<hediffs>
@@ -20,7 +21,7 @@
 	<HediffDef>
 		<defName>ExistanceFusion_wound</defName>
 		<label>実在性崩壊</label>
-		<description>魂はすでに霧散している。</description>
+		<description>魂はすでに霧散している。ついでに肉体も。</description>
 		<defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
 		<displayWound>false</displayWound>
 		<hediffClass>HE_AntiReality.ExistanceFusion_wound</hediffClass>
@@ -35,22 +36,9 @@
 				</exceptionHediffDefs>
 				<exceptionTraitDefs>
 					<li MayRequire="HighElixir.DRClothes">HE_DR_Artificial_God</li>
-					<li>AR_Traits1</li>
+					<li>AR_TraitsA</li>
 				</exceptionTraitDefs>
 			</li>
 		</comps>
-		<stages>
-			<li>
-				<capMods>
-					<li>
-						<capacity>Consciousness</capacity>
-						<!-- 意識が０になると死ぬ-->
-						<setMax>0.1</setMax>
-					</li>
-				</capMods>
-			</li>
-		</stages>
 	</HediffDef>
-
-
 </Defs>

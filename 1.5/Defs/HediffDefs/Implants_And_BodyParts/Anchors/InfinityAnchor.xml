@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<!-- インフィニティアンカー-->
 	<HediffDef ParentName="AR_ImplantBase">
 		<defName>AR_InfinityAnchor</defName>
 		<label>インフィニティアンカー</label>
 		<labelNoun>IF-Anchor</labelNoun>
-		<description>[Tier4]このポーンの全機能は常に100%に保たれ、上げることも下げることもできない。また、実在性崩壊の影響から逃れられるようになる。(Wip)</description>
+		<description>[Tier4]このポーンの全機能は常に100%に保たれ、上げることも下げることもできない。また、実在性崩壊の影響から逃れられるようになる。</description>
 		<descriptionHyperlinks>
 			<ThingDef>AR_InfinityAnchor_Implant</ThingDef>
 			<ThingDef>Fiction_Core</ThingDef>
@@ -21,9 +22,7 @@
 					</li>
 				</hediffs>
 			</li>
-			<!--<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAnchors">
-				<hediffDef>AR_InfinityAnchor</hediffDef>
-			</li>-->
+			<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAnchors" />
 		</comps>
 		<stages>
 			<li>
@@ -149,130 +148,6 @@
 		</fixedIngredientFilter>
 
 		<workAmount>2200</workAmount>
-		<skillRequirements>
-			<Medicine>12</Medicine>
-		</skillRequirements>
-	</RecipeDef>
-
-
-	<!-- ゼロディメンションアンカー-->
-	<HediffDef ParentName="AR_ImplantBase">
-		<defName>AR_ZeroDimensionAnchor</defName>
-		<label>ゼロディメンションアンカー</label>
-			<labelNoun>ZD-Anchor</labelNoun>
-		<description>[Tier4]「座標変換」が使えるようになる。また、実在性崩壊の影響から逃れられるようになる。(Wip)</description>
-		<descriptionHyperlinks>
-			<ThingDef>AR_ZeroDimensionAnchor_Implant</ThingDef>
-			<ThingDef>Fiction_Core</ThingDef>
-		</descriptionHyperlinks>
-		<defaultLabelColor>(0.25, 0.12, 0.38)</defaultLabelColor>
-		<initialSeverity>0.01</initialSeverity>
-
-		<hediffClass>Hediff_Implant</hediffClass>
-		<comps>
-			<li Class="HE_AntiReality.HediffCompProperties_GiveHediffs">
-				<hediffs>
-					<li>
-						<hediffDef>AR_Resistance</hediffDef>
-						<skipIfAlreadyExists>true</skipIfAlreadyExists>
-					</li>
-				</hediffs>
-			</li>
-			<li Class="HE_AntiReality.HediffCompProperties_TransportGizmo"/>
-			<!--<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAnchors">
-				<hediffDef>AR_ZeroDimensionAnchor</hediffDef>
-			</li>-->
-		</comps>
-
-		<stages>
-			<li>
-				<partEfficiencyOffset>0.12</partEfficiencyOffset>
-				<makeImmuneTo>
-					<li>ExistanceFusion_wound</li>
-					<li>LostOfReality</li>
-				</makeImmuneTo>
-				<statFactors>
-					<PsychicSensitivity>0</PsychicSensitivity>
-				</statFactors>
-				<statOffsets>
-				</statOffsets>
-			</li>
-		</stages>
-
-		<tags>
-			<li>Brain</li>
-		</tags>
-	</HediffDef>
-
-	<ThingDef ParentName="BodyPartAntiRealityBase_M">
-		<defName>AR_ZeroDimensionAnchor_Implant</defName>
-		<label>ゼロディメンションアンカー</label>
-		<description>[Tier4]小さな釘の形をしたインプラント。使用者を０次元に存在できるようにすることで、使用者の認識が許す範囲内へ移動できるようになる。
-		これ自体は純粋なエネルギーの塊で、先進コンポーネントは成型のために使い捨てられる。\n注：このMODによって追加されたアンカーは、体内に同時に一つしか存在できない。</description>
-		<descriptionHyperlinks>
-			<RecipeDef>AR_ZeroDimensionAnchor_Recipe</RecipeDef>
-		</descriptionHyperlinks>
-		<costList>
-			<Fiction_Core>20</Fiction_Core>
-			<ComponentSpacer>8</ComponentSpacer>
-		</costList>
-		<statBases>
-			<MarketValue>82000</MarketValue>
-			<Mass>0.01</Mass>
-		</statBases>
-
-		<recipeMaker>
-			<researchPrerequisite>Research_ZeroDimensionAnchor</researchPrerequisite>
-		</recipeMaker>
-	</ThingDef>
-
-
-
-	<RecipeDef ParentName="AR_InstallImplants">
-		<defName>AR_ZeroDimensionAnchor_Recipe</defName>
-		<label>ゼロディメンションアンカーを移植する</label>
-		<description>ゼロディメンションアンカーを移植する。\n埋め込む場所が厳密に指定されるため、高度な知識と技術が必要になる。</description>
-		<descriptionHyperlinks>
-			<ThingDef>AR_ZeroDimensionAnchor_Implant</ThingDef>
-			<HediffDef>AR_ZeroDimensionAnchor</HediffDef>
-		</descriptionHyperlinks>
-		<jobString>ゼロディメンションアンカーを移植している</jobString>
-
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>AR_InfinityAnchor_Implant</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
-			</li>
-			<li>
-				<filter>
-					<categories>
-						<li>Medicine</li>
-					</categories>
-				</filter>
-				<count>3</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>AR_InfinityAnchor_Implant</li>
-			</thingDefs>
-			<categories>
-				<li>Medicine</li>
-			</categories>
-		</fixedIngredientFilter>
-
-		<appliedOnFixedBodyParts>
-			<li>Brain</li>
-		</appliedOnFixedBodyParts>
-
-		<addsHediff>AR_InfinityAnchor</addsHediff>
-
-		<workAmount>4200</workAmount>
-
 		<skillRequirements>
 			<Medicine>12</Medicine>
 		</skillRequirements>

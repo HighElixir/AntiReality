@@ -20,7 +20,7 @@ namespace HE_AntiReality
 
         // 最大FE（エネルギーの最大値）
         public float MaxFE => Props.maxFE;
-        
+
         public float CurrentFE
         {
             get
@@ -58,8 +58,9 @@ namespace HE_AntiReality
         }
 
         // エフェクト（スキル）を使用できるかどうかの判断基準
-        public virtual bool CanUseEffect => CurrentFE > RequiredFE && Condition && CurrentFE > 0;
+        public virtual bool CanUseEffect() => CurrentFE > RequiredFE && Condition && CurrentFE > 0;
 
+        public string GetExposeKey(string saveKey) => $"HE_{nameof(Comp_StoreFE)}_{saveKey}";
         // 初期化メソッド（コンポーネントが作成されたときに呼ばれる）
         public override void Initialize(CompProperties props)
         {
@@ -71,8 +72,6 @@ namespace HE_AntiReality
         // 毎ティック呼ばれるメソッド（エネルギー消費の処理などを行う）
         public override void CompTick()
         {
-            base.CompTick();
-
             // チャージャーが設定されていない場合、エネルギーを消費
             if (!IsSetCharger && ConsumptionPerTick > 0)
             {
@@ -96,6 +95,11 @@ namespace HE_AntiReality
             sb.AppendLine($"動作に必要なFE: {RequiredFE.ToString("0.00")}fu"); // スキルに必要なエネルギー
             sb.AppendLine($"待機中の消耗FE: {(ConsumptionPerTick * 2500).ToString("0.00")} fu/h"); // 待機中の消費量
             return sb.ToString().TrimEnd(); // 最後の改行を削除して文字列を返す
+        }
+
+        public override void PostExposeData()
+        {
+            Scribe_Values.Look(ref currentFE, GetExposeKey("currentFE"), Props.maxFE);
         }
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <!--
+	<!--
   1
   FixBrokenDownBuildingSuccessChance
   ConstructSuccessChance
@@ -90,22 +90,39 @@
   MedicalSurgerySuccessChance
   -->
 
-  <TraitDef>
-    <defName>AR_Traits1</defName>
-    <commonality>0.01</commonality>
-    <degreeDatas>
-      <li>
-        <label>虚構への適応</label>
-        <description>{PAWN_nameDef}は生まれつき虚構エネルギーへの適応性を持っています。</description>
-        <statFactors>
+	<TraitDef>
+		<defName>AR_TraitsA</defName>
+		<commonality>0.01</commonality>
+		<degreeDatas>
+			<li>
+				<label>虚構への適応</label>
+				<description>{PAWN_nameDef}は生まれつき虚構エネルギーへの適応性を持っています。</description>
+				<statFactors>
 
-        </statFactors>
-        <statOffsets>
-          <AR_Resistance>1</AR_Resistance>
-        </statOffsets>
-      
-      </li>
-    </degreeDatas>
-  </TraitDef>
+				</statFactors>
+				<statOffsets>
+					<AR_Resistance>1</AR_Resistance>
+				</statOffsets>
 
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
+	<TraitDef>
+		<defName>AR_TraitsB</defName>
+		<commonality>0.01</commonality>
+		<degreeDatas>
+			<li>
+				<label>虚構への適応</label>
+				<description>{PAWN_nameDef}は生まれつき虚構エネルギーへの適応性を持っています。</description>
+				<statFactors>
+
+				</statFactors>
+				<statOffsets>
+					<AR_Indications>0.5</AR_Indications>
+				</statOffsets>
+
+			</li>
+		</degreeDatas>
+	</TraitDef>
 </Defs>

@@ -5,7 +5,7 @@ using Verse;
 namespace HE_AntiReality
 {
     // FE（Fiction Energy）を使用するベースクラス
-    public class Comp_FEUserBase : ThingComp
+    public abstract class Comp_FEUserBase : ThingComp
     {
         // FEのストレージコンポーネントを保持
         public Comp_StoreFE StoreFE { get; private set; }
@@ -40,16 +40,11 @@ namespace HE_AntiReality
         }
 
         // クールダウンが完了しているかどうかを確認するメソッド
-        public bool IsCooldownComplete()
-        {
-            return countTick <= 0; // クールダウンが0以下で完了
-        }
+        public bool IsCooldownComplete() => countTick <= 0; // クールダウンが0以下で完了
+
 
         // クールダウンの残り時間を取得するメソッド（秒単位で返す）
-        public float GetRemainingCooldown()
-        {
-            return countTick / 60f; // Tickを秒に変換
-        }
+        public float GetRemainingCooldown() => countTick / 60f; // Tickを秒に変換
 
         // デフォルトの説明文とアイコン
         string defaultDesc = "FEをセット：";
@@ -61,7 +56,7 @@ namespace HE_AntiReality
             // アイコンをロード（初回のみ）
             if (icon == null)
             {
-                icon = ContentFinder<Texture2D>.Get("UI/Commands/skill_icon_01_nobg");
+                icon = ContentFinder<Texture2D>.Get(HE_Constants.debugGizmoIconPath);
             }
 
             // StoreFEが存在し、デバッグモードの場合のみGizmoを表示
@@ -112,6 +107,12 @@ namespace HE_AntiReality
 
             // 条件が合わない場合はnullを返す
             return null;
+        }
+
+        public string GetExposeKey(string exposeKey) => $"HE_{nameof(Comp_FEUserBase)}_{exposeKey}";
+        public override void PostExposeData()
+        {
+            Scribe_Values.Look(ref countTick, GetExposeKey(nameof(countTick)), 0);
         }
     }
 }
