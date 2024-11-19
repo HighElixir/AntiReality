@@ -14,9 +14,9 @@ namespace HE_AntiReality
         // 削除対象となるアンカーのリストを定義
         private readonly List<HediffDef> anchors = new List<HediffDef>()
         {
-            HE_HediffDefOf.AR_InfinityAnchor,
-            HE_HediffDefOf.AR_ZeroDimensionAnchor,
-            HE_HediffDefOf.AR_MoltenHeart
+            AR_HediffDefOf.AR_InfinityAnchor,
+            AR_HediffDefOf.AR_ZeroDimensionAnchor,
+            AR_HediffDefOf.AR_MoltenHeart
         };
 
         public HediffCompProperties_DeleteAlreadyExistAnchors Props => (HediffCompProperties_DeleteAlreadyExistAnchors)props;
@@ -36,7 +36,7 @@ namespace HE_AntiReality
                     if (p.health.hediffSet.TryGetHediff(def ,out var h))
                     {
                         p.health.RemoveHediff(h);
-                        Messages.Message(HE_Constants.Hint_DeleteAnchor.Translate(h.def.label) , MessageTypeDefOf.TaskCompletion, false);
+                        Messages.Message(AR_Constants.Hint_DeleteAnchor.Translate(h.def.label) , MessageTypeDefOf.TaskCompletion, false);
                     }
                 }
             }

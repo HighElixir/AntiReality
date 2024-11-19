@@ -35,7 +35,7 @@
 		</costList>
 		<comps>
 			<li Class="PipeSystem.CompProperties_ResourceTrader">
-				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
 				<consumptionPerTick>0.003</consumptionPerTick>
 			</li>
 			<li Class="CompProperties_Power">
@@ -88,7 +88,7 @@
 		</graphicData>
 		<comps>
 			<li Class="HE_AntiReality.CompProperties_FECharge">
-				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
 				<category>AR_NeedFE</category>
 				<consumptionPerTick>0.03</consumptionPerTick>
 				<chargepertick>0.02</chargepertick>
@@ -178,7 +178,7 @@
 		</costList>
 		<comps>
 			<!--<li Class="PipeSystem.CompProperties_DeepExtractor">
-				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
 				<deepThing>VHGE_Helixien</deepThing>
 				<ticksPerPortion>250</ticksPerPortion>
 				<onlyExtractToNet>true</onlyExtractToNet>

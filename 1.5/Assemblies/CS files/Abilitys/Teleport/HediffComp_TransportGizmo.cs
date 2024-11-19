@@ -6,20 +6,24 @@ using System;
 
 namespace HE_AntiReality
 {
+
+    public class HediffCompProperties_TransportGizmo : HediffCompProperties
+    {
+
+        public int coolDownTicks = 6000; // クールダウンの時間（6000 ticks = 約100秒）
+
+        public float maxTeleportDistance = 20f; // テレポートの最大距離（20タイル）
+
+        public HediffCompProperties_TransportGizmo() => compClass = typeof(HediffComp_TransportGizmo);
+
+    }
+
     public class HediffComp_TransportGizmo : HediffComp
     {
         private int countTick = 0; // 最後にテレポートを使用したゲーム内時間（Tick）を記録
-        private const int CooldownTicks = 6000; // クールダウンの時間（6000 ticks = 約100秒）
-        private const float MaxTeleportDistance = 20f; // テレポートの最大距離（20タイル）
 
         // HediffCompProperties_TransportGizmo クラスのプロパティを取得
-        public HediffCompProperties_TransportGizmo Props
-        {
-            get
-            {
-                return (HediffCompProperties_TransportGizmo)props;
-            }
-        }
+        public HediffCompProperties_TransportGizmo Props => (HediffCompProperties_TransportGizmo)props;
 
         // ギズモ（インターフェース上のボタンなど）を取得するメソッド
         public override IEnumerable<Gizmo> CompGetGizmos()
@@ -31,11 +35,19 @@ namespace HE_AntiReality
             }
 
             // テレポートコマンドを作成
-            Command_Action teleportCommand = new Command_Action
+            Command_ActionWithCooldown teleportCommand = new Command_ActionWithCooldown
             {
                 defaultLabel = "座標変換", // コマンドのラベル
                 defaultDesc = "視界の通る範囲内に座標を変える", // コマンドの説明
                 icon = ContentFinder<Texture2D>.Get("UI/Commands/Teleport"), // テレポートコマンドのアイコンを指定
+                cooldownPercentGetter = () =>
+                {
+                    return (Props.coolDownTicks - countTick) / Props.coolDownTicks;
+                },
+                onHover = () =>
+                {
+                    GenDraw.DrawRadiusRing(Pawn.Position, Props.maxTeleportDistance);
+                },
                 action = () =>
                 {
                     // クールダウン中の場合、メッセージを表示して処理を終了
@@ -46,7 +58,7 @@ namespace HE_AntiReality
                     else
                     {
                         // テレポートターゲットの設定を開始
-                        TeleportTargetingSource targetingSource = new TeleportTargetingSource(parent.pawn, MaxTeleportDistance);
+                        TeleportTargetingSource targetingSource = new TeleportTargetingSource(parent.pawn, Props.maxTeleportDistance);
 
                         // ターゲット選択プロセスを開始
                         Find.Targeter.BeginTargeting(targetingSource.targetParams, OnTargetSelected(targetingSource));
@@ -57,7 +69,7 @@ namespace HE_AntiReality
             // クールダウン中はコマンドを無効化
             if (countTick != 0)
             {
-                teleportCommand.Disable("使用可能まであと " + ((float)countTick / 60f).ToString("0.0") + " 秒");
+                teleportCommand.Disable("使用可能まであと " + (countTick / 60f).ToString("0.0") + " 秒");
             }
 
             // 作成したコマンドをギズモのリストに追加
@@ -75,7 +87,7 @@ namespace HE_AntiReality
                     // ターゲットにテレポートを命令する
                     targetingSource.OrderForceTarget(target);
                     // クールダウン時間をリセット
-                    countTick = CooldownTicks;
+                    countTick = Props.coolDownTicks;
                 }
             };
         }
@@ -93,6 +105,13 @@ namespace HE_AntiReality
             {
                 countTick = 0;
             }
+        }
+
+        public override void CompExposeData()
+        {
+            base.CompExposeData();
+            Type t = typeof(HediffComp_TransportGizmo);
+            Scribe_Values.Look(ref countTick, ExposeUtility.GetExposeKey(t, nameof(countTick)), 0);
         }
     }
 }

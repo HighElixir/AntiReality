@@ -17,7 +17,7 @@ namespace HE_AntiReality
         public override void CompPostTick(ref float severityAdjustment)
         {
             tickCount++;
-            if (tickCount >= HE_Constants.OnehourTickCount)
+            if (tickCount >= AR_Constants.OnehourTickCount)
             {
                 tickCount = 0;
                 LostofRealityUtility.Add(Pawn, Props.increaseLostofReality);

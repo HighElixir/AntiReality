@@ -1,8 +1,10 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Text;
+using System;
 using UnityEngine;
 using Verse;
+using HighElixir.Utility;
 
 namespace HE_AntiReality
 {
@@ -15,8 +17,9 @@ namespace HE_AntiReality
     /// <summary>
     /// 
     /// </summary>
-    public class HediffComp_OverLoad : HediffComp
+    public class HediffComp_OverLoad : HediffComp, ILoadReferenceable
     {
+        private string _uniqueId = string.Empty;
         private int _time;
         private float _currentOverload;
         private float _overloadLimit;         // 過負荷の上限値
@@ -26,7 +29,6 @@ namespace HE_AntiReality
         private float _healAmount;
 
         private HediffCompProperties_OverLoad Props => (HediffCompProperties_OverLoad)props;
-
         public float CurrentOverLoad => _currentOverload;
         public float OverloadLimit => _overloadLimit * _overloadLimitFactor;
         public float OverloadFactor => _overloadFactor;
@@ -40,12 +42,12 @@ namespace HE_AntiReality
             get
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine(HE_Constants.Tooltip_OverloadHediff_CurrentAmount.Translate(_currentOverload, OverloadLimit));
+                sb.AppendLine(AR_Constants.Tooltip_OverloadHediff_CurrentAmount.Translate(_currentOverload, OverloadLimit));
                 if (_time > Props.waittoHealTime && _currentOverload > 0)
-                    sb.AppendLine(HE_Constants.Tooltip_OverloadHediff_InHeal.Translate());
+                    sb.AppendLine(AR_Constants.Tooltip_OverloadHediff_InHeal.Translate());
                 int p = GetPenaltyLevel();
                 if (p > 0)
-                    sb.AppendLine(HE_Constants.Tooltip_OverloadHediff_Penalty.Translate(p));
+                    sb.AppendLine(AR_Constants.Tooltip_OverloadHediff_Penalty.Translate(p));
                 return sb.ToString().TrimEnd();
             }
         }
@@ -79,31 +81,31 @@ namespace HE_AntiReality
 
         public void AddLimit(float amount = 0, float factor = 0)
         {
-            _overloadLimitFactor.GetMin(factor);
-            _overloadLimit.GetMin(amount);
+            _overloadLimitFactor.GetClamptoPositive(factor);
+            _overloadLimit.GetClamptoPositive(amount);
         }
 
         public void SubLimit(float amount = 0, float factor = 0)
         {
-            _overloadLimitFactor.GetMin(-factor);
-            _overloadLimit.GetMin(-amount);
+            _overloadLimitFactor.GetClamptoPositive(-factor);
+            _overloadLimit.GetClamptoPositive(-amount);
         }
 
         public void ChengeOverLoadFactor(float amount)
         {
-            _overloadFactor.GetMin(amount);
+            _overloadFactor.GetClamptoPositive(amount);
         }
 
         public void AddHeal(float amount = 0, float factor = 0)
         {
-            _overloadHealFactor.GetMin(factor);
-            _healAmount.GetMin(amount);
+            _overloadHealFactor.GetClamptoPositive(factor);
+            _healAmount.GetClamptoPositive(amount);
         }
 
         public void SubHeal(float amount = 0, float factor = 0)
         {
-            _overloadHealFactor.GetMin(-factor);
-            _healAmount.GetMin(-amount);
+            _overloadHealFactor.GetClamptoPositive(-factor);
+            _healAmount.GetClamptoPositive(-amount);
         }
 
         public bool AddOverLoad(float overload)
@@ -120,7 +122,7 @@ namespace HE_AntiReality
 
         public void HealOverLoad(float overload)
         {
-            _currentOverload.GetMin(-overload);
+            _currentOverload.GetClamptoPositive(-overload);
         }
 
         private Texture2D icon;
@@ -129,7 +131,7 @@ namespace HE_AntiReality
             // アイコンをロード（初回のみ）
             if (icon == null)
             {
-                icon = ContentFinder<Texture2D>.Get(HE_Constants.debugGizmoIconPath);
+                icon = ContentFinder<Texture2D>.Get(AR_Constants.debugGizmoIconPath);
             }
             if (DebugSettings.godMode)
             {
@@ -171,6 +173,20 @@ namespace HE_AntiReality
             Scribe_Values.Look(ref _overloadHealFactor, ExposeUtility.GetExposeKey(t, nameof(_overloadHealFactor)));
             Scribe_Values.Look(ref _healAmount, ExposeUtility.GetExposeKey(t, nameof(_healAmount)));
             Scribe_Values.Look(ref _time, ExposeUtility.GetExposeKey(t, nameof(_time)));
+            Scribe_Values.Look(ref _uniqueId, ExposeUtility.GetExposeKey(t, nameof(_uniqueId)), Set());
+        }
+
+        public string GetUniqueLoadID()
+        {
+            if (string.IsNullOrEmpty(_uniqueId))
+                Set();
+            return _uniqueId;
+        }
+
+        private string Set()
+        {
+            _uniqueId = new Guid().ToString();
+            return _uniqueId;
         }
     }
 }

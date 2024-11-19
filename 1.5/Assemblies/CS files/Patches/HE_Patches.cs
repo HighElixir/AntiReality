@@ -13,11 +13,11 @@ namespace HE_AntiReality
     /// Note:今後過負荷を利用したものに変更する
     /// </summary>
     [StaticConstructorOnStartup]
-    public static class HE_Patches
+    public static class AR_Patches
     {
-        private static readonly Type patchType = typeof(HE_Patches);
+        private static readonly Type patchType = typeof(AR_Patches);
 
-        static HE_Patches()
+        static AR_Patches()
         {
             try
             {
@@ -32,7 +32,7 @@ namespace HE_AntiReality
             }
             catch (Exception ex)
             {
-                Log.Error($"HE__ Failed to create Harmony instance: {ex}");
+                Log.Error($"AR__ Failed to create Harmony instance: {ex}");
             }
         }
 
@@ -41,9 +41,9 @@ namespace HE_AntiReality
 
         public static void Postfix(ref float __result, HediffSet diffSet, PawnCapacityDef capacity, List<CapacityImpactor> impactors = null, bool forTradePrice = false)
         {
-            if (diffSet.pawn.health.hediffSet.HasHediff(HE_HediffDefOf.AR_InfinityAnchor))
+            if (diffSet.pawn.health.hediffSet.HasHediff(AR_HediffDefOf.AR_InfinityAnchor))
             {
-                Hediff firstHediffOfDef = diffSet.pawn.health.hediffSet.GetFirstHediffOfDef(HE_HediffDefOf.AR_InfinityAnchor, false);
+                Hediff firstHediffOfDef = diffSet.pawn.health.hediffSet.GetFirstHediffOfDef(AR_HediffDefOf.AR_InfinityAnchor, false);
                 if (firstHediffOfDef != null)
                 {
                     int level = CheckSeverarity(firstHediffOfDef.Severity);
@@ -88,7 +88,7 @@ namespace HE_AntiReality
             absorbed = false;
             Pawn pawn = Traverse.Create(root: __instance).Field(name: "pawn").GetValue<Pawn>();
             if (pawn == null || !(pawn.Faction?.IsPlayer ?? true)) return true;
-            Hediff anchor = __instance.hediffSet.GetFirstHediffOfDef(HE_HediffDefOf.AR_InfinityAnchor);
+            Hediff anchor = __instance.hediffSet.GetFirstHediffOfDef(AR_HediffDefOf.AR_InfinityAnchor);
             if (anchor != null && anchor.Severity > 0.5f)
             {
                 anchor.Severity -= 0.01f;

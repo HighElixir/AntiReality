@@ -1,11 +1,10 @@
-﻿using System;
-using Verse;
+﻿using Verse;
 using RimWorld;
 
 namespace HE_AntiReality
 {
     [DefOf]
-    public static class HE_HediffDefOf
+    public static class AR_HediffDefOf
     {
         public static HediffDef Non_Existent_Hands;
 
@@ -25,40 +24,67 @@ namespace HE_AntiReality
 
         //public static HediffDef 
 
-        static HE_HediffDefOf()
+        static AR_HediffDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(HE_HediffDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(AR_HediffDefOf));
         }
     }
+
     [DefOf]
-    public static class HE_DamageDefOf
+    public static class AR_ThoughtDefOf
+    {
+        public static ThoughtDef WitnessedLostOfRealityDeath;
+
+        public static ThoughtDef AR_ForceDeath;
+
+        static AR_ThoughtDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(AR_ThoughtDefOf));
+    }
+
+    [DefOf]
+    public static class AR_DamageDefOf
     {
         public static DamageDef SurgicalCut;
 
         public static DamageDef Bathed_in_Energy;
 
-        static HE_DamageDefOf()
+        static AR_DamageDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(HE_DamageDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(AR_DamageDefOf));
         }
     }
     [DefOf]
-    public static class HE_ThingDefOf
+    public static class AR_ThingDefOf
     {
         public static ThingDef AR_DimensionAnchor;
-        static HE_ThingDefOf()
+        static AR_ThingDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(HE_ThingDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(AR_ThingDefOf));
         }
     }
 
     [DefOf]
-    public static class HE_SoundDefOf
+    public static class AR_SoundDefOf
     {
         public static SoundDef Bathed_in_Energy_Sound;
-        static HE_SoundDefOf()
+        static AR_SoundDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(HE_SoundDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(AR_SoundDefOf));
         }
+    }
+
+    [DefOf]
+    public static class AR_MentalStateDefOf
+    {
+        public static MentalStateDef AR_WanderConfused;
+
+        static AR_MentalStateDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(AR_MentalStateDefOf));
+    }
+
+    [DefOf]
+    public static class AR_StatDefOf
+    {
+        public static StatDef AR_Resistance;
+
+        static AR_StatDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(AR_StatDefOf));
     }
 }

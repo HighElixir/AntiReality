@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Verse;
 using PipeSystem;
+using HighElixir.Utility;
 
 namespace HE_AntiReality
 {
@@ -36,7 +37,7 @@ namespace HE_AntiReality
         public static void AddAnchor(Thing thing)
         {
             if (anchors.ContainsKey(thing)) { return; }
-            if (thing.def == HE_ThingDefOf.AR_DimensionAnchor && thing.TryGetComp<CompResourceTrader>(out var trader))
+            if (thing.def == AR_ThingDefOf.AR_DimensionAnchor && thing.TryGetComp<CompResourceTrader>(out var trader))
             {
                 anchors.Add(thing, trader);
                 dicDirty = true;

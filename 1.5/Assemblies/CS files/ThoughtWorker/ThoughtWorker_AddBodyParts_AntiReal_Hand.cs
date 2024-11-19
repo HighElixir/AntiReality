@@ -8,7 +8,7 @@ namespace HE_AntiReality
     {
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
-            if (p.health.hediffSet.HasHediff(HE_HediffDefOf.Non_Existent_Hands, false))
+            if (p.health.hediffSet.HasHediff(AR_HediffDefOf.Non_Existent_Hands, false))
             {
                 return ThoughtState.Inactive;
             }

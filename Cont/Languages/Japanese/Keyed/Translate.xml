@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 	<!-- ITab Overload -->
-	<HE_TabOverload>オーバーロード</HE_TabOverload>
+	<AR_TabOverload>オーバーロード</AR_TabOverload>
 	<NoPawnOrEquipment>このポーンは何も装備していません。</NoPawnOrEquipment>
 	<NoEquipmentFound>装備が見つかりません。</NoEquipmentFound>
 	<EquipmentLabel>{0}</EquipmentLabel>
@@ -31,8 +31,10 @@
 	<UI_Cancel>キャンセル</UI_Cancel>
 	
 	<!-- ワープアンカー -->
-	<HE_WarpAnchorNameChange>名前変更</HE_WarpAnchorNameChange>
-	<HE_WarpAnchorDescription>このアンカーの名前を変更する。</HE_WarpAnchorDescription>
+	<AR_WarpAnchorNameChange>名前変更</AR_WarpAnchorNameChange>
+	<AR_WarpAnchorDescription>このアンカーの名前を変更する。</AR_WarpAnchorDescription>
 	<AnchorCustomLabel>カスタムラベル：{0}</AnchorCustomLabel>
 	
+	<!-- Mote -->
+	<Mote_ForceDeath>{0}の魂は失われました...永遠に。</Mote_ForceDeath>
 </LanguageData>

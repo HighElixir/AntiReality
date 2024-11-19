@@ -14,7 +14,7 @@ namespace HE_AntiReality
             if (pawn != null)
             {
                 // ポーンがAR_InfinityAnchorのHediffを持っているかどうかをチェック
-                return pawn.health.hediffSet.HasHediff(HE_HediffDefOf.AR_InfinityAnchor);
+                return pawn.health.hediffSet.HasHediff(AR_HediffDefOf.AR_InfinityAnchor);
             }
 
             // もしThingがPawnでなければ、このレシピは適用できない
@@ -32,7 +32,7 @@ namespace HE_AntiReality
             }
 
             // PawnがAR_InfinityAnchorを持っているか確認し、取得
-            Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HE_HediffDefOf.AR_InfinityAnchor);
+            Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(AR_HediffDefOf.AR_InfinityAnchor);
             if (hediff != null)
             {
                 // 増加させるSeverityの量

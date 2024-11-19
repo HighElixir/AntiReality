@@ -4,10 +4,14 @@ using Verse;
 
 namespace HE_AntiReality
 {
+    public class HediffSets
+    {
+        public List<HediffDef> hediffDefs;
+    }
     public class HediffCompProperties_NeedHediff : HediffCompProperties
     {
-        public List<HediffDef> needHediffs;
-        public string mode;
+        public List<HediffSets> needHediffs;
+        public string mode = string.Empty;
         public HediffCompProperties_NeedHediff()
         {
             compClass = typeof(NeedHediff);
@@ -16,49 +20,41 @@ namespace HE_AntiReality
 
     public class NeedHediff : HediffComp
     {
+        public override bool CompShouldRemove => !CheckPawnHasHediff();
+        public HediffCompProperties_NeedHediff Props => (HediffCompProperties_NeedHediff)props;
 
-        public HediffCompProperties_NeedHediff Props
-        {
-            get
-            {
-                return (HediffCompProperties_NeedHediff)props;
-            }
-        }
-
+        // Multiフラグが有効の場合、親hediffが1.0以上なら無条件でtrueを返す
         private bool Multi()
         {
-            Hediff hediff = Pawn.health.hediffSet.GetFirstHediffOfDef(parent.def);
-            if (hediff != null && hediff.Severity >= 1.0) { return true; }
-            return false;
+            return parent.Severity >= 1.0;
         }
+
         private bool CheckPawnHasHediff()
         {
-            if (Props.mode != null)
-            {
-                if (Props.mode == "Multi" && Multi())
-                {
-                    return true;
-                }
+            if (Props.mode == "Multi" && Multi())
+                return true;
+            if (Props.needHediffs == null || Props.needHediffs.Count == 0)
+                return false;
 
-            }
-            foreach (HediffDef needhediff in Props.needHediffs)
+            foreach (HediffSets needhediff in Props.needHediffs)
             {
-                bool hasHediff = Pawn.health.hediffSet.HasHediff(needhediff);
-                if (hasHediff)
+                if (CheckHavingHediffs(needhediff))
                 {
                     return true;
                 }
             }
             return false;
         }
-
-        public override bool CompShouldRemove
+        private bool CheckHavingHediffs(HediffSets hediffSet)
         {
-            get
+            foreach (var h in hediffSet.hediffDefs)
             {
-
-                return !CheckPawnHasHediff();
+                if (!Pawn.health.hediffSet.HasHediff(h))
+                {
+                    return false;
+                }
             }
+            return true;
         }
     }
 }

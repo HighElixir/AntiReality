@@ -5,8 +5,7 @@
 	<ThingDef ParentName="AntiRealWeapons_BaseGun">
 		<defName>PN_FireWorksMaker</defName>
 		<label>PN-FireWorksMaker</label>
-		<description>[Tier2]虚構エネルギーを直接的に利用する計画「PN計画」の試作品の一つ。
-虚構の炎を作り出し、対象を燃やす。一撃当たりの火力は低いが、高速で現実性喪失を蓄積させる。</description>
+		<description>[Tier2]虚構エネルギーを直接的に利用する計画「PN計画」の試作品の一つ。\n虚構の炎を作り出し、対象を燃やす。一撃当たりの火力は低いが、高速で現実性喪失を蓄積させる。</description>
 		<possessionCount>1</possessionCount>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/Revolver</texPath>
@@ -17,9 +16,13 @@
 
 		<comps>
 			<li Class="HE_AntiReality.CompProperties_HeatGun">
-				<overloadLimit>100</overloadLimit>
-				<overloadHealFactor>0.1</overloadHealFactor>
 				<addOverLoadPerFire>0.5</addOverLoadPerFire>
+				<addLostofRealityPerPLevel>5</addLostofRealityPerPLevel>
+				<addLostofRealityPerPLevelAndhour>1.2</addLostofRealityPerPLevelAndhour>
+			</li>
+			<li Class="HE_AntiReality.CompProperties_OverLoad">
+				<overloadLimit>25</overloadLimit>
+				<overloadHealAmount>1</overloadHealAmount>
 			</li>
 		</comps>
 		<statBases>

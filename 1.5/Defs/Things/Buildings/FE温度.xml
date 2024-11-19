@@ -50,7 +50,7 @@
 		</building>
 		<comps>
 			<li Class="PipeSystem.CompProperties_ResourceTrader">
-				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
 				<consumptionPerTick>0.005</consumptionPerTick>
 			</li>
 			<li Class="CompProperties_Flickable">

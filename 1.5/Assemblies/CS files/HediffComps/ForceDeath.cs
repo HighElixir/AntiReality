@@ -1,7 +1,9 @@
 ﻿using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Verse;
+using HighElixir.Utility.RimWorld;
 
 namespace HE_AntiReality
 {
@@ -61,6 +63,13 @@ namespace HE_AntiReality
                 }
             }
 
+            MoteMaker.ThrowText(HE_RimUtility.MakeMotePosition(Pawn), Pawn.Map, AR_Constants.Mote_ForceDeath.Translate(Pawn.Name.ToStringShort), AR_Constants.fictionDeepPurple);
+            Pawn.Map.mapPawns.AllPawns
+    .Where(p => p.Faction.def == Pawn.Faction.def)
+    .ToList()
+    .ForEach(p => p.needs.mood.thoughts.memories.TryGainMemory(AR_ThoughtDefOf.AR_ForceDeath));
+
+
             // ポーンを死亡させる
             Pawn.Kill(dinfo);
 
@@ -69,6 +78,8 @@ namespace HE_AntiReality
             {
                 Pawn.Corpse.Destroy(DestroyMode.Vanish);
             }
+
+
         }
     }
 }

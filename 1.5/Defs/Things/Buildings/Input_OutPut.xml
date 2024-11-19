@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="BuildingBase">
-		<defName>HE_ResourceConverter</defName>
+		<defName>AR_ResourceConverter</defName>
 		<label>コア開封機</label>
 		<description>フィクションコアを安全に開封し、様々な機械の動力として利用できる。</description>
 		<thingClass>Building_Storage</thingClass>
@@ -11,7 +11,7 @@
 		</graphicData>
 		<comps>
 			<li Class="PipeSystem.CompProperties_ConvertThingToResource">
-				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
 				<!-- ThingDef to take -->
 				<thing>Fiction_Core</thing>
 				<!-- 1 removed is 1*X added in the net -->
@@ -59,7 +59,7 @@
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
-		<defName>HE_ResourceConverter_O</defName>
+		<defName>AR_ResourceConverter_O</defName>
 		<label>コア封入機</label>
 		<description>FEを密封容器に注入する。取扱注意。</description>
 		<thingClass>Building_Storage</thingClass>
@@ -69,7 +69,7 @@
 		</graphicData>
 		<comps>
 			<li Class="PipeSystem.CompProperties_ConvertResourceToThing">
-				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
 				<!-- ThingDef to take -->
 				<thing>Fiction_Core</thing>
 				<!-- 1 removed is 1*X added in the net -->

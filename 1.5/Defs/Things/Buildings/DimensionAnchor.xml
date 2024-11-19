@@ -37,7 +37,7 @@
 		<comps>
 			<!-- エネルギー供給コンポーネント -->
 			<li Class="PipeSystem.CompProperties_ResourceTrader">
-				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
 				<consumptionPerTick>0.007</consumptionPerTick>
 			</li>
 			<!-- オン/オフスイッチ -->

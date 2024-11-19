@@ -18,11 +18,11 @@ namespace HE_AntiReality
                     center: position,
                     map: map,
                     radius: 3.5f, // 爆発半径を指定
-                    damType: HE_DamageDefOf.Bathed_in_Energy,
+                    damType: AR_DamageDefOf.Bathed_in_Energy,
                     instigator: null,
                     damAmount: -1,
                     armorPenetration: -1,
-                    explosionSound: HE_SoundDefOf.Bathed_in_Energy_Sound, // 適切なサウンドを指定
+                    explosionSound: AR_SoundDefOf.Bathed_in_Energy_Sound, // 適切なサウンドを指定
                     weapon: null,
                     projectile: null,
                     intendedTarget: null,

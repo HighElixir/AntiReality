@@ -18,4 +18,21 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+
+	<ThoughtDef ParentName="DeathMemory">
+		<defName>AR_ForceDeath</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>5</stackLimit>
+		<doNotApplyToQuestLodgers>false</doNotApplyToQuestLodgers>
+		<nullifyingTraits>
+			<li MayRequire="HighElixir.DRClothes">HE_DR_Artificial_God</li>
+		</nullifyingTraits>
+		<stages>
+			<li>
+				<label>精神汚染</label>
+				<description>虚構による惨い汚染</description>
+				<baseMoodEffect>-33</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
 </Defs>

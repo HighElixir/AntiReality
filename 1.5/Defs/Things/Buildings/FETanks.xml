@@ -45,7 +45,7 @@
 		<comps>
 			<li Class="PipeSystem.CompProperties_ResourceStorage">
 				<!-- Accept a PipeNetDef -->
-				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
 				<!-- Amount that can be stored -->
 				<storageCapacity>3000</storageCapacity>
 				<!-- Lenght and Width of the bar -->

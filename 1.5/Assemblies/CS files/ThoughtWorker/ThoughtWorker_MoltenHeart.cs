@@ -7,7 +7,7 @@ namespace HE_AntiReality
     {
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
-            if (p.health.hediffSet.TryGetHediff(HE_HediffDefOf.AR_MoltenHeart, out var h))
+            if (p.health.hediffSet.TryGetHediff(AR_HediffDefOf.AR_MoltenHeart, out var h))
             {
                 if (h.TryGetComp<HediffComp_MoltenHeart>(out var c) && c.OriginalFaction.IsPlayer)
                 {

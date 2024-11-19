@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<MentalStateDef ParentName="BaseMentalState">
+		<defName>AR_WanderConfused</defName>
+		<label>虚構の浸食</label>
+		<stateClass>HE_AntiReality.MentalState_AR_WanderConfused</stateClass>
+		<category>Misc</category>
+		<minTicksBeforeRecovery>3500</minTicksBeforeRecovery>
+		<maxTicksBeforeRecovery>40000</maxTicksBeforeRecovery>
+		<recoveryMtbDays>0.2</recoveryMtbDays>
+		<blockNormalThoughts>true</blockNormalThoughts>
+		<nameColor>(0.17, 0.04, 0.31)</nameColor>
+		<beginLetterLabel>混乱</beginLetterLabel>
+		<beginLetter>{0}は虚構に精神を乱され、彷徨っています。</beginLetter>
+		<beginLetterDef>NegativeEvent</beginLetterDef>
+		<recoveryMessage>{0}は回復しました</recoveryMessage>
+		<baseInspectLine>精神状態　: 虚構の浸食</baseInspectLine>
+		<inCaravanCanDo>true</inCaravanCanDo>
+	</MentalStateDef>
+</Defs>

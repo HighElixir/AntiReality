@@ -1,16 +1,18 @@
-﻿using PipeSystem;
-using RimWorld;
+﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
 using Verse.AI;
-using Verse.Noise;
 
 namespace HE_AntiReality
 {
-
+    public class CompProperties_WarptoAnchor : CompProperties
+    {
+        public int cooldownTicks;
+        public CompProperties_WarptoAnchor() => compClass = typeof(Comp_WarptoAnchor);
+    }
     public class Comp_WarptoAnchor : Comp_FEUserBase
     {
         // フィールド
@@ -32,7 +34,7 @@ namespace HE_AntiReality
             sb.AppendLine("");
             sb.AppendLine($"貯蓄FE: {StoreFE.CurrentFE.ToString("0.00")}fu");
             sb.AppendLine($"必要FE: {StoreFE.RequiredFE.ToString("0.00")}fu");
-
+ 
             Command_ActionWithCooldown teleportCommand = new Command_ActionWithCooldown
             {
                 cooldownPercentGetter = () =>
@@ -79,29 +81,8 @@ namespace HE_AntiReality
                 teleportCommand.Disable("FE不足。");
             }
             yield return teleportCommand;
+        }
 
-            IEnumerator<Command_Action> enumerator = GetInspectorGizmos();
-            while (enumerator.MoveNext())
-            {
-                yield return enumerator.Current;
-            }
-        }
-        // デバッグ用のギズモを追加するための処理
-        protected IEnumerator<Command_Action> GetInspectorGizmos()
-        {
-            var tmp = InspectorGizmo();
-            if (tmp != null)
-            {
-                foreach (var command in tmp)
-                {
-                    if (command != null)
-                    {
-                        yield return command;
-                    }
-                }
-            }
-            yield break;
-        }
         public override void Notify_Equipped(Pawn pawn)
         {
             _userPawn = pawn;

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>	
 	<PipeSystem.PipeNetDef>
-		<defName>HE_FictionPipeSystem</defName>
+		<defName>AR_FictionPipeSystem</defName>
 		<resource>
 			<name>虚構エネルギー</name>
 			<unit>fu</unit>
@@ -9,7 +9,7 @@
 			<offTexPath>Things/Resource/FictionsCore</offTexPath>
 		</resource>
 		<pipeDefs>
-			<li>HE_FictionEnergyPipe</li>
+			<li>AR_FictionEnergyPipe</li>
 		</pipeDefs>
 		<designator>
 			<deconstructIconPath>UI/Commands/FictionEnergyPipeDeconstruct_MenuIcon</deconstructIconPath>

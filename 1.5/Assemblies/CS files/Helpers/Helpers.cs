@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using Verse;
 
-namespace HE_AntiReality
+namespace HighElixir.Utility
 {
     /// <summary>
     /// ゲーム内で使う汎用的なヘルパーメソッドをまとめたクラス。
@@ -12,15 +11,18 @@ namespace HE_AntiReality
     public static class Helpers
     {
 
-        public static float GetMin (this float value, float add) => Mathf.Min(value + add, 0);
+        public static float GetClamptoNegative(this float value, float add = 0f) => Mathf.Min(value + add, 0);
 
+        public static float GetClamptoPositive(this float value, float add = 0f) => Mathf.Max(value + add, 0);
+
+        
         /// <summary>
         /// リストからランダムに1つの要素を選ぶ。
         /// </summary>
         /// <typeparam name="T">リストの要素の型。</typeparam>
         /// <param name="values">要素を持つリスト。</param>
         /// <returns>ランダムに選ばれた要素。リストが空またはnullの場合はデフォルト値を返す。</returns>
-        public static T RandomPick<T>(List<T> values)
+        public static T RandomPick<T>(this List<T> values)
         {
             if (values == null || values.Count == 0) return default;
             return values[UnityEngine.Random.Range(0, values.Count)];
@@ -33,7 +35,7 @@ namespace HE_AntiReality
         /// <typeparam name="V">辞書の値の型。</typeparam>
         /// <param name="values">要素を持つ辞書。</param>
         /// <returns>ランダムに選ばれた値。辞書が空またはnullの場合はデフォルト値を返す。</returns>
-        public static V RandomPick<T, V>(Dictionary<T, V> values)
+        public static V RandomPick<T, V>(this Dictionary<T, V> values)
         {
             if (values == null || values.Count == 0) return default;
             return values.Values.ElementAt(UnityEngine.Random.Range(0, values.Count));
@@ -44,14 +46,13 @@ namespace HE_AntiReality
         /// </summary>
         /// <typeparam name="T">辞書のキーの型。</typeparam>
         /// <typeparam name="V">辞書の値の型。</typeparam>
-        /// <param name="values">辞書。</param>
         /// <returns>辞書の全ての値を持つリスト。</returns>
-        public static List<V> DictionaryToList<T, V>(Dictionary<T, V> dictionary)
+        public static List<V> DictionaryToList<T, V>(this Dictionary<T, V> dictionary)
         {
             return dictionary.Values.ToList();
         }
 
-        public static List<T> DictionaryKeysToList<T, V>(Dictionary<T, V> dictionary)
+        public static List<T> DictionaryKeysToList<T, V>(this Dictionary<T, V> dictionary)
         {
             return dictionary.Keys.ToList();
         }

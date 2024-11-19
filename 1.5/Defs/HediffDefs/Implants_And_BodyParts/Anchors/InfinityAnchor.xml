@@ -23,6 +23,10 @@
 				</hediffs>
 			</li>
 			<li Class="HE_AntiReality.HediffCompProperties_DeleteAlreadyExistAnchors" />
+			<li Class ="HE_AntiReality.HediffCompProperties_AddOverLoad">
+				<addLimitAmount>10</addLimitAmount>
+				<healAmount>1</healAmount>
+			</li>
 		</comps>
 		<stages>
 			<li>

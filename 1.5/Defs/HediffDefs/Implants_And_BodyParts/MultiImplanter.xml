@@ -527,7 +527,12 @@
 		<comps>
 			<li Class="HE_AntiReality.HediffCompProperties_NeedHediff">
 				<needHediffs>
-					<li>AR_MultiImplantor</li>
+					<li>
+						<hediffDefs>
+							<li>AR_MultiImplantor</li>
+						</hediffDefs>
+					</li>
+
 				</needHediffs>
 				<mode>Multi</mode>
 				<!--必要ない時はNone-->

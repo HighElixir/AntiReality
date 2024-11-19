@@ -1,4 +1,8 @@
-﻿using Verse;
+﻿using LudeonTK;
+using RimWorld;
+using System;
+using UnityEngine;
+using Verse;
 
 namespace HE_AntiReality
 {
@@ -14,22 +18,28 @@ namespace HE_AntiReality
 
     public class HediffComp_AddOverLoad : HediffComp
     {
-
         private HediffComp_OverLoad overLoad;
         public HediffCompProperties_AddOverLoad Props => (HediffCompProperties_AddOverLoad)props;
 
-        public override void CompPostMake()
+        public override void CompPostPostAdd(DamageInfo? _)
         {
-            base.CompPostMake();
-            if (!(parent.pawn.health.hediffSet.TryGetHediff(HE_HediffDefOf.AR_OverLoad, out var h) && h.TryGetComp(out overLoad)))
+            var hd = Pawn.health.hediffSet;
+            if (!(hd.TryGetHediff(AR_HediffDefOf.AR_OverLoad, out var h) && h.TryGetComp(out overLoad)))
             {
-                var h2 = parent.pawn.health.AddHediff(HE_HediffDefOf.AR_OverLoad);
-                h2.TryGetComp(out overLoad);
+                var newHediff = new Hediff()
+                {
+                    def = AR_HediffDefOf.AR_OverLoad,
+                    Severity = AR_HediffDefOf.AR_OverLoad.initialSeverity
+                };
+                hd.AddDirect(newHediff);
+                newHediff.TryGetComp(out overLoad);
             }
-        }
-        public override void CompPostPostAdd(DamageInfo? dinfo)
-        {
-            if (overLoad != null)
+
+            if (overLoad == null)
+            {
+                Debug.LogError("Don's assigned 'HediffCompProperties_OverLoad' in AR_OverLoad");
+            }
+            else
             {
                 overLoad.AddLimit(Props.addLimitAmount, Props.addLimitFactor);
                 overLoad.AddHeal(Props.healAmount, Props.healFactor);
@@ -40,6 +50,16 @@ namespace HE_AntiReality
             base.CompPostPostRemoved();
             overLoad.SubLimit(Props.addLimitAmount, Props.addLimitFactor);
             overLoad.SubHeal(Props.healAmount, Props.healFactor);
+        }
+
+        public override void CompExposeData()
+        {
+            Type t = typeof(HediffComp_AddOverLoad);
+            base.CompExposeData();
+            if (overLoad != null)
+            {
+                Scribe_References.Look(ref overLoad, ExposeUtility.GetExposeKey(t, nameof(overLoad)));
+            }
         }
     }
 }

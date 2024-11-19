@@ -30,7 +30,7 @@ namespace HE_AntiReality
         public ITab_Overload()
         {
             size = new Vector2(400f, 300f); // タブのサイズを調整
-            labelKey = "HE_TabOverload"; // 翻訳キーを適切に設定
+            labelKey = "AR_TabOverload"; // 翻訳キーを適切に設定
         }
 
         protected override void FillTab()
@@ -40,7 +40,7 @@ namespace HE_AntiReality
             if (pawn == null || pawn.equipment == null)
             {
                 Rect rect = new Rect(Margin, Margin, size.x - Margin * 2, size.y - Margin * 2);
-                Widgets.Label(rect, HE_Constants.Hint_NullPawnOrEquipment.Translate()); // 翻訳キーを使用
+                Widgets.Label(rect, AR_Constants.Hint_NullPawnOrEquipment.Translate()); // 翻訳キーを使用
                 return;
             }
 
@@ -48,7 +48,7 @@ namespace HE_AntiReality
             if (allEquipment == null || allEquipment.Count == 0)
             {
                 Rect rect = new Rect(Margin, Margin, size.x - Margin * 2, size.y - Margin * 2);
-                Widgets.Label(rect, HE_Constants.Hint_NoEquipment.Translate()); // 翻訳キーを使用
+                Widgets.Label(rect, AR_Constants.Hint_NoEquipment.Translate()); // 翻訳キーを使用
                 return;
             }
 
@@ -66,13 +66,13 @@ namespace HE_AntiReality
             {
                 if (item == null) continue;
 
-                var overloadComp = item.GetComp<Comp_OverloadFE>();
+                var overloadComp = item.GetComp<Comp_Overload>();
                 if (overloadComp != null)
                 {
                     StringBuilder sb = new StringBuilder();
                     sb.AppendLine("EquipmentLabel".Translate(item.Label));
                     sb.AppendLine("OverloadValue".Translate(overloadComp.CurrentOverload.ToString("0.00"), overloadComp.OverloadLimit));
-                    sb.AppendLine("OverloadHealRate".Translate(overloadComp.OverloadHealFactor.ToString("0.00")));
+                    sb.AppendLine("OverloadHealRate".Translate(overloadComp.OverloadHealAmount.ToString("0.00")));
                     sb.AppendLine("CooldownTime".Translate((overloadComp.WaittoHealTime / 60f).ToString("0.00")));
                     sb.AppendLine("PenaltyLevel".Translate(overloadComp.GetPenaltyLevel()));
 
@@ -90,7 +90,7 @@ namespace HE_AntiReality
             if (!flg)
             {
                 Rect labelRect = new Rect(0f, curY, viewRect.width, lineHeight);
-                Widgets.Label(labelRect, HE_Constants.Hint_NoFindOverLoadComp.Translate());
+                Widgets.Label(labelRect, AR_Constants.Hint_NoFindOverLoadComp.Translate());
                 curY += lineHeight;
             }
             Widgets.EndScrollView();

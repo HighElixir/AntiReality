@@ -35,18 +35,18 @@ namespace HE_AntiReality
         {
             get
             {
-                int finishTick = HE_Constants.OneDayTickCount * Props.finishDay;
+                int finishTick = AR_Constants.OneDayTickCount * Props.finishDay;
                 float sevPerTick = parent.def.maxSeverity / finishTick;
-                int day = HE_Constants.OneDayTickCount;
+                int day = AR_Constants.OneDayTickCount;
 
-                return HE_Constants.Tooltip_MoltenHeart_Daytofinish.Translate(Mathf.CeilToInt(Props.finishDay - (parent.Severity / sevPerTick) / day));
+                return AR_Constants.Tooltip_MoltenHeart_Daytofinish.Translate(Mathf.CeilToInt(Props.finishDay - (parent.Severity / sevPerTick) / day));
             }
         }
         public override void CompPostTick(ref float severityAdjustment)
         {
             if (severityAdjustment >= parent.def.maxSeverity) return;
 
-            int finishTick = HE_Constants.OneDayTickCount * Props.finishDay;
+            int finishTick = AR_Constants.OneDayTickCount * Props.finishDay;
             float max = parent.def.maxSeverity;
             float adjustment = max / finishTick;
             if (parent.Severity + adjustment > max)

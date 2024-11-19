@@ -17,9 +17,9 @@ namespace HE_AntiReality
     public class CompWarpSystem : ThingComp
     {
         [MayTranslate]
-        private readonly string GizmoLabel = "HE_WarpAnchorNameChange";
+        private readonly string GizmoLabel = "AR_WarpAnchorNameChange";
         [MayTranslate]
-        private readonly string GizmoDesc = "HE_WarpAnchorDescription";
+        private readonly string GizmoDesc = "AR_WarpAnchorDescription";
         [MayTranslate]
         private readonly string AnchorCustomLabel = "AnchorCustomLabel";
 
@@ -106,25 +106,20 @@ namespace HE_AntiReality
         public override void DoWindowContents(Rect inRect)
         {
             Text.Font = GameFont.Small;
-            Widgets.Label(new Rect(0f, 15f, inRect.width, 35f), HE_Constants.Dialog_InputLabel.Translate());
+            Widgets.Label(new Rect(0f, 15f, inRect.width, 35f), AR_Constants.Dialog_InputLabel.Translate());
             newLabel = Widgets.TextField(new Rect(0f, 50f, inRect.width, 35f), newLabel);
 
-            if (Widgets.ButtonText(new Rect(0f, 100f, inRect.width / 2f, 35f), HE_Constants.UI_Confirmed.Translate()))
+            if (Widgets.ButtonText(new Rect(0f, 100f, inRect.width / 2f, 35f), AR_Constants.UI_Confirmed.Translate()))
             {
                 if (string.IsNullOrWhiteSpace(newLabel))
                 {
-                    Messages.Message(HE_Constants.Error_EnterName.Translate(), MessageTypeDefOf.RejectInput, false);
+                    Messages.Message(AR_Constants.Error_EnterName.Translate(), MessageTypeDefOf.RejectInput, false);
                 }
                 else
                 {
                     compWarpSystem.SetLabel(newLabel);
                     Close();
                 }
-            }
-
-            if (Widgets.ButtonText(new Rect(inRect.width / 2f, 100f, inRect.width / 2f, 35f), HE_Constants.UI_Cancel.Translate()))
-            {
-                Close();
             }
         }
     }

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="BuildingBase">
-		<defName>HE_FictionEnergyPipe</defName>
+		<defName>AR_FictionEnergyPipe</defName>
 		<label>フィクションパイプ</label>
 		<description>実在しないが存在しているパイプ</description>
 		<thingClass>PipeSystem.Building_Pipe</thingClass>
 		<category>Building</category>
 		<tickerType>Rare</tickerType>
 		<graphicData>
-			<texPath>Things/Building/Linked/HE_FictionEnergyPipe_Atlas</texPath>
+			<texPath>Things/Building/Linked/AR_FictionEnergyPipe_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<linkType>Basic</linkType>
 			<!-- Any of the custom link flag. Only used so blueprint connect to buildings -->
@@ -19,14 +19,14 @@
 				<rect>(0,0.35,1,0.3)</rect>
 			</damageData>
 		</graphicData>
-		<uiIconPath>Things/Building/Linked/HE_FictionEnergyPipe_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Linked/AR_FictionEnergyPipe_MenuIcon</uiIconPath>
 		<uiIconScale>0.7</uiIconScale>
 		<building>
 			<ai_chillDestination>false</ai_chillDestination>
 			<isInert>true</isInert>
 			<isEdifice>false</isEdifice>
 			<blueprintGraphicData>
-				<texPath>Things/Building/Linked/HE_FictionEnergyPipe_Atlas</texPath>
+				<texPath>Things/Building/Linked/AR_FictionEnergyPipe_Atlas</texPath>
 			</blueprintGraphicData>
 		</building>
 		<drawerType>MapMeshOnly</drawerType>
@@ -45,7 +45,7 @@
 		</costList>
 		<comps>
 			<li Class="PipeSystem.CompProperties_Resource">
-				<pipeNet>HE_FictionPipeSystem</pipeNet>
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
 			</li>
 		</comps>
 		<placeWorkers>

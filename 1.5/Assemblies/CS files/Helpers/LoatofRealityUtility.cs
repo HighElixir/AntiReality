@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Verse;
 using RimWorld;
+using HighElixir.Utility.RimWorld;
 
 namespace HE_AntiReality
 {
@@ -8,23 +9,26 @@ namespace HE_AntiReality
     {
         public static void Add(Pawn target, float severity, bool hideMote = false)
         {
-            var h1 = new Hediff()
-            {
-                def = HE_HediffDefOf.LostOfReality,
-                Severity = severity
-            };
+            var l = AR_HediffDefOf.LostOfReality;
+            var s = severity * (1f - target.GetStatValue(AR_StatDefOf.AR_Resistance));
             var hediffSet = target.health.hediffSet;
 
-            if (hediffSet.TryGetHediff(HE_HediffDefOf.LostOfReality, out Hediff h2))
+
+            if (hediffSet.TryGetHediff(l, out Hediff h2))
             {
                 if (hideMote && GetDecreaseRealityProgresses(h2.Severity) < GetDecreaseRealityProgresses(h2.Severity + severity))
                 {
                     MakeMote(target);
                 }
-                h2.Severity += severity;
+                h2.Severity += s;
             }
             else
             {
+                var h1 = new Hediff()
+                {
+                    def = l,
+                    Severity = s
+                };
                 hediffSet.AddDirect(h1);
             }
         }
@@ -38,11 +42,14 @@ namespace HE_AntiReality
             return 4;
         }
 
-        public static void MakeMote(Pawn t)
+        private static void MakeMote(Pawn t)
         {
             if (t == null) return;
-            Vector3 v = new Vector3(t.Position.x + 1f, t.Position.y, t.Position.z + 1f);
-            MoteMaker.ThrowText(v, t.Map, HE_Constants.Hint_LostOfReality.Translate(), HE_Constants.fictionDeepPurple);
+
+            Vector3 v = HE_RimUtility.MakeMotePosition(t);
+
+            // モートを生成
+            MoteMaker.ThrowText(v, t.Map, AR_Constants.Hint_LostOfReality.Translate(), AR_Constants.fictionDeepPurple);
         }
     }
 }
