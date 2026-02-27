@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<ThingDef Name="FictionCore" ParentName="ResourceBase">
+		<defName>Fiction_Core</defName>
+		<label>「星々の海水」</label>
+		<description>虚構エネルギーを封じ込めたカプセル。落雷、火災、爆発に巻き込まれないように、注意して取り扱うこと。\nもし容器が壊れてしまえば最後、周囲に高濃度のエネルギーが襲い掛かり、死に至るだろう。</description>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Resource/Fiction_Core</texPath>
+		</graphicData>
+
+		<tickerType>Normal</tickerType>
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+
+		<drawerType>MapMeshOnly</drawerType>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<useHitPoints>true</useHitPoints>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<stackLimit>100</stackLimit>
+		<statBases>
+			<WorkToMake>5000</WorkToMake>
+			<MarketValue>3400</MarketValue>
+			<MaxHitPoints>1</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+			<Beauty>1</Beauty>
+			<Mass>0.8</Mass>
+		</statBases>
+
+		<thingCategories>
+			<li>AR_Resource_Core</li>
+		</thingCategories>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<rotatable>false</rotatable>
+		<pathCost>5</pathCost>
+		<allowedArchonexusCount>-1</allowedArchonexusCount>
+	</ThingDef>
+
+	<RecipeDef>
+		<defName>Make_FictionCore</defName>
+		<label>「星空の海水」の製造</label>
+		<jobString>「海水」を作成中…</jobString>
+		<workAmount>300</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<skillRequirements>
+			<Crafting>10</Crafting>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Tear_in_Reality</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<products>
+			<Fiction_Core>1</Fiction_Core>
+		</products>
+		<recipeUsers>
+			<li>AR_FictionFusionner</li>
+		</recipeUsers>
+		<researchPrerequisite>Research_AR_Core</researchPrerequisite>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smith</soundWorking>
+	</RecipeDef>
+</Defs>

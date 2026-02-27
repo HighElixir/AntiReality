@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<ResearchProjectDef ParentName="AR_ResearchBase">
+		<defName>AR_Research_FETank</defName>
+		<label>構築：「海」に沈む異界</label>
+		<description>[Tier1]虚構エネルギーの幕を風船のように膨らませ、虚無に勢力を広げる。</description>
+
+		<baseCost>18000</baseCost>
+
+		<prerequisites>
+			<li>AR_Research_PipeSystem</li>
+		</prerequisites>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>3.30</researchViewY>
+	</ResearchProjectDef>
+</Defs>

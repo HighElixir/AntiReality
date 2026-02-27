@@ -2,10 +2,10 @@
 <Defs>
 	<StringDef>
 		<name>AR_CommandToggleFE_Label</name>
-		<value>FE切り替え</value>
+		<value>虚構転置装置の切り替え</value>
 	</StringDef>
 	<StringDef>
 		<name>AR_CommandToggleFE_Desc</name>
-		<value>FEスイッチを切り替える。</value>
+		<value>虚構転置装置を切り替える。</value>
 	</StringDef>
 </Defs>

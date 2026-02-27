@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+		<defName>AR_StellaVoyager</defName>
+		<label>ステラヴォイジャー</label>
+		<description>海に映る星空に仮想的な電気網を築く。</description>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<thingClass>Building_Battery</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AR_StellaVoyager</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,2.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.40</fillPercent>
+		<tickerType>Normal</tickerType>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsPower</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>4000</MaxHitPoints>
+			<WorkToBuild>28000</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>0</Flammability>
+			<Beauty>8</Beauty>
+		</statBases>
+		<size>(2,2)</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<costList>
+			<Displacement_Plasteel>70</Displacement_Plasteel>
+			<ComponentSpacer>4</ComponentSpacer>
+			<Fiction_Core>1</Fiction_Core>
+		</costList>
+		<comps>
+			<li Class="PipeSystem.CompProperties_ResourceTrader">
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
+				<consumptionPerTick>-0.001</consumptionPerTick>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(90, 110, 110, 140)</glowColor>
+			</li>
+			<li Class="CompProperties_Battery">
+				<storedEnergyMax>40000</storedEnergyMax>
+				<efficiency>0.7</efficiency>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<transmitsPower>true</transmitsPower>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>AR_AntiRealConstructs</designationCategory>
+		<uiOrder>2020</uiOrder>
+		<staticSunShadowHeight>0.2</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<canOverlapZones>false</canOverlapZones>
+		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+		<researchPrerequisites>
+			<li>AR_Research_PipeSystem</li>
+		</researchPrerequisites>
+	</ThingDef>
+</Defs>

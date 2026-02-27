@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>			
+	<ResearchProjectDef ParentName="AR_ResearchBase">
+		<defName>Research_AR_AntimatterColider</defName>
+		<label>反物質衝突融合の実験</label>
+		<description>[Tier0]</description>
+		
+		<baseCost>6000</baseCost>
+
+		<prerequisites>
+			<li>ShipReactor</li>
+		</prerequisites>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>2.30</researchViewY>
+		<tags>
+			<li>AR_Start</li>
+			<li>AR_Senario</li>
+		</tags>
+	</ResearchProjectDef>
+</Defs>

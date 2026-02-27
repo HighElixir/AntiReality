@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<SoundDef>
+		<defName>AR_Shell_Ejection_huge</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>UI/Weapons/AR_Shell_Ejection_huge</clipPath>
+						
+					</li>
+				</grains>
+				<onCamera>true</onCamera>
+			</li>
+		</subSounds>
+	</SoundDef>
+</Defs>

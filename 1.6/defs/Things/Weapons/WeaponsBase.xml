@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Gun -->
+	<ThingDef Abstract="True" Name="AntiReality_BaseMakableGun" ParentName="BaseHumanMakeableGun">
+		<techLevel>Archotech</techLevel>
+		<relicChance>0</relicChance>
+		<statBases>
+			<Flammability>0</Flammability>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Biocodable"/>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponGun</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers Inherit="False">
+				<li>AR_FictionFusionner</li>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+			<researchPrerequisite>Research_AR_AntimatterColider</researchPrerequisite>
+		</recipeMaker>
+		<smeltable>true</smeltable>
+		<weaponTags>
+			<li>Gun</li>
+		</weaponTags>
+		<tradeTags Inherit="False">
+			<li>AntiReality_Range</li>
+		</tradeTags>
+	</ThingDef>
+
+	<!-- Melee -->
+	<ThingDef Name="AntiReality_BaseMalee" Abstract="True" ParentName="BaseMeleeWeapon">
+		<techLevel>Archotech</techLevel>
+		<smeltable>false</smeltable>
+		<burnableByRecipe>false</burnableByRecipe>
+		<relicChance>0</relicChance>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponMelee</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+		<tradeTags Inherit="False">
+			<li>AntiReality_Range</li>
+		</tradeTags>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers>
+				<li>AR_FictionFusionner</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+			<defaultIngredientFilter>
+				<categories>
+					<li>Root</li>
+				</categories>
+				<disallowedThingDefs Inherit="False">
+					<li>WoodLog</li>
+				</disallowedThingDefs>
+			</defaultIngredientFilter>
+		</recipeMaker>
+	</ThingDef>
+
+	<ThingDef Name="AntiReality_BaseMeleeWeapon_Sharp" ParentName="AntiReality_BaseMalee" Abstract="True">
+		<weaponClasses>
+			<li>MeleePiercer</li>
+		</weaponClasses>
+	</ThingDef>
+
+	<ThingDef Name="AntiReality_BaseMeleeWeapon_Blunt" ParentName="AntiReality_BaseMalee" Abstract="True">
+		<weaponClasses>
+			<li>MeleeBlunt</li>
+		</weaponClasses>
+	</ThingDef>
+</Defs>

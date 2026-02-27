@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="BenchBase">
+        <defName>AR_FictionFusionner</defName>
+        <label>虚構融合器</label>
+        <description>虚構流動体の操作、制御、変質をサポートする作業台</description>
+        <thingClass>Building_WorkTable</thingClass>
+        <graphicData>
+            <texPath>Things/Building/AR_FictionFusionner</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(3,2.5)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <castEdgeShadows>true</castEdgeShadows>
+        <staticSunShadowHeight>0.20</staticSunShadowHeight>
+        <costList>
+            <Plasteel>150</Plasteel>
+            <Tear_in_Reality>2</Tear_in_Reality>
+            <ComponentSpacer>8</ComponentSpacer>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>25000</WorkToBuild>
+            <MaxHitPoints>28000</MaxHitPoints>
+            <Flammability>0</Flammability>
+        </statBases>
+        <size>(3,2)</size>
+        <designationCategory>AR_AntiRealConstructs</designationCategory>
+        <uiOrder>2410</uiOrder>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <surfaceType>Item</surfaceType>
+        <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <!--<building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <unpoweredWorkTableWorkSpeedFactor>0.5</unpoweredWorkTableWorkSpeedFactor>
+            <paintable>true</paintable>
+        </building>-->
+        <comps>
+            <li Class="PipeSystem.CompProperties_ResourceTrader">
+                <pipeNet>AR_FictionPipeSystem</pipeNet>
+                <consumptionPerTick>-0.001</consumptionPerTick>
+            </li>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>800</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable">
+                <commandTexture>Things/Special/Fluid/AR_Pipe_Overlay</commandTexture>
+                <commandLabelKey>AR_CommandToggleFE_Label</commandLabelKey>
+                <commandDescKey>AR_CommandToggleFE_Desc</commandDescKey>
+            </li>
+            <li Class="CompProperties_Glower">
+                <glowRadius>6</glowRadius>
+                <glowColor>(90, 110, 110, 140)</glowColor>
+            </li>
+            <!--<li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+            <li Class="CompProperties_Breakdownable"/>-->
+        </comps>
+        <placeWorkers>
+            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+        </placeWorkers>
+        <researchPrerequisites>
+            <li>Research_AR_Core</li>
+        </researchPrerequisites>
+    </ThingDef>
+</Defs>

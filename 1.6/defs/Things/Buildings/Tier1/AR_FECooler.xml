@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+		<defName>AR_FECooler</defName>
+		<label>冷凍固定装置</label>
+		<description>(WIP)急速に室温を-50度まで冷却する。これは素粒子の振動を抑制することで実現している。建築コストは高いが、維持コストは非常に安い。</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AR_FECooler</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+			<drawRotated>false</drawRotated>
+			<allowFlip>false</allowFlip>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<blockWind>true</blockWind>
+		<rotatable>false</rotatable>
+		<fillPercent>0.5</fillPercent>
+		<coversFloor>true</coversFloor>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<statBases>
+			<MarketValue>30000</MarketValue>
+			<WorkToBuild>1600</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0.7</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<costList>
+			<Fiction_Core>1</Fiction_Core>
+			<ComponentIndustrial>12</ComponentIndustrial>
+			<Displacement_Plasteel>100</Displacement_Plasteel>
+			<Gold>11</Gold>
+		</costList>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<placeWorkers>
+			<li>PlaceWorker_CoolerSimple</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<building>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<comps>
+			<li Class="PipeSystem.CompProperties_ResourceTrader">
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
+				<consumptionPerTick>0.005</consumptionPerTick>
+			</li>
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/AR_Pipe_Overlay</commandTexture>
+				<commandLabelKey>AR_CommandToggleFE_Label</commandLabelKey>
+				<commandDescKey>AR_CommandToggleFE_Desc</commandDescKey>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>PipeSystem.CompHeatPusherNeedResource</compClass>
+				<heatPerSecond>-200</heatPerSecond>
+				<heatPushMinTemperature>-50</heatPushMinTemperature>
+			</li>
+			<li Class="CompProperties_Breakdownable" />
+			<li Class="AntiReality.CompProperties_PlaySustainer">
+				<sound>AR_Building_Beem</sound>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>AR_Research_PipeSystem</li>
+		</researchPrerequisites>
+		<designationCategory>AR_AntiRealConstructs</designationCategory>
+		<constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+	</ThingDef>
+
+</Defs>

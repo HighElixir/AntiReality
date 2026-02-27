@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<!--SkullDimention_AssaultRifle-->
+<Defs>
+	<ThingDef ParentName="AntiReality_BaseMakableGun">
+		<defName>SkullDimention_AssaultRifle</defName>
+		<label>スカルディメンション・アサルトライフル</label>
+		<description>「裂け目」とその流体が持つ反質量と断絶の性質を生かして性能向上を図ったアサルトライフル。</description>
+
+		<graphicData>
+			<texPath>Things/Weapons/Ranged/Tier0/SkullDimentionAssultRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<equippedAngleOffset>30.3</equippedAngleOffset>
+		<statBases>
+			<WorkToMake>67000</WorkToMake>
+			<Mass>3.5</Mass>
+			<AccuracyTouch>0.8</AccuracyTouch>
+			<AccuracyShort>0.72</AccuracyShort>
+			<AccuracyMedium>0.68</AccuracyMedium>
+			<AccuracyLong>0.61</AccuracyLong>
+			<RangedWeapon_Cooldown>1.890</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>Research_AR_AntimatterColider</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>12</Crafting>
+			</skillRequirements>
+			<displayPriority>200</displayPriority>
+		</recipeMaker>
+		<costList>
+			<Plasteel>75</Plasteel>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Tear_in_Reality>1</Tear_in_Reality>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>AntiReality_Rifle_Bullet</defaultProjectile>
+				<warmupTime>1.0</warmupTime>
+				<range>29.2</range>
+				<ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+				<burstShotCount>3</burstShotCount>
+				<soundCast>AR_Rifle</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>ストック</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>クリスタルピアサー</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2.2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>AntiReality_Rifle_Bullet</defName>
+		<label>反破砕弾</label>
+		<graphicData>
+			<texPath>Things/Projectile/Charge_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>16.5</damageAmountBase>
+			<armorPenetrationBase>0.42</armorPenetrationBase>
+			<speed>92</speed>
+		</projectile>
+	</ThingDef>
+</Defs>

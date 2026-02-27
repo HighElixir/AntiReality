@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--
+  🏗️ 建設・修理系
+FixBrokenDownBuildingSuccessChance（建物修理成功率）
+
+ConstructSuccessChance（建設成功率）
+
+ConstructionSpeed（建設速度）
+
+SmoothingSpeed（床の平滑化速度）
+
+⛏️ 資源採取系
+MiningYield（採掘収穫量）
+
+MiningSpeed（採掘速度）
+
+ForagedNutritionPerDay（採取栄養量／日）
+
+PlantHarvestYield（植物収穫量）
+
+AnimalGatherYield（動物収集収穫量）
+
+🛠️ 作業速度系
+WorkSpeedGlobal（全作業速度）
+
+GeneralLaborSpeed（一般作業速度）
+
+PlantWorkSpeed（農作業速度）
+
+AnimalGatherSpeed（動物収集速度）
+
+ButcheryFleshSpeed（生肉解体速度）
+
+ButcheryMechanoidSpeed（機械解体速度）
+
+🔬 研究・生産系
+ResearchSpeed（研究速度）
+
+SmeltingSpeed（精錬速度）
+
+DrugSynthesisSpeed（薬品合成速度）
+
+DrugCookingSpeed（薬品調理速度）
+
+CookSpeed（料理速度）
+
+💪 戦闘・防御系
+MeleeDPS（近接攻撃DPS）
+
+MeleeArmorPenetration（近接装甲貫通力）
+
+MeleeHitChance（近接命中率）
+
+MeleeDodgeChance（近接回避率）
+
+ShootingAccuracyPawn（射撃命中率）
+
+AimingDelayFactor（照準遅延率）
+
+ArmorRating_Sharp（鋭武器への装甲値）
+
+ArmorRating_Blunt（鈍器への装甲値）
+
+ArmorRating_Heat（熱攻撃への装甲値）
+
+IncomingDamageFactor（被ダメージ率）
+
+🐾 動物対応系
+HuntingStealth（狩猟時の隠密性）
+
+TameAnimalChance（動物を飼い慣らす成功率）
+
+TrainAnimalChance（動物訓練成功率）
+
+PawnTrapSpringChance（罠解除成功率）
+
+💬 社会・交渉系
+NegotiationAbility（交渉能力）
+
+TradePriceImprovement（取引価格改善率）
+
+SocialImpact（社会的影響力）
+
+ArrestSuccessChance（逮捕成功率）
+
+PawnBeauty（見た目の美しさ）
+
+🧠 精神・学習系
+MentalBreakThreshold（精神崩壊のしやすさ）
+
+PsychicSensitivity（サイキック感受性）
+
+PsychicEntropyMax（サイキックエネルギー上限）
+
+PsychicEntropyRecoveryRate（サイキックエネルギー回復速度）
+
+PsychicEntropyGain（サイキック消費増加率）
+
+GlobalLearningFactor（学習速度）
+
+❤️‍🩹 医療・耐久系
+MedicalTendSpeed（医療手当速度）
+
+MedicalTendQuality（手当の質）
+
+MedicalOperationSpeed（手術速度）
+
+MedicalSurgerySuccessChance（手術成功率）
+
+ImmunityGainSpeed（免疫獲得速度）
+
+ToxicResistance（毒耐性）
+
+PainShockThreshold（痛みショックしきい値）
+
+FoodPoisonChance（食中毒発生率）
+
+🚶‍♂️ 物理・生理系
+MoveSpeed（移動速度）
+
+CarryingCapacity（運搬可能重量）
+
+MinimumHandlingSkill（必要取り扱いスキル）
+
+HungerRateMultiplier（空腹度増加率）
+
+RestRateMultiplier（休息増加率）
+
+EatingSpeed（食事速度）
+
+ComfyTemperatureMin（快適温度下限）
+
+ComfyTemperatureMax（快適温度上限）
+
+🥩 収穫・素材量系
+MeatAmount（肉収穫量）
+
+LeatherAmount（皮収穫量）
+-->
+
+
+	<ThingDef Name="AR_BodyPartBase" ParentName="BodyPartBase" Abstract="True">
+		<techLevel>Archotech</techLevel>
+		<thingCategories>
+			<li>AR_BodyAdd</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(45,11,80)</color>
+		</graphicData>
+		<statBases>
+			<WorkToMake>10000</WorkToMake>
+			<MarketValue>14000</MarketValue>
+			<Mass>0.8</Mass>
+		</statBases>
+
+		<recipeMaker>
+			<researchPrerequisite>Research_AR_Core</researchPrerequisite>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+
+			<recipeUsers>
+				<li>AR_FictionFusionner</li>
+			</recipeUsers>
+			<effectWorking>Smelt</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedHealthItemProsthetic</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>20</Crafting>
+			</skillRequirements>
+
+			<displayPriority>600</displayPriority>
+		</recipeMaker>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+	</ThingDef>
+
+	<HediffDef Name="AR_ImplantBase" ParentName="ImplantHediffBase" Abstract="True">
+		<hediffClass>Hediff_Implant</hediffClass>
+		<defaultLabelColor>(0.25, 0.12, 0.38)</defaultLabelColor>
+		<initialSeverity>0.5</initialSeverity>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+	</HediffDef>
+
+	<HediffDef Name="AR_BodyPartsBase" ParentName="AddedBodyPartBase" Abstract="True">
+		<hediffClass>Hediff_AddedPart</hediffClass>
+		<defaultLabelColor>(0.17, 0.04, 0.31)</defaultLabelColor>
+		<initialSeverity>0.5</initialSeverity>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+	</HediffDef>
+
+	<!-- レシピ-->
+
+	<RecipeDef Name="AR_Surgery" Abstract="True">
+		<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+		<recipeUsers>
+			<li>Human</li>
+		</recipeUsers>
+
+		<skillRequirements>
+			<Medicine>8</Medicine>
+		</skillRequirements>
+	</RecipeDef>
+
+	<RecipeDef Name="AR_InstallImplants" ParentName="AR_Surgery" Abstract="True">
+		<workerClass>Recipe_InstallImplant</workerClass>
+	</RecipeDef>
+
+	<RecipeDef Name="AR_AddBodyParts" ParentName="AR_Surgery" Abstract="True">
+		<workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+	</RecipeDef>
+</Defs>

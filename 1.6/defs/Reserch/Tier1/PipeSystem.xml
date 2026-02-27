@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<ResearchProjectDef ParentName="AR_ResearchBase">
+		<defName>AR_Research_PipeSystem</defName>
+		<label>構築：FictionEnergySystem</label>
+		<description>[Tier1]虚構エネルギーを利用したパイプシステムとその素材になる建材を追加する。</description>
+
+		<baseCost>18000</baseCost>
+
+		<prerequisites>
+			<li>Research_AR_Core</li>
+		</prerequisites>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>2.30</researchViewY>
+	</ResearchProjectDef>
+</Defs>
+
+

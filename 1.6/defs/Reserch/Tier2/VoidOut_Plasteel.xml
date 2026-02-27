@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ResearchProjectDef ParentName="AR_ResearchBase">
+		<defName>Research_VoidOut_Plasteel</defName>
+		<label>構築：虚展プラスチール</label>
+		<description>[Tier2]虚展プラスチールと、それに関連する装備、構造物の研究開発を行う。</description>
+
+		<baseCost>32000</baseCost>
+
+		<prerequisites>
+			<li>AR_Research_PipeSystem</li>
+		</prerequisites>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>2.30</researchViewY>
+	</ResearchProjectDef>
+</Defs>

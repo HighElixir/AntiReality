@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+		<defName>AR_FictionEnergyPipe</defName>
+		<label>虚妄流体管</label>
+		<description>コーティングされた変位プラスチールを使用した管。非常に頑丈。</description>
+		<thingClass>PipeSystem.Building_Pipe</thingClass>
+		<category>Building</category>
+		<tickerType>Rare</tickerType>
+		<graphicData>
+			<texPath>Things/Building/Linked/AR_FictionEnergyPipe_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<!-- Any of the custom link flag. Only used so blueprint connect to buildings -->
+			<linkFlags>
+				<li>Custom7</li>
+			</linkFlags>
+			<damageData>
+				<rect>(0,0.35,1,0.3)</rect>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Linked/AR_FictionEnergyPipe_MenuIcon</uiIconPath>
+		<uiIconScale>0.7</uiIconScale>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/AR_FictionEnergyPipe_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<drawerType>MapMeshOnly</drawerType>
+		<altitudeLayer>Conduits</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>3200</MaxHitPoints>
+			<WorkToBuild>80</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Fiction_Pipe_T>1</Fiction_Pipe_T>
+		</costList>
+		<comps>
+			<li Class="PipeSystem.CompProperties_Resource">
+				<pipeNet>AR_FictionPipeSystem</pipeNet>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PipeSystem.PlaceWorker_Pipe</li>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>AR_AntiRealConstructs</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<clearBuildingArea>false</clearBuildingArea>
+		<researchPrerequisites>
+			<li>AR_Research_PipeSystem</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+	</ThingDef>
+</Defs>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ResearchProjectTagDef>
+		<defName>AR_Start</defName>
+	</ResearchProjectTagDef>
+
+	<ResearchProjectTagDef>
+		<defName>AR_Senario</defName>
+	</ResearchProjectTagDef>
+
+	<ResearchTabDef>
+		<defName>Anti_Reality</defName>
+		<label>AntiReality</label>
+	</ResearchTabDef>
+
+	<ResearchProjectDef Name="AR_ResearchBase" Abstract="True">
+		<description>準備中</description>
+
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+
+		<techLevel>Archotech</techLevel>
+		<tab>Anti_Reality</tab>
+		<baseCost>1</baseCost>
+	</ResearchProjectDef>
+</Defs>

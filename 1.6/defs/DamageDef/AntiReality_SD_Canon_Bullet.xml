@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<DamageDef ParentName="Bullet">
+		<defName>AntiReality_SD_Canon_Bullet</defName>
+		<label>圧縮弾</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<deathMessage>{0}は粉々に砕けった</deathMessage>
+		<hediff>Gunshot</hediff>
+		<armorCategory>Sharp</armorCategory>
+		<buildingDamageFactor>50</buildingDamageFactor><!-- 建築物に対する倍率-->
+		<overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+	</DamageDef>
+</Defs>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ResearchProjectDef ParentName="AR_ResearchBase">
+		<defName>Research_AR_Core</defName>
+		<label>虚構エネルギーの封じ込め</label>
+		<description>[Tier1]「海」の一滴を小さなカプセルに封じ込める。</description>
+
+		<baseCost>6000</baseCost>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>2.30</researchViewY>
+		<prerequisites>
+			<li>Research_AR_AntimatterColider</li>
+		</prerequisites>
+	</ResearchProjectDef>
+</Defs>

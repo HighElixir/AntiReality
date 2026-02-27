@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="ResourceBase">
+        <defName>Fiction_Pipe_T</defName>
+        <label>虚妄流体管</label>
+        <description>コーティングし、「海水」を流体状のままでの管理が可能になったプラスチール。</description>
+        <graphicData>
+            <texPath>Things/Resource/FictionPipe</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <techLevel>Archotech</techLevel>
+
+        <soundInteract>Metal_Drop</soundInteract>
+        <!-- Silver_Drop Metal_Drop Wood_Drop ChunkRock_Drop -->
+        <soundDrop>Metal_Drop</soundDrop>
+        <statBases>
+            <MarketValue>150</MarketValue>
+            <Mass>0.05</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+        <!-- should raw resource item have hitpoints -->
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <thingCategories>
+            <li>AR_Resource</li>
+        </thingCategories>
+        <burnableByRecipe>false</burnableByRecipe>
+        <smeltable>false</smeltable>
+        <!-- idk maybe if can smelt? -->
+        <stuffProps>
+            <appearance>Metal</appearance>
+            <categories>
+                <li>Metallic</li>
+                <li>Stony</li>
+                <!-- Metallic Woody Stony Fabric -->
+            </categories>
+            <commonality>0.0001</commonality>
+            <!-- silver 0.05 gold 0.02 steel 1.00 plasteel 0.05 wood 1.0 uranium 0.05 jade 0.05 -->
+            <constructEffect>ConstructMetal</constructEffect>
+            <!-- ConstructMetal ConstructWood -->
+            <color>(107,111,88)</color>
+            <!-- R,G,B -->
+            <soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+            <!-- BulletImpact_Metal BulletImpact_Wood -->
+            <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+            <!-- MeleeHit_Metal_Sharp MeleeHit_Wood MeleeHit_Stone -->
+            <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+            <!-- MeleeHit_Metal_Blunt MeleeHit_Wood MeleeHit_Stone -->
+        </stuffProps>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <!-- Light Medium Heavy -->
+    </ThingDef>
+
+    <RecipeDef>
+        <defName>Fiction_Pipe_R</defName>
+        <label>虚妄流体管を20個作る</label>
+        <description>変位プラスチールをコーティングし、海水を輸送可能にする。</description>
+        <jobString>虚妄流体管を作っている</jobString>
+
+        <recipeUsers>
+            <li>AR_FictionFusionner</li>
+        </recipeUsers>
+        <researchPrerequisite>Research_AR_Core</researchPrerequisite>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <effectWorking>Smelt</effectWorking>
+        <soundWorking>Recipe_Smelt</soundWorking>
+        <allowMixingIngredients>false</allowMixingIngredients>
+
+        <workAmount>600</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Displacement_Plasteel</li>
+                    </thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Displacement_Plasteel</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <Fiction_Pipe_T>20</Fiction_Pipe_T>
+        </products>
+    </RecipeDef>
+</Defs>

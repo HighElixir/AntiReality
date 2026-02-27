@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>Tear_in_Reality</defName>
+		<label>次元の裂け目</label>
+		<description>あの世への入り口？</description>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Resource/TearInReality</texPath>
+		</graphicData>
+
+		<tickerType>Normal</tickerType>
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+
+		<drawerType>MapMeshOnly</drawerType>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<stackLimit>100</stackLimit>
+		<statBases>
+			<MarketValue>2000</MarketValue>
+			<Beauty>3</Beauty>
+			<Mass>0.8</Mass>
+		</statBases>
+		<useHitPoints>false</useHitPoints>
+		<!-- should raw resource item have hitpoints -->
+		<healthAffectsPrice>false</healthAffectsPrice>
+
+		<thingCategories>
+			<li>AR_Resource</li>
+		</thingCategories>
+
+		<!--<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>240</wickTicks>
+				<explosiveRadius>13</explosiveRadius>
+				<explosiveDamageType>Bathed_in_Energy</explosiveDamageType>
+				<explodeOnKilled>true</explodeOnKilled>
+			</li>
+		</comps>-->
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<rotatable>false</rotatable>
+		<pathCost>1</pathCost>
+		<allowedArchonexusCount>-1</allowedArchonexusCount>
+	</ThingDef>
+</Defs>

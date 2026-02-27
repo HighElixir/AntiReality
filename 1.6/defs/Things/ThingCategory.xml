@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<!-- 
+      <ThingCategoryDef>
+    <defName>Items</defName>
+    <label>items</label>
+    <parent>Root</parent>
+  </ThingCategoryDef>
+-->
+	<!-- 素材-->
+	<ThingCategoryDef>
+		<defName>AR_Resource</defName>
+		<label>虚構構築素材</label>
+		<parent>Manufactured</parent>
+		<iconPath>UI/Overlays/Fiction_Energy</iconPath>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>AR_Resource_Core</defName>
+		<label>コア素材</label>
+		<parent>AR_Resource</parent>
+	</ThingCategoryDef>
+
+	<!--武器 -->
+	<ThingCategoryDef>
+		<defName>AR_Weapon</defName>
+		<label>AR 武器</label>
+		<parent>Weapons</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>AR_Ranged</defName>
+		<label>近接武器</label>
+		<parent>AR_Weapon</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>AR_Melee</defName>
+		<label>遠距離武器</label>
+		<parent>AR_Weapon</parent>
+	</ThingCategoryDef>
+
+	<!-- 衣服-->
+	<ThingCategoryDef>
+		<defName>AR_Apparel</defName>
+		<label>AR 衣服</label>
+		<parent>AR_Weapon</parent>
+	</ThingCategoryDef>
+
+	<!-- インプラント・義肢-->
+	<ThingCategoryDef>
+		<defName>AR_BodyAdd</defName>
+		<label>AR 義肢</label>
+		<parent>BodyParts</parent>
+	</ThingCategoryDef>
+
+	<!-- その他-->
+	<ThingCategoryDef>
+		<defName>AR_Buildings</defName>
+		<label>虚構構築物</label>
+		<parent>Buildings</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>AR_Powers</defName>
+		<label>FE関連構築物群</label>
+		<parent>AR_Buildings</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>AR_NeedFE</defName>
+		<label>FE動力</label>
+		<parent>AR_Powers</parent>
+	</ThingCategoryDef>
+</Defs>
