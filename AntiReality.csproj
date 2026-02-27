@@ -5,7 +5,7 @@
     <ProjectGuid>{09253F3E-44DB-403B-AE9F-C9E3328E1142}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>HE_AntiReality</AssemblyName>
+    <AssemblyName>AntiReality</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -17,68 +17,66 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>1.5\Assemblies\</OutputPath>
+    <OutputPath>1.6\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>5</WarningLevel>
+    <WarningLevel>0</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>HE_AntiReality</RootNamespace>
+    <RootNamespace>AntiReality</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <None Include=".vs\AntiReality\FileContentIndex\064c2d70-a452-4508-8198-231418044dfd.vsidx" />
-    <None Include=".vs\AntiReality\v17\.suo" />
-    <Content Include="1.5\Assemblies\HE_AntiReality.dll" />
-    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\Anchors\MoltenHeart.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\Anchors\ZeroDimensionAnchor.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\MultiImplanter.xml" />
     <None Include="Anti-Reality.code-workspace" />
     <None Include="Cont\Textures\UI\Commands\Teleport.clip" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="1.5\Defs\.ModDef\modDef.xml" />
-    <Content Include="1.5\Defs\DamageDefs\Osmosis.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\.Base.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\BodyParts_NonExistentArms.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\Anchors\InfinityAnchor.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Implants_And_BodyParts\[Tier1]Implants.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Injures\FrostBite.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Injures\Osmosis_Injure.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Other\LostReality.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Other\Resistance.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Other\精神の負荷.xml" />
-    <Content Include="1.5\Defs\HediffDefs\Other\実在性の崩壊.xml" />
-    <Content Include="1.5\Defs\ITabDef\AR_ITabOverLoad.xml" />
-    <Content Include="1.5\Defs\ManeuverDefs_And_ToolCaps\OsmosisMelee.xml" />
-    <Content Include="1.5\Defs\MentalStateDefs\AR_WanderConfused.xml" />
-    <Content Include="1.5\Defs\Misc\AR_AntiReal.xml" />
-    <Content Include="1.5\Defs\SoundDefs\Bathed_in_Energy_Sound.xml" />
-    <Content Include="1.5\Defs\Things\Buildings\Pipes\HE_FictionEnergyPipe.xml" />
-    <Content Include="1.5\Defs\Things\Buildings\Pipes\HE_FictionPipeSystem.xml" />
-    <Content Include="1.5\Defs\Things\Buildings\Pipes\Designation.xml" />
-    <Content Include="1.5\Defs\Reserch\PN_Tier2~.xml" />
-    <Content Include="1.5\Defs\Reserch\Resertch.xml" />
-    <Content Include="1.5\Defs\Reserch\Items_Structure.xml" />
-    <Content Include="1.5\Defs\Reserch\Anchors.xml" />
-    <Content Include="1.5\Defs\Misc\stat.xml" />
-    <Content Include="1.5\Defs\Things\Buildings\Input_OutPut.xml" />
-    <Content Include="1.5\Defs\Things\Buildings\FETanks.xml" />
-    <Content Include="1.5\Defs\Things\Buildings\FEPowers.xml" />
-    <Content Include="1.5\Defs\Things\Buildings\FE温度.xml" />
-    <Content Include="1.5\Defs\Things\Buildings\DimensionAnchor.xml" />
-    <Content Include="1.5\Defs\Things\Items\ZeroDimensionStone.xml" />
-    <Content Include="1.5\Defs\Things\Weapons\ItemBase..xml" />
-    <Content Include="1.5\Defs\Things\Weapons\Ranged\PN-FireWorksMaker.xml" />
-    <Content Include="1.5\Defs\Thought\BadMemories.xml" />
-    <Content Include="1.5\Patches\XMLFile1.xml" />
+    <Content Include="1.6\Assemblies\AntiReality.dll" />
+    <Content Include="1.6\defs\.ModDef\modDef.xml" />
+    <Content Include="1.6\defs\DamageDef\AntiReality_SD_Canon_Bullet.xml" />
+    <Content Include="1.6\defs\HediffDefs\Implants\.Base.xml" />
+    <Content Include="1.6\defs\HediffDefs\Injures\Osmosis_Injure.xml" />
+    <Content Include="1.6\defs\HediffDefs\Other\LostReality.xml" />
+    <Content Include="1.6\defs\misc\AR_AntiReal.xml" />
+    <Content Include="1.6\defs\misc\stat.xml" />
+    <Content Include="1.6\defs\Reserch\ResearchBase.xml" />
+    <Content Include="1.6\defs\Reserch\Tier0\AR_AntimatterColider.xml" />
+    <Content Include="1.6\defs\Reserch\Tier1\AR_Core.xml" />
+    <Content Include="1.6\defs\Reserch\Tier1\AR_Research_FETank.xml" />
+    <Content Include="1.6\defs\Reserch\Tier1\PipeSystem.xml" />
+    <Content Include="1.6\defs\Reserch\Tier2\VoidOut_Plasteel.xml" />
+    <Content Include="1.6\defs\SoundDef\Building\AR_Building_Beem.xml" />
+    <Content Include="1.6\defs\SoundDef\Weapons\AR_Rifle.xml" />
+    <Content Include="1.6\defs\SoundDef\Weapons\AR_Shell_Ejection.xml" />
+    <Content Include="1.6\defs\SoundDef\Weapons\AR_Shell_Ejection_huge.xml" />
+    <Content Include="1.6\defs\SoundDef\Weapons\AR_Sniper_huge.xml" />
+    <Content Include="1.6\defs\Things\Buildings\.Pipes\HE_FictionPipeSystem.xml" />
+    <Content Include="1.6\defs\Things\Buildings\Designation.xml" />
+    <Content Include="1.6\defs\Things\Buildings\Tier0\AR_AntimatterColider.xml" />
+    <Content Include="1.6\defs\Things\Buildings\Tier1\AR_FECooler.xml" />
+    <Content Include="1.6\defs\Things\Buildings\Tier1\AR_StellaVoyager.xml" />
+    <Content Include="1.6\defs\Things\Buildings\Tier1\FictionFusionner.xml" />
+    <Content Include="1.6\defs\Things\Buildings\Tier1\Pipes\FETanks.xml" />
+    <Content Include="1.6\defs\Things\Buildings\Tier1\Pipes\HE_FictionEnergyPipe.xml" />
+    <Content Include="1.6\defs\Things\Buildings\Tier1\Pipes\Input_OutPut.xml" />
+    <Content Include="1.6\defs\Things\Items\Resources\Tier0\Tear_in_Reality.xml" />
+    <Content Include="1.6\defs\Things\Items\Resources\Tier1\Displacement_Plasteel.xml" />
+    <Content Include="1.6\defs\Things\Items\Resources\Tier1\Fictions_Core.xml" />
+    <Content Include="1.6\defs\Things\Items\Resources\Tier1\Pipe.xml" />
+    <Content Include="1.6\defs\Things\Items\Resources\Tier2\VoidOut_Plasteel.xml" />
+    <Content Include="1.6\defs\Things\ThingCategory.xml" />
+    <Content Include="1.6\defs\Things\Weapons\Ranged\Tier0\SkullDimenthion_DMR.xml" />
+    <Content Include="1.6\defs\Things\Weapons\Ranged\Tier0\SkullDimention_AssaultRifle.xml" />
+    <Content Include="1.6\defs\Things\Weapons\Ranged\Tier0\SkullDimention_Canon.xml" />
+    <Content Include="1.6\defs\Things\Weapons\WeaponsBase.xml" />
+    <Content Include="1.6\defs\traitsdef\Traits.xml" />
     <Content Include="Cont\Languages\Japanese\Commands.xml" />
     <Content Include="Cont\Languages\Japanese\Keyed\Translate.xml" />
     <Content Include="Cont\Sounds\Misc\BathedinEnergy.wav" />
@@ -96,9 +94,9 @@
     <Content Include="Cont\Textures\Things\Building\ResourceConverter_O.png" />
     <Content Include="Cont\Textures\Things\Building\ResourceConverter.png" />
     <Content Include="Cont\Textures\Things\Building\Linked\BuriedHE_FicitionEnergyPipe_MenuIcon.png" />
-    <Content Include="Cont\Textures\Things\Building\Linked\HE_FictionEnergyPipe_Atlas.png" />
-    <Content Include="Cont\Textures\Things\Building\Linked\HE_FicitionEnergyPipe_Blueprint_Atlas.png" />
-    <Content Include="Cont\Textures\Things\Building\Linked\HE_FictionEnergyPipe_MenuIcon.png" />
+    <Content Include="Cont\Textures\Things\Building\Linked\AR_FictionEnergyPipe_Atlas.png" />
+    <Content Include="Cont\Textures\Things\Building\Linked\AR_FicitionEnergyPipe_Blueprint_Atlas.png" />
+    <Content Include="Cont\Textures\Things\Building\Linked\AR_FictionEnergyPipe_MenuIcon.png" />
     <Content Include="Cont\Textures\Things\Item\ZeroDimensionStone.png" />
     <Content Include="Cont\Textures\Things\Special\Fluid\GasTransmitterAtlas.png" />
     <Content Include="Cont\Textures\Things\Special\Fluid\VHGE_OverlayBase.png" />
@@ -106,21 +104,8 @@
     <Content Include="Cont\Textures\UI\Commands\skill_icon_01_nobg.png" />
     <Content Include="Cont\Textures\UI\Commands\Teleport.png" />
     <Content Include="Cont\Textures\UI\Commands\UI_Skill_Icon_Recon.png" />
-    <Content Include="Mods\Kiiro\Defs\Apparel\Pants.xml" />
-    <Content Include="1.5\Defs\Things\Items\Resources\Fictions_Core.xml" />
-    <Content Include="1.5\Defs\Things\Items\Resources\Displacement_Plasteel.xml" />
-    <Content Include="1.5\Defs\Things\Projectile\PN_Gun.xml" />
-    <Content Include="1.5\Defs\Things\ThingCategory.xml" />
-    <Content Include="1.5\Defs\Thought\Thought.xml" />
-    <Content Include="1.5\Defs\Things\Weapons\Melee\EL-アンパルスブレード.xml" />
-    <Content Include="1.5\Defs\Things\Weapons\Melee\PN-非現実の腕.xml" />
-    <Content Include="1.5\Defs\Things\Weapons\Ranged\EL-慟哭.xml" />
-    <Content Include="1.5\Defs\Things\Weapons\Ranged\PC-マルチランス.xml" />
-    <Content Include="1.5\Defs\Things\Weapons\Ranged\PN-PEACEMAKER.xml" />
-    <Content Include="1.5\Defs\TraitsDef\Traits.xml" />
     <Content Include="About\About.xml" />
     <Content Include="Cont\Textures\Things\Resource\FictionsCore.dds" />
-    <Content Include="Cont\Textures\Things\Resource\FictionsCore.png" />
     <Content Include="Cont\Textures\Things\Weapons\MeleeWeapons\others\W1.dds" />
     <Content Include="Cont\Textures\Things\Weapons\MeleeWeapons\others\W1.png" />
     <Content Include="Cont\Textures\Things\Weapons\MeleeWeapons\tier1\W1.dds" />
@@ -132,99 +117,43 @@
     <Content Include="LoadFolders.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\TeleportTargetingSource.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Buildings\ChargeSystem\CompChargeFE.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Buildings\ChargeSystem\CompProperties_FECharge.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Buildings\WarpSystem\WarpAnchorHelper.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Buildings\WarpSystem\CompProperties_WarpSystem.cs" />
-    <Compile Include="1.5\Assemblies\CS files\DamageWorker\DamageWorker_FE.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\Anchors\HediffCompProperties_AnchorSeverity.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\OverLoad\AddOverLoad.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\OverLoad\Hediff_OverLoad.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\MoltenHeart.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\DecreaseReality.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\LostofReality.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\GiveThoughtToWitnesses.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Helpers\AR_Helper.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Helpers\LoatofRealityUtility.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Helpers\HE_Constants.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Helpers\Helpers.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Interface\ITab_Overload.cs" />
-    <Compile Include="1.5\Assemblies\CS files\MentalState\MentalState_AR_WanderConfused.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Misc\DebugActions_AddPawn_MentalState_AR_WanderConfused.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Misc\DebugActions_BathedInEnergy.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Research\WarpCostResearch.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\CapsureSlot\CapsureSlot.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\CapsureSlot\Comp_CapsureSlot.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\Overload\Comp_OverloadUserBase.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\Overload\HeatGun.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\Overload\Thing_Overload.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\Anchors\DeleteAlreadyExistAnchors.cs" />
-    <Compile Include="1.5\Assemblies\CS files\DefOf\DefOf.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\HediffComp_TransportGizmo.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Patches\HE_Patches.cs" />
-    <Compile Include="1.5\Assemblies\CS files\RecipeWorker\RecipeWorker_InfinityAdjustSeverity.cs" />
-    <Compile Include="1.5\Assemblies\CS files\Abilitys\Teleport\TargetingParameters_Extensions.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\GiveHediffs.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\ExistanceFusion_wound.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\ForceDeath.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\MakeBodyParts.cs" />
-    <Compile Include="1.5\Assemblies\CS files\HediffComps\NeedHediff.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\.Comp_StoreFE.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\FEUser\.Comp_FEUserBase.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThingComps\StoreFE\FEUser\Comp_WarptoAnchor.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThoughtWorker\ThoughtWorker_MoltenHeart.cs" />
-    <Compile Include="1.5\Assemblies\CS files\ThoughtWorker\ThoughtWorker_AddBodyParts_AntiReal_Hand.cs" />
+    <Compile Include="1.6\Assemblies\Constants.cs" />
+    <Compile Include="1.6\Assemblies\defof\DefOf.cs" />
+    <Compile Include="1.6\Assemblies\helpers\MakeMoteUtility.cs" />
+    <Compile Include="1.6\Assemblies\LostReality\LoatofRealityUtility.cs" />
+    <Compile Include="1.6\Assemblies\LostReality\LostofReality.cs" />
+    <Compile Include="1.6\Assemblies\ThingComp\CompProperties_PlaySustainer.cs" />
+    <Compile Include="1.6\Assemblies\ThingComp\SpawnItemWithConsumePower.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="HarmonyMod">
-      <HintPath>..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\HarmonyMod.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PipeSystem">
-      <HintPath>..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.TextCoreModule">
-      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.TextCoreModule.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="VFECore">
-      <HintPath>..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\VFECore.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="1.5\Assemblies\CS files\Buildings\PypeSystems\" />
-    <Folder Include="1.5\Assemblies\CS files\Parent\" />
-    <Folder Include="1.5\Defs\AbilityDefs\" />
-    <Folder Include="1.5\Defs\Things\Cloth\" />
-    <Folder Include="1.5\Defs\Things\Items\Apparels\" />
+    <Folder Include="1.6\defs\Things\Buildings\Tier2\" />
     <Folder Include="Cont\Sounds\Weapons\" />
     <Folder Include="Cont\Textures\Things\Projectile\" />
   </ItemGroup>

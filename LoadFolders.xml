@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <loadFolders>
 	<v1.5>
-		<li>1.5</li>
+		<li>1.6</li>
 		<li>Cont</li>
-		<li IfModActive="Ancot.KiiroRace">Mods/Kiiro</li>
 	</v1.5>
+	<v1.6>
+		<li>1.6</li>
+		<li>Cont</li>
+	</v1.6>
 </loadFolders>
