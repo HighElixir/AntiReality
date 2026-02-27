@@ -1,0 +1,299 @@
+AntiReality Def Flavor Summary
+Generated: 2026-02-28 08:17:19
+
+[AntiReality] (MVCF.ModDef)
+file: 1.6\defs\.ModDef\modDef.xml
+flavor quote: 「複数の攻撃手段を持つ武器、遠距離攻撃機能付きhediff」
+summary: MVCF機能有効化のModDef。
+
+[AntiReality_SD_Canon_Bullet] (DamageDef)
+file: 1.6\defs\DamageDef\AntiReality_SD_Canon_Bullet.xml
+flavor quote: 「圧縮弾」
+summary: ダメージタイプ定義。
+
+[Osmosis_Injure] (OsmosisInjurlyBase)
+file: 1.6\defs\HediffDefs\Injures\Osmosis_Injure.xml
+flavor quote: 「傷の向こうに鮮やかな何かが見える。不思議と痛みはなく、まるで初めから自分に備わっていた物なのだと錯覚させられる。」
+summary: 負傷系Hediffの派生定義。
+
+[Vulnerability] (HediffDef)
+file: 1.6\defs\HediffDefs\Injures\Osmosis_Injure.xml
+flavor quote: 「突然虚構エネルギーに触れたことによる副反応。 戦闘能力がかなり弱体化する」
+summary: 状態異常(Hediff)定義。isBad: 。ステージ数: 1。
+
+[LostOfReality] (HediffDef)
+file: 1.6\defs\HediffDefs\Other\LostReality.xml
+flavor quote: 「だんだんと存在が薄れていく」
+summary: 状態異常(Hediff)定義。isBad: 。ステージ数: 6。
+
+[AntiReal] (DamageArmorCategoryDef)
+file: 1.6\defs\misc\AR_AntiReal.xml
+flavor quote: 「（説明テキストなし）」
+summary: 防御カテゴリ定義。対応statで被ダメージ計算に関与。
+
+[AR_Indications] (StatDef)
+file: 1.6\defs\misc\stat.xml
+flavor quote: 「[ ]」
+summary: ステータス定義。カテゴリ: PawnCombat、初期値: 0.5。
+
+[AR_Resistance] (StatDef)
+file: 1.6\defs\misc\stat.xml
+flavor quote: 「虚構エネルギーへの曝露に対する耐性。ただし、100%の耐性を持っていても実在性崩壊は耐えられない。」
+summary: ステータス定義。カテゴリ: BasicsPawn、初期値: 0。
+
+[AR_Resistance_combat] (StatDef)
+file: 1.6\defs\misc\stat.xml
+flavor quote: 「虚構エネルギーへの曝露に対する外部的な補強。降りかかる偽りの刃を防ぐ為の能力」
+summary: ステータス定義。カテゴリ: PawnCombat、初期値: 0。
+
+[Anti_Reality] (ResearchTabDef)
+file: 1.6\defs\Reserch\ResearchBase.xml
+flavor quote: 「AntiReality」
+summary: 研究タブ定義。
+
+[AR_Senario] (ResearchProjectTagDef)
+file: 1.6\defs\Reserch\ResearchBase.xml
+flavor quote: 「（説明テキストなし）」
+summary: 研究タグ定義。
+
+[AR_Start] (ResearchProjectTagDef)
+file: 1.6\defs\Reserch\ResearchBase.xml
+flavor quote: 「（説明テキストなし）」
+summary: 研究タグ定義。
+
+[Research_AR_AntimatterColider] (ResearchProjectDef)
+file: 1.6\defs\Reserch\Tier0\AR_AntimatterColider.xml
+flavor quote: 「[Tier0]」
+summary: 研究プロジェクト。基礎コスト: 6000。前提なし。
+
+[Research_AR_Core] (ResearchProjectDef)
+file: 1.6\defs\Reserch\Tier1\AR_Core.xml
+flavor quote: 「[Tier1]「海」の一滴を小さなカプセルに封じ込める。」
+summary: 研究プロジェクト。基礎コスト: 6000。前提なし。
+
+[AR_Research_FETank] (ResearchProjectDef)
+file: 1.6\defs\Reserch\Tier1\AR_Research_FETank.xml
+flavor quote: 「[Tier1]虚構エネルギーの幕を風船のように膨らませ、虚無に勢力を広げる。」
+summary: 研究プロジェクト。基礎コスト: 18000。前提なし。
+
+[AR_Research_PipeSystem] (ResearchProjectDef)
+file: 1.6\defs\Reserch\Tier1\PipeSystem.xml
+flavor quote: 「[Tier1]虚構エネルギーを利用したパイプシステムとその素材になる建材を追加する。」
+summary: 研究プロジェクト。基礎コスト: 18000。前提なし。
+
+[Research_VoidOut_Plasteel] (ResearchProjectDef)
+file: 1.6\defs\Reserch\Tier2\VoidOut_Plasteel.xml
+flavor quote: 「[Tier2]虚展プラスチールと、それに関連する装備、構造物の研究開発を行う。」
+summary: 研究プロジェクト。基礎コスト: 32000。前提なし。
+
+[AR_Building_Beem] (SoundDef)
+file: 1.6\defs\SoundDef\Building\AR_Building_Beem.xml
+flavor quote: 「（説明テキストなし）」
+summary: サウンド定義。subSounds数: 1。
+
+[AR_Rifle] (SoundDef)
+file: 1.6\defs\SoundDef\Weapons\AR_Rifle.xml
+flavor quote: 「（説明テキストなし）」
+summary: サウンド定義。subSounds数: 1。
+
+[AR_Shell_Ejection_huge] (SoundDef)
+file: 1.6\defs\SoundDef\Weapons\AR_Shell_Ejection_huge.xml
+flavor quote: 「（説明テキストなし）」
+summary: サウンド定義。subSounds数: 1。
+
+[AR_Shell_Ejection] (SoundDef)
+file: 1.6\defs\SoundDef\Weapons\AR_Shell_Ejection.xml
+flavor quote: 「（説明テキストなし）」
+summary: サウンド定義。subSounds数: 1。
+
+[AR_Sniper_huge] (SoundDef)
+file: 1.6\defs\SoundDef\Weapons\AR_Sniper_huge.xml
+flavor quote: 「（説明テキストなし）」
+summary: サウンド定義。subSounds数: 1。
+
+[AR_FictionPipeSystem] (PipeSystem.PipeNetDef)
+file: 1.6\defs\Things\Buildings\.Pipes\HE_FictionPipeSystem.xml
+flavor quote: 「（説明テキストなし）」
+summary: PipeSystemのネットワーク定義。資源名: 流体状の虚構エネルギー、単位: fu。
+
+[AR_AntiRealConstructs] (DesignationCategoryDef)
+file: 1.6\defs\Things\Buildings\Designation.xml
+flavor quote: 「虚構構築物群」
+summary: 建築メニューのカテゴリ定義。
+
+[AR_AntimatterColider] (ThingDef)
+file: 1.6\defs\Things\Buildings\Tier0\AR_AntimatterColider.xml
+flavor quote: 「膨大な電力とウランで実験を行う。」
+summary: FEパイプネットワーク連携のThingDef。thingClass: Building。PipeSystemコンポーネントで資源接続する。
+
+[AR_FECooler] (ThingDef)
+file: 1.6\defs\Things\Buildings\Tier1\AR_FECooler.xml
+flavor quote: 「(WIP)急速に室温を-50度まで冷却する。これは素粒子の振動を抑制することで実現している。建築コストは高いが、維持コストは非常に安い。」
+summary: FEパイプネットワーク連携のThingDef。thingClass: Building。PipeSystemコンポーネントで資源接続する。
+
+[AR_StellaVoyager] (ThingDef)
+file: 1.6\defs\Things\Buildings\Tier1\AR_StellaVoyager.xml
+flavor quote: 「海に映る星空に仮想的な電気網を築く。」
+summary: FEパイプネットワーク連携のThingDef。thingClass: Building_Battery。PipeSystemコンポーネントで資源接続する。
+
+[AR_FictionFusionner] (ThingDef)
+file: 1.6\defs\Things\Buildings\Tier1\FictionFusionner.xml
+flavor quote: 「虚構流動体の操作、制御、変質をサポートする作業台」
+summary: FEパイプネットワーク連携のThingDef。thingClass: Building_WorkTable。PipeSystemコンポーネントで資源接続する。
+
+[AR_FETank] (ThingDef)
+file: 1.6\defs\Things\Buildings\Tier1\Pipes\FETanks.xml
+flavor quote: 「小規模な異界を作成し、その中に流体虚構エネルギーを貯蔵する。」
+summary: FEパイプネットワーク連携のThingDef。thingClass: 。PipeSystemコンポーネントで資源接続する。
+
+[AR_FictionEnergyPipe] (ThingDef)
+file: 1.6\defs\Things\Buildings\Tier1\Pipes\HE_FictionEnergyPipe.xml
+flavor quote: 「コーティングされた変位プラスチールを使用した管。非常に頑丈。」
+summary: FEパイプネットワーク連携のThingDef。thingClass: PipeSystem.Building_Pipe。PipeSystemコンポーネントで資源接続する。
+
+[AR_ResourceConverter] (ThingDef)
+file: 1.6\defs\Things\Buildings\Tier1\Pipes\Input_OutPut.xml
+flavor quote: 「フィクションコアを安全に開封し、様々な機械の動力として利用できる。」
+summary: FEパイプネットワーク連携のThingDef。thingClass: Building_Storage。PipeSystemコンポーネントで資源接続する。
+
+[AR_ResourceConverter_O] (ThingDef)
+file: 1.6\defs\Things\Buildings\Tier1\Pipes\Input_OutPut.xml
+flavor quote: 「FEを密封容器に注入する。取扱注意。」
+summary: FEパイプネットワーク連携のThingDef。thingClass: Building_Storage。PipeSystemコンポーネントで資源接続する。
+
+[Tear_in_Reality] (ThingDef)
+file: 1.6\defs\Things\Items\Resources\Tier0\Tear_in_Reality.xml
+flavor quote: 「あの世への入り口？」
+summary: ゲーム内オブジェクト定義のThingDef。thingClass: ThingWithComps。
+
+[Displacement_Plasteel] (RecipeDef)
+file: 1.6\defs\Things\Items\Resources\Tier1\Displacement_Plasteel.xml
+flavor quote: 「半現実環境でプラスチールと虚構エネルギーを積層させ、変位プラスチールを作成する。」
+summary: クラフト/加工レシピ定義。使用設備: 未指定。
+
+[Displacement_Plasteel] (ThingDef)
+file: 1.6\defs\Things\Items\Resources\Tier1\Displacement_Plasteel.xml
+flavor quote: 「衝突した物体の持つ固有の周波数に合わせて周波数が変化し、共振させてダメージを増幅させる。」
+summary: ゲーム内オブジェクト定義のThingDef。thingClass: 。
+
+[Fiction_Core] (FictionCore)
+file: 1.6\defs\Things\Items\Resources\Tier1\Fictions_Core.xml
+flavor quote: 「虚構エネルギーを封じ込めたカプセル。落雷、火災、爆発に巻き込まれないように、注意して取り扱うこと。 もし容器が壊れてしまえば最後、周囲に高濃度のエネルギーが襲い掛かり、死に至るだろう。」
+summary: def定義。
+
+[Make_FictionCore] (RecipeDef)
+file: 1.6\defs\Things\Items\Resources\Tier1\Fictions_Core.xml
+flavor quote: 「「星空の海水」の製造」
+summary: クラフト/加工レシピ定義。使用設備: 未指定。
+
+[Fiction_Pipe_R] (RecipeDef)
+file: 1.6\defs\Things\Items\Resources\Tier1\Pipe.xml
+flavor quote: 「変位プラスチールをコーティングし、海水を輸送可能にする。」
+summary: クラフト/加工レシピ定義。使用設備: 未指定。
+
+[Fiction_Pipe_T] (ThingDef)
+file: 1.6\defs\Things\Items\Resources\Tier1\Pipe.xml
+flavor quote: 「コーティングし、「海水」を流体状のままでの管理が可能になったプラスチール。」
+summary: ゲーム内オブジェクト定義のThingDef。thingClass: 。
+
+[VoidOut_Plasteel] (RecipeDef)
+file: 1.6\defs\Things\Items\Resources\Tier2\VoidOut_Plasteel.xml
+flavor quote: 「変位プラスチールを半現実環境から虚数空間へ浸透させ、虚展プラスチールを作成する。」
+summary: クラフト/加工レシピ定義。使用設備: 未指定。
+
+[VoidOut_Plasteel] (ThingDef)
+file: 1.6\defs\Things\Items\Resources\Tier2\VoidOut_Plasteel.xml
+flavor quote: 「虚展を経たプラスチール繊維を織った素材。耐久値が非常に高くなる。」
+summary: ゲーム内オブジェクト定義のThingDef。thingClass: 。
+
+[AR_Apparel] (ThingCategoryDef)
+file: 1.6\defs\Things\ThingCategory.xml
+flavor quote: 「AR 衣服」
+summary: Thingカテゴリ定義。アイテムの分類/フィルタに使用。
+
+[AR_BodyAdd] (ThingCategoryDef)
+file: 1.6\defs\Things\ThingCategory.xml
+flavor quote: 「AR 義肢」
+summary: Thingカテゴリ定義。アイテムの分類/フィルタに使用。
+
+[AR_Buildings] (ThingCategoryDef)
+file: 1.6\defs\Things\ThingCategory.xml
+flavor quote: 「虚構構築物」
+summary: Thingカテゴリ定義。アイテムの分類/フィルタに使用。
+
+[AR_Melee] (ThingCategoryDef)
+file: 1.6\defs\Things\ThingCategory.xml
+flavor quote: 「遠距離武器」
+summary: Thingカテゴリ定義。アイテムの分類/フィルタに使用。
+
+[AR_NeedFE] (ThingCategoryDef)
+file: 1.6\defs\Things\ThingCategory.xml
+flavor quote: 「FE動力」
+summary: Thingカテゴリ定義。アイテムの分類/フィルタに使用。
+
+[AR_Powers] (ThingCategoryDef)
+file: 1.6\defs\Things\ThingCategory.xml
+flavor quote: 「FE関連構築物群」
+summary: Thingカテゴリ定義。アイテムの分類/フィルタに使用。
+
+[AR_Ranged] (ThingCategoryDef)
+file: 1.6\defs\Things\ThingCategory.xml
+flavor quote: 「近接武器」
+summary: Thingカテゴリ定義。アイテムの分類/フィルタに使用。
+
+[AR_Resource] (ThingCategoryDef)
+file: 1.6\defs\Things\ThingCategory.xml
+flavor quote: 「虚構構築素材」
+summary: Thingカテゴリ定義。アイテムの分類/フィルタに使用。
+
+[AR_Resource_Core] (ThingCategoryDef)
+file: 1.6\defs\Things\ThingCategory.xml
+flavor quote: 「コア素材」
+summary: Thingカテゴリ定義。アイテムの分類/フィルタに使用。
+
+[AR_Weapon] (ThingCategoryDef)
+file: 1.6\defs\Things\ThingCategory.xml
+flavor quote: 「AR 武器」
+summary: Thingカテゴリ定義。アイテムの分類/フィルタに使用。
+
+[AntiReality_SD_DMR_Bullet] (ThingDef)
+file: 1.6\defs\Things\Weapons\Ranged\Tier0\SkullDimenthion_DMR.xml
+flavor quote: 「反破砕弾」
+summary: ゲーム内オブジェクト定義のThingDef。thingClass: 。
+
+[SkullDimention_DMR] (ThingDef)
+file: 1.6\defs\Things\Weapons\Ranged\Tier0\SkullDimenthion_DMR.xml
+flavor quote: 「「裂け目」とその流体が持つ反質量と断絶の性質を生かし、反動を全て弾速に変換したDMR。」
+summary: 武器/射撃関連のThingDef。thingClass: 。装備時アクションや投射物定義を持つ。
+
+[AntiReality_Rifle_Bullet] (ThingDef)
+file: 1.6\defs\Things\Weapons\Ranged\Tier0\SkullDimention_AssaultRifle.xml
+flavor quote: 「反破砕弾」
+summary: ゲーム内オブジェクト定義のThingDef。thingClass: 。
+
+[SkullDimention_AssaultRifle] (ThingDef)
+file: 1.6\defs\Things\Weapons\Ranged\Tier0\SkullDimention_AssaultRifle.xml
+flavor quote: 「「裂け目」とその流体が持つ反質量と断絶の性質を生かして性能向上を図ったアサルトライフル。」
+summary: 武器/射撃関連のThingDef。thingClass: 。装備時アクションや投射物定義を持つ。
+
+[AntiReality_SD_Canon_Bullet] (ThingDef)
+file: 1.6\defs\Things\Weapons\Ranged\Tier0\SkullDimention_Canon.xml
+flavor quote: 「圧縮弾」
+summary: ゲーム内オブジェクト定義のThingDef。thingClass: 。
+
+[SkullDimention_Canon] (ThingDef)
+file: 1.6\defs\Things\Weapons\Ranged\Tier0\SkullDimention_Canon.xml
+flavor quote: 「「裂け目」とその流体が持つ反質量と断絶の性質を生かし、圧倒的な阻止力と強大な衝撃波を伴う対物ライフル。」
+summary: 武器/射撃関連のThingDef。thingClass: 。装備時アクションや投射物定義を持つ。
+
+[AR_TraitsA] (TraitDef)
+file: 1.6\defs\traitsdef\Traits.xml
+flavor quote: 「（説明テキストなし）」
+summary: 特性(Trait)定義。段階数: 1。
+
+[AR_TraitsB] (TraitDef)
+file: 1.6\defs\traitsdef\Traits.xml
+flavor quote: 「（説明テキストなし）」
+summary: 特性(Trait)定義。段階数: 1。
+
+
